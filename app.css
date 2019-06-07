@@ -79,7 +79,7 @@ body{
  
     .main-game{
         color: black;
-        font-size: 5em;
+        font-size: 2em;
         display: grid;
         box-sizing: border-box;
         width: 100%;
@@ -91,18 +91,24 @@ body{
     .header { 
         grid-column-start: 1;
         grid-column-end: 3;
-        color: red;
+        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #CB0005;
      }
 
-     .header img{
-         width: auto;
-         height: 70px;
-         filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(251deg) brightness(101%) contrast(105%);
-     }
+        .header img{
+            width: auto;
+            height: 70px;
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(251deg) brightness(101%) contrast(105%);
+        }
+        .header select{
+            width: 150px;
+            height: 25px;
+            background-color: white;
+        }
+
      .left-box { 
         border: 5px dotted red;
      }
