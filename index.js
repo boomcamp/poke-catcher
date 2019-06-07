@@ -62,14 +62,16 @@ function catchHandler(){
         if(pokemons.length<8){
             pokemons.push(encountered);
             let imarkUp = "";
+            let marker = 0;
             pokemons.forEach(key=>{
                 imarkUp+=`
-                <div onclick="caHandler('${key}')" class="captured-actual">
+                <div onclick="bagClick('${marker}')" class="captured-actual">
                     <img class="img" src="${key[1].avatar}"/>
                     <p class="name">${key[0].name}</p>
                 </div>
                
                 `;
+                marker++;
             });
             msa.text(`You have ${pokemons.length}/${limit} Pokemons`);
             $('.cap').html(imarkUp);
@@ -135,7 +137,6 @@ function floatingHandler(){
 
             found = true;
             let i = encountered[1];
-            console.log(i);
             let iMak = `
                 <div class="ability1">Attack   <strong>${i.attack}</strong></div>
                 <div class="ability1">Defense   <strong>${i.defense}</strong></div>
@@ -144,7 +145,7 @@ function floatingHandler(){
                 <div class="ability1">Special Defense  <strong>${i.specialDefense}</strong></div>
                 <div class="ability1">Speed   <strong>${i.speed}</strong></div>
             `;
-            
+            topContent.css({'display':'flex'});
             disp.css({'display':'flex'});
             sample.html(iMak);
             $('#catch').css({'display':'block'});
@@ -152,6 +153,26 @@ function floatingHandler(){
             
         })
     });
+}
+
+function bagClick(key){
+    if(confirm("Ara. Do you want to throw this lovely pokemon away?")){
+         pokemons.splice(key,1);
+         let imarkUp = "";
+         let marker = 0;
+         pokemons.forEach(key=>{
+             imarkUp+=`
+             <div onclick="bagClick('${marker}')" class="captured-actual">
+                 <img class="img" src="${key[1].avatar}"/>
+                 <p class="name">${key[0].name}</p>
+             </div>
+            
+             `;
+             marker++;
+         });
+         msa.text(`You have ${pokemons.length}/${limit} Pokemons`);
+         $('.cap').html(imarkUp);
+    }
 }
 
 function backHandler(){
@@ -180,21 +201,46 @@ function getRegions(){
     floating.css({'display':'none'});
     where.text("You are not in any region.");
     let regionApi = `${api}region`;
-    $.ajax(regionApi).done((data)=>{
-        let regions = data.results;
-        let tmpMarkUp = "";
-        regions.map(region=>{
-           tmpMarkUp+=`
+    // $.ajax(regionApi).done((data)=>{
+    //     let regions = data.results;
+    //     let tmpMarkUp = "";
+    //     regions.map(region=>{
+    //        tmpMarkUp+=`
                    
-                    <a href="#" onclick="getCities('${region.name}','${region.url}')" id="action" class="region">
-                        ${region.name} Region
-                    </a>
+    //                 <a href="#" onclick="getCities('${region.name}','${region.url}')" id="action" class="region">
+    //                     ${region.name} Region
+    //                 </a>
            
-           `;
+    //        `;
+    //     });
+    // change to fetch
+
+
+        fetch(regionApi)
+        .then(data=>data.json())
+        .then(data=>{
+            console.log(data);
+            let regions = data.results;
+            let tmpMarkUp = "";
+            regions.map((region)=>{
+                       tmpMarkUp+=`
+                               
+                                <a href="#" onclick="getCities('${region.name}','${region.url}')" id="action" class="region">
+                                    ${region.name} Region
+                                </a>
+                       
+                       `;
+                    });
+
+                    place.text("Regions");
+                    menu.html(tmpMarkUp);
+
         });
-       place.text("Regions");
-       menu.html(tmpMarkUp);
-    });
+
+
+
+       
+    // });
 }
 
 function getCities(name,url){
@@ -205,7 +251,27 @@ function getCities(name,url){
     activeRegionApi = url;
     back.css({'display':'block'});
     where.text(`${activeRegion} Region`);
-    $.ajax(url).done((data)=>{
+    // $.ajax(url).done((data)=>{
+    //     let regions = data.locations;
+    //     let tmpMarkUp = "";
+    //     regions.map(region=>{
+    //        tmpMarkUp+=`
+            
+    //                 <a href="#" onclick="getArea('${region.name}','${region.url}')" id="action" class="region">
+    //                     ${region.name}
+    //                 </a>
+           
+    //        `;
+    //     });
+    //    place.text("Cities");
+    //    menu.html(tmpMarkUp);
+    // });
+
+
+
+    fetch(url)
+    .then(data=>data.json())
+    .then((data)=>{
         let regions = data.locations;
         let tmpMarkUp = "";
         regions.map(region=>{
@@ -219,14 +285,35 @@ function getCities(name,url){
         });
        place.text("Cities");
        menu.html(tmpMarkUp);
-    });
+    })
 }
 
 function getArea(name,url){
     floating.css({'display':'none'});
     $('#catch').css({'display':'none'});
     activeCity = name;
-    $.ajax(url).done((data)=>{
+    // $.ajax(url).done((data)=>{
+    //     let regions = data.areas;
+    //     let tmpMarkUp = "";
+    //     regions.map(region=>{
+    //        tmpMarkUp+=`
+            
+    //                 <a href="#" onclick="getMonsters('${region.name}','${region.url}')" id="action" class="region">
+    //                     ${region.name}
+    //                 </a>
+           
+    //        `;
+    //     });
+    //    place.text("Areas");
+    //    let word = "";
+    //    name.match(/\b(\w*city\w*)\b/g)?null:word="City";
+    //    where.text(`${activeCity} , ${activeRegion} Region`);
+    //    menu.html(tmpMarkUp);
+    // });
+
+    fetch(url)
+    .then((data)=>data.json())
+    .then(data=>{
         let regions = data.areas;
         let tmpMarkUp = "";
         regions.map(region=>{
@@ -243,11 +330,11 @@ function getArea(name,url){
        name.match(/\b(\w*city\w*)\b/g)?null:word="City";
        where.text(`${activeCity} , ${activeRegion} Region`);
        menu.html(tmpMarkUp);
-    });
+    })
 }
 
 function getMonsters(name,url){
-    topContent.css({'display':'flex'});
+    
     activeArea = name;
     where.text(`${activeArea} , ${activeCity} , ${activeRegion} Region`);
     floating.css({'display':'block'});

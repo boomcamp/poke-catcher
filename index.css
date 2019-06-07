@@ -49,7 +49,33 @@ body {
 .left {
     width: 20vw;
     height: inherit;
+    overflow: scroll;
     background: #10ac84;
+}
+
+#style-6::-webkit-scrollbar-track
+{
+	
+	background-color: #10ac84;
+}
+
+#style-6::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #10ac84;
+}
+
+#style-6::-webkit-scrollbar-thumb
+{
+	background-color: #F90;	
+	background-image: -webkit-linear-gradient(45deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
 }
 
 .tag {
@@ -248,6 +274,8 @@ body {
     justify-content: start;
     flex-direction: column;
 }
+
+
 
 .ability1 {
 
