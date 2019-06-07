@@ -1,65 +1,78 @@
 body{
     background-color: #fff;
     box-sizing: border-box;
+    opacity: 0;
 }
 
-.left-joycon{
-    margin-left: -37%;
-    position: absolute;
-    display: none; 
-    animation-duration: 2s;
-    animation-name: slideleft;
-}
-    @keyframes slideleft {
-        from {
-            margin-left: -13%; 
-        }
-        to {
-        margin-left: -37%;
-        }
-    }
-    
-.right-joycon{
-    margin-left: 37%;
-    position: absolute;
-     display: none; 
-     animation-duration: 2s;
-     animation-name: slideright;
-}
-    @keyframes slideright {
-        from {
-            margin-left: 13%; 
-        }
-        to {
-        margin-left: 37%;
-        
-        }
-    }
-
-  
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex-container {
+    padding: 10px;
+    margin: 0;
+    width: 100vw;
     height: 100vh;
-    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
     margin-left: -10px;
     margin-top: -10px;
-}
-.screen{
-    position: absolute;
-    width: 52%;
-    height: 570px;
-    border: 50px solid black;
-    display: none; 
-    animation-duration: 2s;
-     animation-name: expand;
-}
-@keyframes expand {
-    from {
-        width: 5%;
+  }
+  
+  .flex-item {
+    padding: 5px;
+    width: auto;
+    height: 90vh;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .flex-item img{
+      height: 100%;
+  }
+  .center{
+    border: 20px solid white;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+
+  }
+  
+    .center-top{
+        border: 50px solid black;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+        width: 57%;
+        z-index: 4;
+        background-image: url('img/flat-space.gif');
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:cover;
+        position: absolute;
     }
-    to {
-        width: 52%;
+
+    .poke-logo{
+        display: none;
+        height: auto;
+        width: 60vw;
+        animation: mymove 2s ;
+        position: relative;
+        bottom: 90px;
     }
-}
+    @keyframes mymove {
+        from {bottom: 0px;}
+        to {bottom: 90px;}
+      }
+ 
+    
+    /*  */
