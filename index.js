@@ -6,6 +6,7 @@ const back = $('.back');
 const floating = $('.floating');
 const msa = $('.message-actual');
 const avatar = $('.avatar');
+const disp = $('.ability');
 let ca = $('.captured-actual');
 let activeRegion= "";
 let activeRegionApi = "";
@@ -15,8 +16,10 @@ let activeAreaApi = "";
 let limit = 8;
 let pokemons = [];
 let encountered = [];
+let sample = $('.sample');
 let found = false;
 let api = "https://pokeapi.co/api/v2/";
+let topContent = $('.topcontent');
 $(document).ready(()=>{
     _ear();
     sysFunc();
@@ -55,6 +58,7 @@ function catchHandler(){
         },1000)
         $('.notify').text(`You caught ${encountered[0].name}`);
         
+        
         if(pokemons.length<8){
             pokemons.push(encountered);
             let imarkUp = "";
@@ -80,6 +84,7 @@ function catchHandler(){
         }
 
         avatar.html('Explore to find pokemon.');
+        disp.css({'display':'none'});
         $('#catch').css({'display':'none'});
         
     }
@@ -91,6 +96,7 @@ function catchHandler(){
         pokemons.length<=8? $('.notify').text(` ${encountered[0].name} has escaped!`): $('.notify').text(`You have reached the maximum allowed pokemons!`);
         encountered = [];
         avatar.html('Explore to find pokemon.');
+        disp.css({'display':'none'});
         $('#catch').css({'display':'none'});
     }
 }
@@ -128,6 +134,19 @@ function floatingHandler(){
             `;
 
             found = true;
+            let i = encountered[1];
+            console.log(i);
+            let iMak = `
+                <div class="ability1">Attack   <strong>${i.attack}</strong></div>
+                <div class="ability1">Defense   <strong>${i.defense}</strong></div>
+                <div class="ability1">HP   <strong>${i.hp}</strong></div>
+                <div class="ability1">Special Attack   <strong>${i.specialAttack}</strong></div>
+                <div class="ability1">Special Defense  <strong>${i.specialDefense}</strong></div>
+                <div class="ability1">Speed   <strong>${i.speed}</strong></div>
+            `;
+            
+            disp.css({'display':'flex'});
+            sample.html(iMak);
             $('#catch').css({'display':'block'});
             avatar.html(imgMarkUp);
             
@@ -155,6 +174,8 @@ function actionHander(){
 }
 
 function getRegions(){
+    topContent.css({'display':'none'});
+    $('#catch').css({'display':'none'});
     back.css({'display':'none'});
     floating.css({'display':'none'});
     where.text("You are not in any region.");
@@ -177,6 +198,9 @@ function getRegions(){
 }
 
 function getCities(name,url){
+    topContent.css({'display':'none'});
+    $('#catch').css({'display':'none'});
+    floating.css({'display':'none'});
     activeRegion = name;
     activeRegionApi = url;
     back.css({'display':'block'});
@@ -199,7 +223,8 @@ function getCities(name,url){
 }
 
 function getArea(name,url){
-    
+    floating.css({'display':'none'});
+    $('#catch').css({'display':'none'});
     activeCity = name;
     $.ajax(url).done((data)=>{
         let regions = data.areas;
@@ -222,6 +247,7 @@ function getArea(name,url){
 }
 
 function getMonsters(name,url){
+    topContent.css({'display':'flex'});
     activeArea = name;
     where.text(`${activeArea} , ${activeCity} , ${activeRegion} Region`);
     floating.css({'display':'block'});

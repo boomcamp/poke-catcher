@@ -237,6 +237,30 @@ body {
     background: white;
 }
 
+.ability {
+
+    display: none;
+    width: fit-content;
+    padding: 0px 10px 0px 10px;
+    border-radius: 10px;
+    height: fit-content;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.ability1 {
+
+    display: flex;
+    width: fit-content;
+    padding: 0px 10px 0px 10px;
+    border-radius: 10px;
+    height: fit-content;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
 .name {
     position: absolute;
     top: 30px;
