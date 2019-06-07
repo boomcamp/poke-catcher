@@ -137,6 +137,7 @@ body {
     width: 80vw;
     display: flex;
     flex-direction: row;
+    align-items: center;
 
 }
 
@@ -198,6 +199,11 @@ body {
     background: green !important;
 }
 
+.img {
+    
+    border-left: 1px solid #000;
+}
+
 
 .notify {
 
@@ -229,4 +235,13 @@ body {
     border-left: 1px solid rgba(0,0,0,0.5);
     height: 100vh;
     background: white;
+}
+
+.name {
+    position: absolute;
+    top: 30px;
+    text-indent: 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: orangered;
 }
