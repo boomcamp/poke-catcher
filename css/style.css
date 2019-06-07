@@ -15,8 +15,8 @@ html,body{
 *{ box-sizing: border-box; }
 
 .container{
-    margin: 10px auto;
-    width: 768px;
+    margin: 20px auto 0px;
+    max-width: 768px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -36,7 +36,7 @@ header{
 
 .pokemon-search{
     width: 100%;
-    height: 400px;
+    height: 350px;
 }
 
 #explore{
@@ -48,5 +48,16 @@ header{
     border-radius: 3px;
     padding: 3px;
     margin: 5px auto;
+}
+
+.pokemons{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+}
+
+.pokemons div{
+    width: calc(100%/7);
 }
 
