@@ -11,29 +11,128 @@
 <body>
 <div class="header">
     <span class="icon">
-        <!-- <img src="img/logo.png" alt="" height="100" width="300"> -->
-        <span class="logo-text">Poke - Catcher</span>
+        <img src="img/logo.png" alt="">
+        <!-- <span class="logo-text">Poke - Catcher</span> -->
     </span>
 </div>
 <div class="main-content">
     <div class="main-wrapper">
         <div class="container-sm">
-            <div class="location-form">
+            <div class="form-container">
+
+                <div class="form-wrap">
+                    <label for="region-inp" class="select-label">REGION: </label>
+                    <select name="region" id="region-inp" class="select-inp">
+                        
+                    </select>
+                    
+                    <label for="loc-inp" class="select-label">LOCATION: </label>
+                    <select name="region" id="loc-inp" class="select-inp">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                    </select>
+                    <label for="area-inp" class="select-label"> AREA: </label>
+                    <select name="region" id="area-inp" class="select-inp">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+                <div class="btn-wrap">
+                    <input type="button" value="EXPLORE" class="explore-btn"></a>
+                </div>
 
             </div>
-            <div class="poke-info">
+        <div class="poke-info">
+            <div class="box-title b-gold">
+                <span>ENCOUNTER </span>
+            </div>
+            
+            <div class="found-cont" >
+                <div class="details-cont">
+                        <span class="founded-text" style="margin-top: 20px">You've founded:</span>
+                       
+                        <div class="img-name">
+                        <img src="img/pikachu.png" alt="" width="200px" height="200px">
+                        </div>
+                         <span class="founded-text">PIKACHU</span>
+                        <input type="button" value="Catch" class="catch-btn">
+                </div>
+                
+                <div class="image-name-cont">
+                    <div class="details">
+                        <div class="stat-name">
+                           <p>SPEED:</p><br>
+                           <p>SPECIAL ATTACK:</p><br>
+                           <p>DEFENSE:</p><br>
+                           <p>ATTACK:</p><br>
+                           <p>HP:</p>
+                        </div>
+                        <div class="stat-num">
+                             <p>40</p><br>
+                             <p>50</p><br>
+                             <p>20</p><br>
+                             <p>50</p><br>
+                             <p>20</p>
+                        </div>    
+                    </div>
+                    
+                </div>
+            
+            </div>
+
+            <div class="found-cont-captured hide">
+                <div class="capture-prompt">
+                        <span class="capture-text">YOU'VE CAPTURED PIKACHU!
+                        </span>
+                </div>
 
             </div>
+        </div>
         </div>
 
         <div class="container-lg">
             <div class="my-poke">
+            <div class="box-title b-blue">
+                <span>CAPTURED</span>&nbsp;&nbsp;
+                <span>0/6</span>
+            </div>
+
+            <div class="captured-box">
+                <div class="captured-poke">
+
+                </div>
+                <div class="captured-poke">
+
+                </div>
+                <div class="captured-poke">
+
+                </div>
+                <div class="captured-poke">
+
+                </div>
+                <div class="captured-poke">
+
+                </div>
+                <div class="captured-poke">
+
+                </div>
+              
+                            
+            </div>
 
             </div>
 
         </div>
     </div>
 </div>
+
+<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+<script src="app/main.js"></script>
     
 </body>
 </html>
