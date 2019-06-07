@@ -25,6 +25,12 @@ $(document).ready(()=>{
     sysFunc();
 });
 
+
+function sound(){
+    
+    
+}
+
 function sysFunc(){
     msa.text(`You have ${pokemons.length}/${limit} Pokemons`);
    
@@ -51,6 +57,7 @@ function _ear(){
     $('.notify').text(``);
     $('.notify').css({'display':'flex','left':'50%'});
     $('.notify').css({'background':`url(${'./lolpoke.gif'})`,'width':'500px','height':'288px'});
+    topContent.css({'display':'none'});
        setTimeout(catchHandler,1400);
    });
   
@@ -62,6 +69,7 @@ function caHandler(){
 }
 
 function catchHandler(){
+    
     let chance = Math.floor((Math.random() * 100)+(Math.random()*30));
     if(chance>60 && pokemons.length<=8){
 
