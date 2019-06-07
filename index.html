@@ -4,16 +4,67 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
-    <title>PokeCatcher!</title>
+    <link rel="icon" href="pokeball.ico" type="images/gif" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+
+    <title>PokeCatcher</title>
 </head>
 
 <body>
-    <div class="grid-container">
-        <div class="grid-item header"></div>
-        <div class="grid-item box-left"></div>
-        <div class="grid-item mid"></div>
-        <div class="grid-item box-right"></div>
-        <div class="grid-item footer"></div>
+    <div class="header">
+        <div class="logos">
+            <div class="logo-container">
+                <img class="poke-logo" src="./images/icons/pokemon-logo.png">
+            </div>
+
+        </div>
+        <div class="logos2">
+            <div class="logo-container">
+                <img class="poke-balls-logo" src="./images/icons/pokeballs.png">
+            </div>
+            <div class="logo-container">
+                <img class="poke-balls-logo" src="./images/icons/ultra-ball.png">
+            </div>
+            <div class="logo-container">
+                <img class="poke-balls-logo" src="./images/icons/superball.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="box-container color-me vt323">
+        <div class="box-item mid">
+            <div class="grid-item">
+                <h3>You Found A: </h3>
+            </div>
+            <div class="grid-item">
+                <h3>Pokédex data: </h3>
+            </div>
+        </div>
+
+        <div class="box-item right">
+            <div class="grid-item select-cont">
+                <h3>Where to go?</h3>
+                <label>Regions: </label>
+                <select class="regions">
+                    <option>Kanto</option>
+                </select>
+                <label>Regions: </label>
+                <select class="city">
+                    <option>Star City</option>
+                </select>
+                <label>Regions: </label>
+                <select class="area">
+                    <option>Area 51</option>
+                </select>
+
+                <div class="explore-btn">
+                    <button></button>
+                </div>
+            </div>
+            <div class="grid-item pokemons-cont">
+                <h3>Pokédex: </h3>
+            </div>
+        </div>
     </div>
 
 
