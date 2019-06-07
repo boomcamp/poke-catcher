@@ -7,42 +7,65 @@
     <title>Pokemon Catcher</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+   
 </head>
 <body>
+    <div class="main">
+
+       
     <div class="wrapper">
-        <div class="explore-inputs">
-            <div class="items">
-                <div class="items-groups">
-                    <label for="region">Enter Region</label>
-                    <select name="region" id="region" class="region">
-                    </select>
-                </div>
-                <div class="items-groups">
-                    <label for="location">Enter Location</label>
-                    <select name="location" id="location" class="location">
-                        <option value="Albay">Albay</option>
-                    </select>
-                </div>
-                <div class="items-groups">
-                    <label for="area">Enter Area</label>
-                    <select name="area" id="area" class="area">
-                        <option value="Legazpi">Legazpi</option>
-                    </select>
+        <div class="start">
+            <div class="explore-inputs">
+                <div class="logo-wrp">
+                    <img src="./assets/img/logo.png" width="50%" height="50%" alt="">
                 </div>
             </div>
-            <div class="explore-btn-wrp">
-                <button class="explore-btn">Explore</button>
+            <div class="container">
+                <div class="trainer">
+                    <img width="300px" src="./assets/img/trainer.png" alt="trainer">
+                </div>
+                <div class="menu">
+                    <div class="map">
+                        <img width="100px" src="./assets/img/map-icon.png" alt="map" style="margin-bottom:35px;"> 
+                        <label for="">Explore</label>
+                    </div>
+                    <div class="bag">
+                        <img width="100px" src="./assets/img/bag.png" alt="map" style="margin-bottom:20px;"> 
+                        <label for="">Bag</label>
+                    </div>
+                    <div class="pokedex">
+                        <img width="100px" src="./assets/img/pokedex1.png" alt="map" style="margin-bottom:20px;"> 
+                        <label for="">Pokedex</label>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container">
-            <div class="encounter">
-
+        <div class="map-body hide">
+            <div class="region-map">
             </div>
-            <div class="pokemon-bag">
-
+            <img src="./assets/img/map-region.png" width="65%" height="100%" alt="">
+            <div class="details">
+                <img  src="./assets/img/details.jpg" width="100%" height="100%" alt="">
+                <div class="details-item">  
+                    <h2 class="header">Select Region</h2>
+                    <select name="region" class="region" id="region">
+                    </select>
+                    <h2 class="header">Location</h2>
+                    <select name="location" class="location" id="location">
+                        <option value="none">-----</option>
+                    </select>
+                    <h2 class="header">Area</h2>
+                    <select name="area" class="area" id="area">
+                        <option value="none">-----</option>
+                    </select>
+                    <button class="footer">
+                        Explore
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-    <script src="./assets/js/main.js"></script>
+</div>
+    <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
