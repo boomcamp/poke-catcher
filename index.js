@@ -1,6 +1,8 @@
 const regSelect = document.querySelector("#reg");
 const locSelect = document.querySelector("#loc");
 const areaSelect = document.querySelector("#area");
+const hidSelect = document.querySelector("#hid");
+const buttonExplore = document.querySelector("#explore");
 const fetchAPI = function() {
   const pokeUrl = "https://pokeapi.co/api/v2";
   function getReg(path) {
@@ -68,11 +70,25 @@ const fetchAPI = function() {
          return fetch(`${pokeEncounter}`)
                   .then(res => res.json())
                   .then(function(data){
-                    //let pokemonRes = data.pokemon-encounter;
-                    console.log(data)
+                    let pokemonRes = data.pokemon_encounters;
+                    var length = pokemonRes.length
+                    var randNumber = Math.floor(Math.random() * length);
+                    var pokemons =  pokemonRes[randNumber].pokemon.name;
+                    hidSelect.innerHTML = pokemonRes.map(pkmn => {
+                      if(pokemonRes.indexOf(pkmn) == randNumber){
+                        //console.log(pokemons)
+                        return `<option value="${pokemons}">${pokemons}</option>`
+                      }
+                      
+                    })
                   })
-           
        })
+       
+       buttonExplore.addEventListener('click', function(e){
+        console.log(hidSelect.value);
+        
+       })
+
       });
   }
   return getReg("region");
