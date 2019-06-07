@@ -1,6 +1,8 @@
 const regionSelect = document.getElementById('region');
 const locationSelect = document.getElementById('location');
 const areaSelect = document.getElementById('area');
+const pokemonSelect = document.getElementById('pokemonName');
+const explorebutton = document.getElementById('explorePokemon');
 
 
 const fetchAPI = (path) => {
@@ -17,7 +19,7 @@ const fetchAPI = (path) => {
                     if(postsValue.indexOf(arrValue) == 0){
                          return `
                          <option value=""  selected ">Select Region</option>
-                         <option value="${arrValue.url}"   ">${arrValue.name}</option>`;
+                         <option value="${arrValue.url}"   >${arrValue.name}</option>`;
                     }else{
                         return `<option value="${arrValue.url} ">${arrValue.name}</option>`;
                     }  
@@ -36,7 +38,7 @@ const fetchAPI = (path) => {
                         if(postsValue.indexOf(arrValue) == 0){
                             return `
                             <option value=""  selected ">Select Region</option>
-                            <option value="${arrValue.url}"   ">${arrValue.name}</option>`;
+                            <option value="${arrValue.url}"   >${arrValue.name}</option>`;
                        }else{
                            return `<option value="${arrValue.url} ">${arrValue.name}</option>`;
                        } 
@@ -48,7 +50,7 @@ const fetchAPI = (path) => {
 
             locationSelect.addEventListener('change', function() {
                 let areaURL = this.value;
-                // console.log(areaURL);
+                
                 return fetch(`${areaURL}`)
                 .then(res => res.json())
                 .then(function (posts)  {
@@ -59,7 +61,7 @@ const fetchAPI = (path) => {
                         if(postsValue.indexOf(arrValue) == 0){
                             return `
                             <option value=""  selected ">Select Region</option>
-                            <option value="${arrValue.url}"   ">${arrValue.name}</option>`;
+                            <option value="${arrValue.url}"   >${arrValue.name}</option>`;
                        }else{
                            return `<option value="${arrValue.url} ">${arrValue.name}</option>`;
                        } 
@@ -68,6 +70,39 @@ const fetchAPI = (path) => {
                 })
             
             });
+
+            areaSelect.addEventListener('change', function() {
+                let pokemonURL = this.value;
+                // console.log(pokemon.pokemon_encounters);
+                return fetch(`${pokemonURL}`)
+                .then(res => res.json())
+                .then(function (data)  {
+                    var encounters = data.pokemon_encounters;
+                    var randomNumber = Math.floor(Math.random()*(encounters.length-1));
+                    var pokemonName = encounters[randomNumber].pokemon.name;
+                    
+                    // console.log(encounters);
+                    pokemonSelect.innerHTML =  encounters.map(function(arrValue){
+                        
+                        if(encounters.indexOf(arrValue) == randomNumber){
+                            
+                            return `<option value="${pokemonName}"  selected >${pokemonName}</option>`
+                        }else{
+                            
+                        }
+
+                    });
+
+                   
+                })
+            
+            });
+
+            explorebutton.addEventListener('click', function() {
+                console.log(pokemonSelect.value);
+            });
+
+            
             
  
         })
