@@ -39,7 +39,12 @@ function _ear(){
    action.on('click',()=>actionHander());
    back.on('click',()=>backHandler());
    floating.on('click',()=>floatingHandler());
-   $('.catch').on('click',()=>catchHandler());
+   $('.catch').on('click',()=>{
+    $('.notify').text(``);
+    $('.notify').css({'display':'flex'});
+    $('.notify').css({'background':`url(${'./lolpoke.gif'})`,'width':'500px','height':'288px'});
+       setTimeout(catchHandler,1400);
+   });
   
 }
 
@@ -56,7 +61,8 @@ function catchHandler(){
         setTimeout(()=>{
             $('.notify').css({'display':'none'});
         },1000)
-        $('.notify').text(`You caught ${encountered[0].name}`);
+        $('.notify').css({'background':`url(${'./pokeball.gif'})`,'width':'250px','height':'260px'});
+        $('.notify').text(``);
         
         
         if(pokemons.length<8){
@@ -82,6 +88,7 @@ function catchHandler(){
         setTimeout(()=>{
             $('.notify').css({'display':'none'});
         },1000)
+        $('.notify').css({'background':'white'});
         $('.notify').text(`Limit Reached!`);
         }
 
@@ -95,6 +102,7 @@ function catchHandler(){
         setTimeout(()=>{
             $('.notify').css({'display':'none'});
         },1000)
+        $('.notify').css({'background':'white'});
         pokemons.length<=8? $('.notify').text(` ${encountered[0].name} has escaped!`): $('.notify').text(`You have reached the maximum allowed pokemons!`);
         encountered = [];
         avatar.html('Explore to find pokemon.');
