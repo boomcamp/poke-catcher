@@ -40,26 +40,41 @@
                 </div>
             </div>
         </div>
-        <div class="map-body hide">
-            <div class="region-map">
+        <div class="mapDiv hide">
+            <div class="map-body">
+                <div class="region-map">
+                </div>
+                <img src="./assets/img/map-region.png" width="65%" height="100%" alt="">
+                <div class="details">
+                    <img  src="./assets/img/details.jpg" width="100%" height="100%" alt="">
+                    <div class="details-item">  
+                        <h2 class="header">Select Region</h2>
+                        <select name="region" class="region" id="region">
+                        </select>
+                        <h2 class="header">Location</h2>
+                        <select name="location" class="location" id="location">
+                            <option value="none">-----</option>
+                        </select>
+                        <h2 class="header">Area</h2>
+                        <select name="area" class="area" id="area">
+                            <option value="none">-----</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <img src="./assets/img/map-region.png" width="65%" height="100%" alt="">
-            <div class="details">
-                <img  src="./assets/img/details.jpg" width="100%" height="100%" alt="">
-                <div class="details-item">  
-                    <h2 class="header">Select Region</h2>
-                    <select name="region" class="region" id="region">
-                    </select>
-                    <h2 class="header">Location</h2>
-                    <select name="location" class="location" id="location">
-                        <option value="none">-----</option>
-                    </select>
-                    <h2 class="header">Area</h2>
-                    <select name="area" class="area" id="area">
-                        <option value="none">-----</option>
-                    </select>
-                    <button class="footer">
-                        Explore
+            <div class="exploreDiv">
+                <div class="bg-pokemon">
+                    <div class="showPokemon">
+                        <h3>Pokemons in the Area</h3>
+                        <div class="pokemons flex">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="explore-btn-div">
+                    <button class="btn-explore">
+                        <img  style="padding-top:10px;" src="./assets/img/explore.png" width="50%" height="70%" alt="">
+                        <h2>Explore</h2>
                     </button>
                 </div>
             </div>
