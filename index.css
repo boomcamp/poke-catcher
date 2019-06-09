@@ -1,0 +1,34 @@
+
+	* {
+		padding: 0;
+		margin:0;
+		box-sizing: border-box;
+	}
+	body {
+		background: url('poke_bg.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+
+	}
+	.header {
+
+		display: flex;
+		flex-direction: row;
+		background-color: red;
+		height: 100px;
+	}
+	.logo {
+		height: 100px;
+		background-image:url('pokelogo.jpg');
+		width:200px;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.text {
+		padding: 30px;
+		font-size: 1.8em;
+		color:#fff;
+	}
+	select {
+		width:200px;
+	}
