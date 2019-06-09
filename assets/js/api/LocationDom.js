@@ -3,7 +3,6 @@ import pokemonApi from './pokemonApi.js';
 const SelectRegion = document.querySelector('.region');
 const SelectLocation = document.querySelector('.location');
 const SelectArea = document.querySelector('.area');
-const showPokemon = document.querySelector('.showPokemon');
 //Responsible for the DOMS
 function RegionNames(names){
     SelectRegion.innerHTML =  names.map(regionName => `<option>${regionName.name}</option>`);

@@ -22,9 +22,18 @@ function getPokemonDetailsObject(pokemonObject){
             PokemonDom.showPokemonDetailsObject(pokemonDetailsObject);
         })
 }
+function PokemonAreaUrl(pokemonareaUrl){
+    const PokemonAreaObject = all.get(pokemonareaUrl);
+    PokemonAreaObject
+    .then(PokemonAreaObjectArr =>   
+       PokemonDom.passPokemonUrl(PokemonAreaObjectArr.pokemon_encounters)
+    )
+}
+
 
 
 export default{
     getPokemonObject,
     getPokemonDetailsObject,
+    PokemonAreaUrl,
 }
