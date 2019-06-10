@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//db.onlinewebfonts.com/c/b2e75c336df191233b3096682c9ee6be?family=PixelarRegularW01-Regular" rel="stylesheet">
+
+    <title>Pokè Catcher</title>
+</head>
+<body>
+    <div class="pokelogo">
+        <img src="css/images/logo.png" alt="">
+    </div>
+    
+    <div class="container">
+        <div class="box">
+            <div class="red-container">REGION</div>
+            <div class="black-container"></div>
+            <div class="white-container">
+                <select id="region" name="region">Select</select>
+            </div>
+        </div>
+        <div class="box">
+            <div class="red-container">LOCATION</div>
+            <div class="black-container"></div>
+            <div class="white-container">
+                <select id="location" name="location"></select>
+            </div>
+        </div>
+        <div class="box">
+            <div class="red-container">AREA</div>
+            <div class="black-container"></div>
+            <div class="white-container">
+                <select id="area" name="area"></select>
+            </div>
+        </div>
+
+        <div class="box">
+            <button id="explore" class="button">EXPLORE!</button>
+        </div>
+    </div>
+
+    <div class="poke-area-container">
+        <div class="poke-area">GOTTA CATCH EM ALL</div>
+    </div>
+
+   <div class="sub-container">
+        <div class="encounter-container">
+            <div class="encounter-title">
+                <p>ENCOUNTER</p>
+            </div>
+            <div class="encounter-found-a">
+                <div class="pokemon-container">
+                    <p>You found a</p> 
+                    <div class="pokemon">
+                            <p id="pokemonName" name="Pokemon Name"></p>
+                    </div>
+                    <div class="capture-button-container">
+                        <button class="capture-button">POKEBALL</button>
+                    </div>
+                </div>
+                <div class="pokemon-stats-container">
+                    <p>Statistics:</p>
+                    <p id="pokemondetails" name="Pokemon Details"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="captured-container">
+            <div class="captured-title">
+                <p>POKÉDEX</p>
+            </div>
+            <div class="pokemon-captured-container">
+                <div class="catch-area-container">
+                       <div class="catch-container"></div>
+                       <div class="catch-container"></div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
