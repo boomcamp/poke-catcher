@@ -177,7 +177,7 @@ body{
 
 .game-container{
     letter-spacing: 5px;
-    
+   
     margin:0 auto;
     width:90%;
     padding:15px;
@@ -188,65 +188,103 @@ body{
     color:#333;
     animation-name: main-game;
     animation-duration: 2s;
-}
-.main-wrapper{
+  
+} 
+
+.box-container{
     display: flex;
-    margin-top:25px;
-   
 }
 .box{
-    margin:15px;
-    background: rgba(203, 255, 255, 0.5);
-    border:solid 1px  rgba(171, 229, 113, 0.4);
-  
+    background: rgba(207, 216, 202, 0.5);
+    border:solid 1px rgba(207, 216, 202, 0.5);;
+    height: 700px;
+    margin:5px;
+    -moz-box-shadow: 8px -1px 16px #71735a;
+    -webkit-box-shadow: 8px -1px 16px #71735a;
+    box-shadow: 8px -1px 16px #71735a;
 }
 .explore-container{
-
-    padding:15px;
     width:80%;
-    display: flex;
-  
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
 }
-
-@keyframes explore{
-    from{
-        height: 0px;
-    }
-}
-.explore-img{
-    animation-name: explore;
-    animation-duration: 0.9s;
-    height: 300px;;
-}
-
-.explore-btn-wrapper{
- 
-}
-
-.explore-btn{
-    padding:10px;
-    width:200px;
-    background-color:  rgba(203, 225, 213, 0.8);
-    border:solid 1px rgba(203, 255, 255, 0.7);
-    border-radius: 25px;
-    font-size:18px;
-    letter-spacing: 5px;
-    color:#444;
+.bag-container{
+    width:20%;
 }
 
 .pokemon-display{
-    border:solid 1px;
+   
+    margin: 0 auto;
+    width:60%;
+ 
+    display: flex;
+    flex-direction: column;
+    
+    margin-top:5px;
 }
 
-.pokemon-container{
-    width:20%;
+.explore-box{
+    margin:15px;
+}
+.img-container{
+    border:solid 1px rgba(191, 191, 165, 0.9);;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: rgba(215, 255, 195, 0.5);
+    border-radius: 15px;
+    height: 200px;
+    flex-direction: column;
+    text-align: center;
+}
+.img-display{
+   
+    margin:0 auto;
+    margin-top:15px;
+    width:200px;
+   
+}
+.stats-container{
     
-} 
+    background: rgba(255, 255, 165, 0.5);
+    border:solid 1px rgba(255, 255, 165, 0.8);
+    padding:15px;
+}
+.stat-title{
+   margin:10px;
+}
+.stat{
+    border-bottom:solid 1px rgba(255, 255, 195, 0.9);;
+    padding:10px;
+}
 
+.btn-wrapper{
+  
+    margin: 0 auto;
+    width:60%;
+  
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
 
+.btn{
+    padding:7px;
+    font-size:17px;
+    width:200px;
+    margin:5px;
+    font-family: 'Jura', sans-serif;
+    letter-spacing: 5px;
+    background: rgba(122, 164, 141, 0.8);
+    color:#FFF;
+    border:0;
+    border-radius: 5px;
+
+}
+.btn:hover{
+    background: rgba(122, 164, 141, 1);
+}
+.explore-btn{
+   
+}
 
 .changeBackground-1{
     background-image: url('/img/1.png');  
@@ -269,4 +307,7 @@ body{
 }
 .background{
     background-image: url('/img/background.gif');
+}
+.float-right{
+    float:right
 }
