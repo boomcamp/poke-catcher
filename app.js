@@ -42,6 +42,7 @@ $(document).ready(function(){
             </option>
             `);
             });
+        $("#region-select").val($("#region-select:first").val());  
         return response
     })
     .then((response) => { // on region name get url for the city dropdown
@@ -66,7 +67,6 @@ $(document).ready(function(){
                         ${element.name}
                         </option>
                         `);
-                       
                         });                 
                     })
                     .catch(function(err) {
@@ -93,11 +93,14 @@ $(document).ready(function(){
             .then((response) => {
                 response.forEach(element =>{
                     //gets areas from url of city 
+                 
                     if (this.value == element.name){
+                        
                         fetch(element.url)
                         .then((response => response.json()))
                         .then(response => response.areas)
                         .then(response => {
+                           
                             $('#area-select').find('option').remove(); //cleans the city dropdown for previous populations  //fixes bug where selecting regions keeps adding the cities
                             response.forEach(element => {
                                 $('#area-select').append(`
@@ -105,17 +108,19 @@ $(document).ready(function(){
                                 ${element.name}
                                 </option>
                                 `);
-                               
+                                
                                 }); 
+                            
                         })
                         .catch(function(err) {
                             console.error(err);
                             });
+                    
                     }  
-                   
+                 
                 }) 
-
             })
+
 
             .catch(function(err) {
                 console.error(err);
@@ -123,6 +128,19 @@ $(document).ready(function(){
             
            
         })
+
+        $('#explore').on('click', function(){
+            var loc = 'https://pokeapi.co/api/v2/location-area/?limit=700';
+            fetch(loc)
+            .then((response => response.json())) 
+            .then(response => console.log(response))
+            .then(response => {
+                // get selected area, compare to array
+            })
+        })
+
+
+     
     })
     
   
@@ -130,6 +148,9 @@ $(document).ready(function(){
         console.error(err);
 });
   
+
+
+
 
 
 

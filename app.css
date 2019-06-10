@@ -101,6 +101,9 @@ body{
         align-items: center;
         justify-content: space-around;
         font-size: 10px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
      }
 
         .header img{
@@ -112,7 +115,8 @@ body{
             width: auto;
             height: 35px;
             background-color: white;
-            font-family: 'Press Start 2P', cursive;
+            font-family: 'Press Start 2P', cursive;]
+            font-size: 10px;
         }
 
      .left-box { 
