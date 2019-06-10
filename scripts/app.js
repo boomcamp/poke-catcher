@@ -128,12 +128,13 @@ function capture(pokemonName , imgSrc){
         
         if(captureRand < 10){
 
-            $('.bag-title').html(`Pokemon ${pokemonBag.length+1}/6`)
+          
 
             console.log(pokemonBag.length);
             
 
            if(pokemonBag.length < 6){
+                $('.bag-title').html(`Pokemon ${pokemonBag.length + 1}/6`)
                 $('.stat-title').html(`<b style="color:green">${pokemonName} succesfully captured</b>`);
 
                 let insertPokemon = new capturedPokemon(pokemonName , imgSrc);
@@ -165,7 +166,7 @@ function capture(pokemonName , imgSrc){
         $('.explore-btn').fadeIn();
      
        
-    } , 2000)
+    } , 1000)
 
    
 
@@ -185,7 +186,7 @@ function viewPokemon(url , baseUrl ,areaName){
             let imgDisplay = document.querySelector('.img-display');
             
             let pokemonImgSrc = pokemon.sprites.front_default;
-            let randTime = getRandomArbitrary(3000 , 5000)
+            let randTime = getRandomArbitrary(1000 , 2000)
            
             pokemonStats = pokemon.stats;
             imgDisplay.src = '';
