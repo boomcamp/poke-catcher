@@ -8,6 +8,8 @@ const pokeCard = document.getElementById('poke-card');
 const pokeStatsUpper = document.getElementById('poke-stats1');
 const pokeStatsLower = document.getElementById('poke-stats2');
 const capturePokemon = document.getElementById('btn-capture');
+
+
 var pokeEmpty = [
     document.getElementById('pokecon1'),
     document.getElementById('pokecon2'),
@@ -25,8 +27,6 @@ var pokeContainer = [
     document.getElementById('captured-box6')
 ];
 var pokeCatchName = [];
-
-
 
 var counter = 0;
 
@@ -84,20 +84,24 @@ const fetchAPI = (path) => {
                     var postsValue = posts.areas;
 
                     areaSelect.innerHTML = postsValue.map(function(arrValue){
-
+                        
                         if(postsValue.indexOf(arrValue) == 0){
                             return `
                             <option value=""  selected ">Select Area</option>
                             <option value="${arrValue.url}"  >${arrValue.name}</option>`;
+                           
                        }else{
                            return `<option value="${arrValue.url} ">${arrValue.name}</option>`;
                        } 
-
+                       
+                        
                     })
+                    
+                    
                 })
-            
+                
             });/* location select end */
-
+        
             areaSelect.addEventListener('change', function() {
                 let pokemonURL = this.value;
                 // console.log(pokemonURL);
@@ -176,7 +180,7 @@ capturePokemon.addEventListener('click', function(){
     var getImage = document.getElementById('imgCatch').src;
     var getName = pokemonName.value;
     capturePokemon.setAttribute('disabled',true);
-    explorebutton.setAttribute('disabled',true);
+    // explorebutton.setAttribute('disabled',true);
     pokeCard.classList.add('hide');
     pokeContainer[counter].innerHTML = `<img src="${getImage}" height="50%" width="70%"  /> 
     <p>${getName.toString().toUpperCase()}</p>`;
