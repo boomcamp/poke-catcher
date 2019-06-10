@@ -1,3 +1,5 @@
+var pokemonBag = [];
+var encounteredPokemon = [];
 function getRandomArbitrary(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -47,12 +49,18 @@ $(document).ready(function(){
     $('.backtoLocation').click(function(){
         clearStat();
         $('.game-container').fadeOut();
-
+        
         $('.regions-container').fadeIn();
 
         document.querySelector('body').className = '';
-      
         
+        let imgDisplay = document.querySelector('.img-display');
+        imgDisplay.src = 'img/tumblr_nr8uncLPbG1scncwdo1_540.gif';
+
+        $('.capture-btn').fadeOut();
+        
+        $('.stat-title').html('Unavailable');
+        $('.text-display').html('Explore and Capture Pokemons');
     })
 
 
@@ -91,10 +99,69 @@ $(document).ready(function(){
 
 function clearStat(){
     $('.stats-wrapper').html('');
-
+    
 }
 
 
+function capturedPokemon (pokemonName , imgSrc){
+  
+    this.pokemonName = pokemonName;
+    this.imgSrc = imgSrc;
+
+
+}
+
+function capture(pokemonName , imgSrc){
+   
+    let captureRand = 0;
+    
+    $('.stat-title').html(`<b>Capturing ${pokemonName}. Please wait!</b>`);
+   
+    $('.stats-wrapper').empty();
+    $('.capture-btn').fadeOut();
+    $('.explore-btn').fadeOut();
+    
+    captureRand = getRandomArbitrary(0 , 10);
+
+    console.log(captureRand);
+    setTimeout(function(){
+        
+        if(captureRand < 10){
+            $('.stat-title').html(`<b style="color:green">${pokemonName} succesfully captured</b>`);
+
+            let insertPokemon = new capturedPokemon(pokemonName , imgSrc);
+
+            pokemonBag.push(insertPokemon);
+            let slotDisp = $(`
+                    <div class="slot">
+                        <img src="${imgSrc}">
+                        <span class="pokemon-name">${pokemonName}</span>
+                    </div>
+            `)    
+
+            $(`.slot-container`).prepend(slotDisp);
+
+            console.log(pokemonBag);
+     
+         
+         
+        }
+        else{
+            $('.stat-title').html(`<b style="color:red">Failed to capture ${pokemonName} </b>`);
+        }
+
+     
+        $('.explore-btn').fadeIn();
+     
+       
+    } , 2000)
+
+   
+
+
+
+   
+}
 
 function viewPokemon(url , baseUrl ,areaName){
 
@@ -104,12 +171,14 @@ function viewPokemon(url , baseUrl ,areaName){
             return response.json();
         })
         .then(function(pokemon){
-           
+            let imgDisplay = document.querySelector('.img-display');
+            
             let pokemonImgSrc = pokemon.sprites.front_default;
             let randTime = getRandomArbitrary(3000 , 5000)
            
             pokemonStats = pokemon.stats;
-            let imgDisplay = document.querySelector('.img-display');
+            imgDisplay.src = '';
+
             imgDisplay.src = 'img/lg.searching-for-loading-icon.gif';
            
             $('.explore-btn').fadeOut();
@@ -124,8 +193,7 @@ function viewPokemon(url , baseUrl ,areaName){
                 $('.capture-btn').fadeIn();
                
                 $('.explore-btn').fadeIn();
-                imgDisplay.src = '';
-                imgDisplay.src = `${pokemonImgSrc}`;
+            
                 console.log(randTime , pokemonImgSrc);  
             
                 $('.stats-wrapper').empty();
@@ -144,37 +212,35 @@ function viewPokemon(url , baseUrl ,areaName){
                     $('.stats-wrapper').append(displayStats);
                     $('.stat-title').html('Statistics')
 
-                    
+               
+                    imgDisplay.src = `${pokemonImgSrc}`;
                 });
              
             } , randTime)
+       
+           
             
-            $('.capture-btn').click(function(){
-                console.log(pokemon);
-            })
+          
+              
             
-            
-
+        
         })
+       
       
    
 
 
 }
-function capture(pokemonName , imgSrc){
-    console.log('CAPTURED!');
-}
-
 function explore(url , areaName){
     
     $(`.regions-container`).fadeOut();
     $(`.game-container`).fadeIn();
     $(`.area-name`).html(areaName);
-    var randomNum = getRandomArbitrary(1 ,6);
-
+    
+    
     
     $('body').addClass(`background` , {duration:500});
-
+    
 
     return fetch(url)
         .then(function(response){
@@ -182,23 +248,46 @@ function explore(url , areaName){
         })
         .then(function(area){
             let pokemonEncounters = area.pokemon_encounters;
+            let randNum = 0;
            
             $('.explore-btn').click(function(){
-                let randomNum = 0;
-            
+               
+               
                 randNum = getRandomArbitrary(0 , pokemonEncounters.length);
+                
                 // setTimeout(function(){
                 //     console.log(pokemonEncounters[randNum]);
                 // } , randTime)
-                console.log(randNum);
-                viewPokemon(pokemonEncounters[randNum].pokemon.url , url , areaName)
+               
+                encounteredPokemon = pokemonEncounters[randNum].pokemon.url
+                viewPokemon(encounteredPokemon , url , areaName)
+                
             })
-
-
+            
+            $('.capture-btn').click(function(){
+           
+                capturePokemon(encounteredPokemon)
+                // capture(pokemon.name , pokemonImgSrc);
+                
+            })
+            
            
         })
 
 
+}
+
+function capturePokemon(encounteredPokemon){
+    return fetch(encounteredPokemon)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(pokemon){
+            capture(pokemon.name , pokemon.sprites.front_default);
+            console.log(pokemon.sprites.front_default);
+            console.log(pokemon.name);
+            
+        })
 }
 
 function viewArea(url){

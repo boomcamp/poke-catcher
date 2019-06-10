@@ -187,7 +187,7 @@ body{
     background: rgba(171, 255, 113, 0.2);
     color:#333;
     animation-name: main-game;
-    animation-duration: 2s;
+    animation-duration: 0.6s;
   
 } 
 
@@ -208,6 +208,29 @@ body{
 }
 .bag-container{
     width:20%;
+   
+
+}
+.bag-title{
+    padding:15px;
+}
+.slot-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border:solid 1px;
+}
+.slot{
+    border:solid 1px green;
+    margin:5px;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+.pokemon-name{
+  text-align: center;
 }
 
 .pokemon-display{
@@ -242,11 +265,13 @@ body{
     width:200px;
    
 }
+
 .stats-container{
     
     background: rgba(255, 255, 165, 0.5);
     border:solid 1px rgba(255, 255, 165, 0.8);
     padding:15px;
+   
 }
 .stat-title{
    margin:10px;
