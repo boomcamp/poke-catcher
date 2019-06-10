@@ -1,0 +1,57 @@
+/** Pokeball effect */
+
+var upClass = 'toggle-up';
+var downClass = 'toggle-down';
+
+function toggle() {
+  var square = document.querySelector('.pokeball');
+  
+  if (~square.className.indexOf(downClass)) {
+    square.className = square.className.replace(downClass, upClass);
+  } else {
+        square.className = square.className.replace(upClass, downClass);
+  }
+  
+}
+
+/** Select Region */
+
+function get(url) {
+  return fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+}
+  var region = get('https://pokeapi.co/api/v2/region');
+  var menuRegion = document.querySelector('.menu');
+  region.then(regionName => {
+    var regionResults = regionName.results;
+    regionResults.map(region => 
+      menuRegion.innerHTML = `<option>${(region.name)}</option>` 
+      
+      )
+  })
+
+//   document.querySelector('.menu')
+//   .innerHTML = `${(regionName.results)
+//   .map(region => {
+//    console.log(region);
+//   })
+//   }`
+// }
+  // .then(myJson => {
+  //   /**DOM */
+  //   document.querySelector('.menu')
+  //   .innerHTML = `${(myJson.results)
+  //   .map( region => { 
+  //     getLocation(region.url);
+  //     return `<option> ${region.name} </option>`
+  //   })
+  //   .join('')}`;
+
+    
+  // });
+
+  // function getLocation(regionUrl) {
+  //   console.log(regionUrl);
+  // }
