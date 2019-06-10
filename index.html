@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>Poke Catcher</title>
 </head>
 
 <body>
@@ -13,8 +15,53 @@
         <select id="region"></select>
         <select id="locations"></select>
         <select id="areas"></select>
-        <button>Explore</button>
-</div>
+        
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="details">
+                <div class="bar">
+                    <span id="name"><small>Name</small></span>
+                    <span>
+                        <b>HP</b>
+                        <h id="hp">0</h>
+                    </span>
+                </div>
+                <img id="pokemon-image">
+               
+                <span id="description"><small><b>DESCRIPTION</b><small></span>
+                <span>Loves to eat</span>
+                <div class="stats">
+                    <span><b>SP </b><i id="sp">0</i></span>
+                    <span><b>SDEF </b><i id="sdef">0</i></span>
+                    <span><b>SATK </b><i id="satk">0</i></span>
+                    <span><b>DEF </b><i id="def">0</i></span>
+                    <span><b>ATK </b><i id="atk">0</i></span>
+                </div>
+            </div>
+        </div>
+        <button id="explore">EXPLORE</button>
+        <button id="catch">CATCH</button>
+
+    </div>
+
+    <div class="deck">
+        <div class="card-holder back">
+           <img src="ball.png" alt="logo" width="100px" height="100px">
+        </div>
+        <div class="card-holder front">
+            <div>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <span></span>
+            </div>
+           
+        </div>
+    </div>
+        
+ 
+   
    
     <script src="main.js"></script>
 </body>
