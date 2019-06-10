@@ -14,12 +14,13 @@ const API = (function() {
         });
     }
 
-    function hideShow(rem,add){
-        pName.classList[rem]('hide');
-        pImg.classList[rem]('hide');
-        capture.classList[rem]('hide');
-        pStats.classList[rem]('hide');
-        msg.classList[add]('hide');
+    function hideShow(m1,m2){
+        pFound.classList[m1]('hide');
+        pName.classList[m1]('hide');
+        pImg.classList[m1]('hide');
+        capture.classList[m1]('hide');
+        pStats.classList[m1]('hide');
+        msg.classList[m2]('hide');
     }
 
     return {

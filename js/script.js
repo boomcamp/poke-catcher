@@ -9,6 +9,7 @@ var locArea = document.getElementById('area');
 
 var explore = document.getElementById('explore');
 
+var pFound = document.querySelector('.pokemon-found');
 var pName = document.querySelector('.pokemon-name');
 var pImg = document.querySelector('.pokemon-img');
 var pStats = document.querySelector('.details ul');
@@ -27,7 +28,6 @@ window.onload = API.options(region,regionURL,'results');
 window.onload = API.options(regLoc,locationURL,'locations');
 window.onload = API.options(locArea,areaURL,'areas');
 
-
 region.addEventListener('change', regionLoc);
 regLoc.addEventListener('change', regionLocAreas);
 
@@ -35,13 +35,15 @@ function regionLoc(){
     locationURL = region.options[region.selectedIndex].value;
     API.options(regLoc,locationURL,'locations');
 
+    
     API.fetchJSON(locationURL,'locations')
-        .then(data => options(locArea,data[0].url,'areas'));
+        .then(data => API.options(locArea,data[0].url,'areas'));
     
     API.hideShow('add','remove');
 }
 
 function regionLocAreas(){
+    regLoc = document.querySelector('#location');
     areaURL = regLoc.options[regLoc.selectedIndex].value;
     API.options(locArea,areaURL,'areas');
     API.hideShow('add','remove');
@@ -51,26 +53,34 @@ function regionLocAreas(){
 explore.addEventListener('click',explorePokemon);
 
 function explorePokemon(){
-    areaURL = locArea.options[locArea.selectedIndex].value;
-    API.fetchJSON(areaURL,'pokemon_encounters')
-        .then( data => {
-            const rand = Math.floor(Math.random() * (data.length-1));
-            pName.innerHTML = data[rand].pokemon.name.toUpperCase();
-            API.fetchJSON(data[rand].pokemon.url,'sprites')
-                .then(pic => pImg.setAttribute('src', pic.front_default));
-            API.fetchJSON(data[rand].pokemon.url,'stats')
-                .then(stats => pStats.innerHTML = stats.map( stat =>`<li>
-                    ${stat.stat.name} : ${stat.base_stat}</li>`).join(''));
-        });
-    API.hideShow('remove','add');
-}
+    if(locArea.firstChild === null){
+        msg.innerHTML = "No Pokemon can be found <br/>in this area! <br/>Please Select a different location.";
+        API.hideShow('add','remove');
+    }else{
+        pImg.setAttribute('src', '');
+        areaURL = locArea.options[locArea.selectedIndex].value;
+        API.fetchJSON(areaURL,'pokemon_encounters')
+            .then( data => {
+                const rand = Math.floor(Math.random() * (data.length-1));
+                pName.innerHTML = data[rand].pokemon.name.toUpperCase();
 
+                API.fetchJSON(data[rand].pokemon.url,'sprites')
+                    .then(pic => pImg.setAttribute('src', pic.front_default));
+
+                API.fetchJSON(data[rand].pokemon.url,'stats')
+                    .then(stats => pStats.innerHTML = stats.map( stat =>
+                        `<li>${stat.stat.name} : ${stat.base_stat}</li>`)
+                        .join(''));
+            });
+        msg.textContent = "Please Click Explore Button to Search a Pokemon!";
+        API.hideShow('remove','add');
+    }
+}
 
 // Capture Pokemon
 capture.addEventListener('click',capturePokemon);
 
 function capturePokemon(){
-    
     let exploredName = document.querySelector('.pokemon-name').textContent;
     let exploredImg = document.querySelector('.pokemon-img').getAttribute('src');
     

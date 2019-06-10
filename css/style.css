@@ -61,9 +61,18 @@ header{
     text-align: center;
 }
 
+.pokemon-found{
+    color: white;
+    text-align: left;
+    margin-top: 25px;
+    padding-left: 30px;
+    font-size: 20px;
+}
+
 .pokemon-name{
-    margin-top: 30px;
-    font-size: 30px;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bolder;
 }
 
 .pokemon-img{
@@ -72,10 +81,14 @@ header{
 }
 
 #capture{
-    width: 200px;
-    height: 34px;
+    width: 180px;
+    height: 30px;
     margin: 0 auto;
-    font-size: 24px
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid green;
+    background-color: yellow;
+    color: red;
 }
 
 .pokemon h1{
