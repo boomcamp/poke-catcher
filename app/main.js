@@ -135,7 +135,7 @@ const fetchLocation = (path)=>{
         <img src="${pokePics}" alt="" width="200px" height="200px" class="img-captured">
         <span class="founded-text" id="founded-text">${pokeName}</span>
         </div>
-        `).slideDown()
+        `)
 
         capturedCounter++;
         $('.cap-countered').text(`${capturedCounter}/6`)
