@@ -2,6 +2,8 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background: url('https://images7.alphacoders.com/662/662102.png');
+    background-size: cover;
 }
 
 .container {
@@ -11,12 +13,19 @@ body {
 .top-container {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .select {
     text-align-last: center;
     height: 40px;
-    width: 200px;;
+    width: 200px;
+    margin: 0 20px;
+    font-size: 18px;
+    background: #ffc600;
+    color: white;
+    border: 2px solid red;
+    border-radius: 5px;
 }
 
 .encounter-container {
@@ -26,6 +35,7 @@ body {
     width: 1200px;
     background: whitesmoke;
     text-align: center;
+    opacity: 0.8;
 }
 
 .pokemon-container {
@@ -38,6 +48,7 @@ body {
     height: 800px;
     width: 400px;
     background: whitesmoke;
+    opacity: 0.8;
 }
 
 .stats {
@@ -72,24 +83,35 @@ body {
 
 .mypoke {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
+    align-items:  center;
 }
 
 .counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     width: 400px;
-    background: #bada55;
+    background: #ffc600 ;
     color: white;
     text-align: center;
     font-size: 20px;
 }
 
 .capture{
-    background: #bada55;
-    color: white;
+    background: #ffc600;
+    color: red;
     height: 40px;
     width: 100px;
-    border-radius: 25px;
+    border-radius: 5px;
+    border: 2px solid red;
+    font-size: 15px;
+}
+
+.msg {
+    padding: 20px;
+    font-size: 20px;
 }
 
