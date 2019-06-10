@@ -6,6 +6,7 @@ const regId = $('#region-inp')
 const locId = $('#loc-inp')
 const areaId = $('#area-inp')
 const exploreBtn = $('#explore-btn')
+var capturedCounter = 0;
 
 const fetchLocation = (path)=>{
     return fetch(`${pokeapiURL}${path}`)
@@ -61,8 +62,11 @@ const fetchLocation = (path)=>{
     })
 
     var pokeName;
-  
+    var pokePics;
+    
+
     exploreBtn.on('click', function(){
+        $('.found-cont-captured').addClass('hide')
         $('.found-cont').removeClass('hide')
         fetch(locAreaUrl)
         .then(res => res.json())
@@ -87,8 +91,6 @@ const fetchLocation = (path)=>{
                 $('#defense').text(details.stats[3].base_stat);
                 $('#attack').text(details.stats[4].base_stat)
                 $('#hp').text(details.stats[5].base_stat);
-
-
             })
             }
         })
@@ -96,11 +98,22 @@ const fetchLocation = (path)=>{
     })
 
     $('#catch-btn').on('click', function(){
+
+        if(capturedCounter<6){
         $('.found-cont').addClass('hide')
         $('.found-cont-captured').removeClass('hide')
         $('.capture-text').text(`YOU'VE CAPTURED ${pokeName}`)
 
+        $('.captured-box').append(`
+        <div class="captured-poke">
+        <img src="${pokePics}" alt="" width="200px" height="200px" class="img-captured">
+        <span class="founded-text" id="founded-text">${pokeName}</span>
+        </div>
+        `)
 
+        capturedCounter++;
+        $('.cap-countered').text(`${capturedCounter}/6`)
+        }
 
     })
         

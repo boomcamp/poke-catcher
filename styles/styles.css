@@ -296,10 +296,20 @@ body{
 .captured-poke{
     height: 220px;
     width: 210px;
-    background: #3B4CCA;
-    border: 1px solid black;
+    background: rgb(218, 214, 214, 0.2);
+    /* border: 1px solid black; */
+    box-shadow: 3px 3px #888888;
     margin: 4px;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-captured{
+    height: 55%;
+    width: 60%;
+    margin-bottom: 10px;
 }
 
 /* MY POKEMONS END */
