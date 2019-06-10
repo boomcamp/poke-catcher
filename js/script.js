@@ -8,31 +8,24 @@ var regLoc = document.getElementById('location');
 var locArea = document.getElementById('area');
 
 var explore = document.getElementById('explore');
+
 var pName = document.querySelector('.pokemon-name');
 var pImg = document.querySelector('.pokemon-img');
 var pStats = document.querySelector('.details ul');
+var msg = document.querySelector('.pokemon h1');
 var capture = document.querySelector('#capture');
+
 var captured = document.querySelector('.pokemons');
+var maxCapture = 6;
+var captureCount = 0;
+var pokeCounter = document.querySelector('.counter');
 
-function fetchJSON(url,get) {
-    return fetch(url)
-        .then(result => result.json())
-        .then(data => data[get]);
-}
-
-// Options
-function options(opt,optURL,get){
-    fetchJSON(optURL,get).then(data => {
-        opt.innerHTML = data.map(reg => `
-            <option value="${reg.url}">${reg.name}</option>
-        `).join('');
-    });
-}
+pokeCounter.innerHTML = `Captured: ${captureCount}/${maxCapture}`;
 
 // Options
-window.onload = options(region,regionURL,'results');
-window.onload = options(regLoc,locationURL,'locations');
-window.onload = options(locArea,areaURL,'areas');
+window.onload = API.options(region,regionURL,'results');
+window.onload = API.options(regLoc,locationURL,'locations');
+window.onload = API.options(locArea,areaURL,'areas');
 
 
 region.addEventListener('change', regionLoc);
@@ -40,16 +33,18 @@ regLoc.addEventListener('change', regionLocAreas);
 
 function regionLoc(){
     locationURL = region.options[region.selectedIndex].value;
-    options(regLoc,locationURL,'locations');
+    API.options(regLoc,locationURL,'locations');
 
-    fetchJSON(locationURL,'locations').then(data => 
-        options(locArea,data[0].url,'areas')
-    );
+    API.fetchJSON(locationURL,'locations')
+        .then(data => options(locArea,data[0].url,'areas'));
+    
+    API.hideShow('add','remove');
 }
 
 function regionLocAreas(){
     areaURL = regLoc.options[regLoc.selectedIndex].value;
-    options(locArea,areaURL,'areas');
+    API.options(locArea,areaURL,'areas');
+    API.hideShow('add','remove');
 }
 
 // Pokemons
@@ -57,31 +52,51 @@ explore.addEventListener('click',explorePokemon);
 
 function explorePokemon(){
     areaURL = locArea.options[locArea.selectedIndex].value;
-    fetchJSON(areaURL,'pokemon_encounters')
+    API.fetchJSON(areaURL,'pokemon_encounters')
         .then( data => {
-            const rand = Math.floor(Math.random() * data.length);
-            pName.innerHTML = data[rand].pokemon.name;
-            fetchJSON(data[rand].pokemon.url,'sprites')
-                .then(pic => {
-                    pImg.setAttribute('src', pic.front_default);
-                });
-            fetchJSON(data[rand].pokemon.url,'stats')
-                .then(stats => {
-                    pStats.innerHTML = stats.map( stat =>`
-                        <li>${stat.stat.name} : ${stat.base_stat}</li>
-                    `).join('');
-                });
+            const rand = Math.floor(Math.random() * (data.length-1));
+            pName.innerHTML = data[rand].pokemon.name.toUpperCase();
+            API.fetchJSON(data[rand].pokemon.url,'sprites')
+                .then(pic => pImg.setAttribute('src', pic.front_default));
+            API.fetchJSON(data[rand].pokemon.url,'stats')
+                .then(stats => pStats.innerHTML = stats.map( stat =>`<li>
+                    ${stat.stat.name} : ${stat.base_stat}</li>`).join(''));
         });
+    API.hideShow('remove','add');
 }
 
+
+// Capture Pokemon
 capture.addEventListener('click',capturePokemon);
 
 function capturePokemon(){
+    
     let exploredName = document.querySelector('.pokemon-name').textContent;
     let exploredImg = document.querySelector('.pokemon-img').getAttribute('src');
-    captured.insertAdjacentElement = `
-        <div class="poke">
-            <span class="pokemon-name">${exploredName}</span>
-            <img src="${exploredImg}" class="pokemon-img"/>
-        </div>`;
+    
+    let newCapture = document.createElement('div');
+    let newCapturedName = document.createElement('span');
+    let newCapturedImg = document.createElement('img');
+
+    API.hideShow('add','remove');
+
+    newCapture.classList.add('poke');
+    newCapturedName.classList.add('mypokemon-name');
+    newCapturedImg.classList.add('mypokemon-img');
+
+    newCapturedName.textContent = exploredName;
+    newCapturedImg.setAttribute('src',exploredImg)
+
+    newCapture.appendChild(newCapturedName);
+    newCapture.appendChild(newCapturedImg);
+    captured.appendChild(newCapture);
+
+    captureCount++;
+    pokeCounter.innerHTML = `Captured: ${captureCount}/${maxCapture}`;
+
+    if(captureCount === 6){
+        let searhPoke = document.querySelector('.pokemon-search');
+        searhPoke.classList.add('hide');
+        return;
+    }
 }
