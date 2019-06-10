@@ -121,11 +121,7 @@ const fetchLocation = (path)=>{
             })
             }
         })      
-        
-    
     })
-
-    
 
     $('#catch-btn').on('click', function(){
 
