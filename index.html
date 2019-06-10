@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poke-Catcher</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="div-header">
+        <div class="left-header"><h1>Poke Catcher</h1></div>
+        <div class="right-header">
+                <!-- <div class="box">
+                        <select>
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                          <option>Option 4</option>
+                          <option>Option 5</option>
+                        </select>
+                </div> -->
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="left-nav">
+            <div class="place">
+                <div class="message" id = "mes">
+                    Click "Explore" to start searching for Pokemon
+                </div> <br>
+                    <div class="drpdown">
+                        <label class="white">Region</label>
+                        <div class="select md-margin">
+                            <select name="slct-reg" id="slct-region">
+                                <option selected disabled>Choose an option</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="drpdown">
+                        <label class="white">Location</label>
+                        <div class="select sm-margin ">
+                            <select name="slct-location" id="slct-location">
+                                <option selected disabled>Choose an Option</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="drpdown">
+                        <label class="white">Area</label>
+                        <div class="select lg-margin">
+                            <select name="slct-area" id="slct-area">
+                                    <option selected disabled>Choose an Option</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="explore-btn">Explore</button>
+                </div>
+                <div class="captured">
+                    <h1 class="capture-title">Explore to find pokemons !</h1>
+                    <div class="pokemon">
+                        <br><br>
+                        <div id="name-captured">
+                        </div><br>
+                        <div id="img">
+                             <br>
+                        </div>
+                        <button id="capture-btn" class="blue disabled">Capture</button>
+                    </div>
+                    
+                        <span id="det-title" class="details-title disabled" >Details</span>
+                        <div id="det-info" class="details disabled">
+                            <div class="left">
+                                <h4>Speed</h4>
+                                <h4>Special Defense</h4>
+                                <h4>Special Attack</h4>
+                                <h4>Defense</h4>
+                                <h4>Attack</h4>
+                                <h4>Hp</h4>
+                            </div>
+                            <div class="middle">
+                                <h4>:</h4>
+                                <h4>:</h4>
+                                <h4>:</h4>
+                                <h4>:</h4>
+                                <h4>:</h4>
+                                <h4>:</h4>
+                            </div>
+                            <div class="right" id="detail">
+                            </div>
+                        </div>
+                </div>
+        </div>
+        <div class="right-col">
+            <span class="right-col-title">CAPTURED</span>
+            <span class="countmax">/6</span><span class="count"  id="count">0</span>
+            <div class="output">
+            </div> 
+        </div>
+        </div>
+        <script src="main.js">
+        </script>
+    
+</body>
+</html>
