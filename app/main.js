@@ -14,37 +14,23 @@ const fetchLocation = (path)=>{
         var allResValue = allRes.results;
         
         if(path ==='region'){
-            $(regId).append('<option>Select Region</option>')
+            $(regId).append('<option>- select region -</option>')
             for(let x in allResValue){
                 $(regId).append(`
                 <option value="${allResValue[x].url}">${allResValue[x].name}</option>`)
                 }
             }
     
-    //Setting Default Value
-    // let locationURL = "https://pokeapi.co/api/v2/region/1/"
-    // fetch(locationURL)
-    //         .then(res => res.json())
-    //         .then(function(locRes){
-    //             locValue = locRes.locations;
-    //             // console.log(locValue)
-    //         for(let x in locValue){
-    //          $(locId).append(`<option value="${locValue[x].url}">${locValue[x].name}</option>`)
-    //         }    
-    //         });
-
-    // $(regId).html('')
 
     regId.on('change', function(){
         locationURL = this.value;
-        // console.log(locationURL)
         $(locId).html('')
         $(areaId).html('')
         return fetch(locationURL)
             .then(res => res.json())
             .then(function(locRes){
                 locValue = locRes.locations;
-                // console.log(locValue)
+            $(locId).append('<option>- select location -</option>')
             for(let x in locValue){
              $(locId).append(`<option value="${locValue[x].url}">${locValue[x].name}</option>`)
             }
@@ -56,14 +42,12 @@ const fetchLocation = (path)=>{
 
     locId.on('change', function(){
         areaURL = this.value;
-        // currentId = this.id;
-        // console.log(areaURL)
         areaId.html('');
         return fetch(areaURL)
             .then(res => res.json())
             .then(function(areaRes){
-            
-                areaVal = areaRes.areas;
+            areaVal = areaRes.areas;
+            $(areaId).append('<option>- select area -</option>')
             for(let x in areaVal){
              $(areaId).append(`<option value="${areaVal[x].url}">${areaVal[x].name}</option>`)
             } 
@@ -73,27 +57,56 @@ const fetchLocation = (path)=>{
    
  
     areaId.on('change', function(){
-        locAreaUrl = this.value;
-        console.log(locAreaUrl);
-       
+        locAreaUrl = this.value;    
     })
 
-    // console.log(locationURL)
+    var pokeName;
+  
     exploreBtn.on('click', function(){
-        return fetch(locAreaUrl)
+        $('.found-cont').removeClass('hide')
+        fetch(locAreaUrl)
         .then(res => res.json())
         .then(function(allPoke){
-            var encounter = allPoke.pokemon_encounters;
+            encounter = allPoke.pokemon_encounters;
             var randomNum = Math.floor(Math.random()*(encounter.length-1));
-            $('#founded-text').text(encounter[randomNum].pokemon.name)  
+            console.log(randomNum)
+            pokeName = encounter[randomNum].pokemon.name ;
+            console.log(pokeName)
+            pokeUrl = encounter[randomNum].pokemon.url ;
+            console.log(pokeUrl)
+            $('#founded-text').text(pokeName)
+            if(pokeUrl){
+            fetch(pokeUrl)
+            .then(res => res.json())
+            .then(function(details){
+                pokePics = details.sprites.front_default;
+                $('#poke-image').attr('src', pokePics);
+                $('#speed').text(details.stats[0].base_stat)  
+                $('#sp-defense').text(details.stats[1].base_stat);
+                $('#sp-attack').text(details.stats[2].base_stat);
+                $('#defense').text(details.stats[3].base_stat);
+                $('#attack').text(details.stats[4].base_stat)
+                $('#hp').text(details.stats[5].base_stat);
+
+
+            })
+            }
         })
+    
     })
 
+    $('#catch-btn').on('click', function(){
+        $('.found-cont').addClass('hide')
+        $('.found-cont-captured').removeClass('hide')
+        $('.capture-text').text(`YOU'VE CAPTURED ${pokeName}`)
+
+
+
+    })
         
     })
 }
 
 fetchLocation('region')
 
-    console.log( "ready" );
 });

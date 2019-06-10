@@ -46,32 +46,34 @@
                 <span>ENCOUNTER </span>
             </div>
             
-            <div class="found-cont" >
+            <div class="found-cont hide" >
                 <div class="details-cont">
                         <span class="founded-text" style="margin-top: 20px">You've founded:</span>
                        
                         <div class="img-name">
-                        <img src="img/pikachu.png" alt="" width="200px" height="200px">
+                        <img src="" alt="" width="200px" height="200px" id="poke-image">
                         </div>
-                         <span class="founded-text" id="founded-text">PIKACHU</span>
-                        <input type="button" value="Catch" class="catch-btn">
+                         <span class="founded-text" id="founded-text"></span>
+                        <input type="button" value="Catch" class="catch-btn" id="catch-btn">
                 </div>
                 
                 <div class="image-name-cont">
                     <div class="details">
                         <div class="stat-name">
                            <p>SPEED:</p><br>
+                           <p>SPECIAL DEFENSE:</p>
                            <p>SPECIAL ATTACK:</p><br>
                            <p>DEFENSE:</p><br>
                            <p>ATTACK:</p><br>
                            <p>HP:</p>
                         </div>
                         <div class="stat-num">
-                             <p>40</p><br>
-                             <p>50</p><br>
-                             <p>20</p><br>
-                             <p>50</p><br>
-                             <p>20</p>
+                             <p id="speed">40</p><br>
+                             <p id = "sp-defense">50</p><br>
+                             <p id = "sp-attack">50</p><br>
+                             <p id = "defense">20</p><br>
+                             <p id= "attack">50</p><br>
+                             <p id="hp">20</p>
                         </div>    
                     </div>
                     
@@ -81,8 +83,7 @@
 
             <div class="found-cont-captured hide">
                 <div class="capture-prompt">
-                        <span class="capture-text">YOU'VE CAPTURED PIKACHU!
-                        </span>
+                        <span class="capture-text"></span>
                 </div>
 
             </div>
@@ -98,6 +99,8 @@
 
             <div class="captured-box">
                 <div class="captured-poke">
+                    <img src="img/pikachu.png" alt="" width="200px" height="200px" >
+                    <span class="founded-text" id="founded-text">PIKACHU</span>
 
                 </div>
                 <div class="captured-poke">
