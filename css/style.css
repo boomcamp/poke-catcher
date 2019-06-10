@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+*{ margin: 0; padding: 0; }
+
+body{  background:linear-gradient(0deg,rgba(90,90,90,0.1),rgba(90,90,90,0.1)),url('../img/pokeworld.gif'); background-size: cover; background-repeat: no-repeat; height: 950px; }
+
+.container{ background-color: rgba(200,200,200,0.7); width: 98%; margin: 20px auto; height: 930px; border-radius: 10px; box-shadow: 2px 2px 3px #999;  }
+
+.m-header{ height: 220px; background:linear-gradient(rgba(90,90,90,0.1),rgba(90,90,90,0.1)),url('../img/poke-header.png'); background-size: cover; }
+
+.top-header{   display: flex; height: 130px; justify-content: center; align-items: center; border-radius: 10px 10px 0px 0px; }
+
+.pokemon-title{ width: 25%; height: 125px; }
+.bot-header{ margin-top: 30px; height: 60px; background-color: #222; display: flex; justify-content: center; }
+
+.b-header-left{ overflow: hidden; display: flex; align-items: center; justify-content: space-around; width: 70%; /*background-color: red;*/ }
+.b-header-left span{  width: 31%; /*background-color: red;*/ display: flex; justify-content: space-around; }
+.b-header-left label{  font-family: 'Permanent Marker', cursive; color: #FBD848; font-size: 19px; }
+.b-header-right{ width: 30%; display: flex; justify-content: center; align-items: center;}
+
+.select{ font-size: 17px; color: #111; padding:10px; width: 55%; height: 40px; background-color: #5bc0de; border: none; border-radius: 5px; box-shadow: 1.5px 1.5px 3px skyblue; }
+.btn-explore{ background-color: #ffc107; border: 1px solid #ffc107; box-shadow: 2px 2px 3px #ffc107; width: 30%; font-family: 'Permanent Marker', cursive; font-size: 20px; height: 45px; border-radius: 10px; }
+.btn-explore:hover { background-color: #999; border: 1px solid #888; box-shadow: none; transition: 0.2s; color: #fff; }
+.ex-disabled{ background-color: #999; color: #fff; border: none; box-shadow: none; }
+
+.body-items{ width: 100%; margin: 0px auto; height: 710px; display: flex; justify-content: space-around; align-items: center;}
+.body-items-left{ box-shadow: 2px 3px 5px #888; width: 48%; height: 670px; background-color: rgba(50,50,50,0.5); border-radius: 10px 10px; }
+.body-items-right{ box-shadow: 2px 3px 5px #888; width: 48%; height: 670px; background-color: rgba(50,50,50,0.5); border-radius: 10px 10px; }
+.b-items-left-head{  height: 40px; background-color: #428bca; border-radius: 10px 10px 0px 0px; display: flex; justify-content: center; align-items: center; align-content: center;}
+.b-items-right-head{ height: 40px; background-color: #428bca; border-radius: 10px 10px 0px 0px; display: flex; justify-content: center; align-items: center; align-content: center;}
+
+.b-items-left-head p{  font-family: 'Permanent Marker', cursive; font-size: 18.5px; color: #f7ca0e;}
+.b-items-right-head p{  font-family: 'Permanent Marker', cursive; font-size: 18.5px; color: #f7ca0e;}

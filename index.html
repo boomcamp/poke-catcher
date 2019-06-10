@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="img/poke-logo1.png">
+	<title>Pokemon Catcher</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="m-header">
+			<div class="top-header">
+				<img class="pokemon-title" src="img/catch.png">	
+			</div>		
+			<div class="bot-header">
+				<div class="b-header-left">
+					<span>
+						<label for="regions">Select Region :</label>
+						<select class="select region" id="regions" name="regions">
+							<!-- <option selected disabled>Select here</option> -->
+						</select>
+					</span>
+					<span id="select-loc">
+						<label for="location">Select Location :</label>
+						<select class="select location" id="locations" name="locations">
+						</select>
+					</span>
+					<span id="select-area">
+						<label for="area">Select Area :</label>
+						<select class="select area" id="areas" name="areas">				
+						</select>
+					</span>
+				</div>
+				<div class="b-header-right">
+					<button class="btn btn-explore" id="explore">Explore</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="body-items">
+			<div class="body-items-left">
+				<div class="b-items-left-head">
+					<p>Pokemon Encounter</p>
+				</div>
+				<div class="b-items-left-body">
+					<div class="body-encounter">
+						
+					</div>
+				</div>
+			</div>
+			<div class="body-items-right">
+				<div class="b-items-right-head">
+					<p>Pokemon Captured</p>
+				</div>
+				<div class="b-items-right-body">
+					<div class="body-captured">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript" src="script/poke_api.js"></script>
+ --><script type="text/javascript" src="script/index.js"></script>
+
+
+</html>
