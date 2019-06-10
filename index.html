@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="icon" href="img/logo2.png"/>	
+		<title>Pokemon Catcher</title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="left">
+				<img class="logo" src="img/logo3.png" />
+				<div class="center"><center>Click "Explore" to start searching for Pokemon</center></div>
+			</div>
+			
+		</div>	
+		<div class="mid">
+			<label for="region">Region:</label>
+				<select class="dropdown" id="region">
+					<option id="regOption"></option>
+				</select>
+			<label for="location">Location:</label>
+				<select class="dropdown" id="location">
+					<option id="locOption"></option>
+				</select>
+			<label for="area">Area:</label>
+				<select class="dropdown" id="area">
+					<option id="areaOption"></option>
+				</select>
+		</div>
+		<button id="explore" class="center exp-btn">Explore</button>
+		<div class="row">
+			<div class="col col1">
+				<div class="cont">
+					<p class="label">ENCOUNTER</p>
+					<div class="content">
+                        <img class="poke-img">
+						<p class="poke-name"></p> 
+						<button id="capture" class="capture-btn">Capture</button>
+					</div>
+					<div class="details">
+						<p class="label">DETAILS</p>
+						<ul class="det">
+							<li><b>speed: </b>  70</li>
+							<li><b>special-defense: </b>  40</li>
+							<li><b>special-attack: </b>  80</li>
+							<li><b>defense: </b> 100</li> 
+							<li><b>attack: </b> 70</li>
+							<li><b>hp: </b> 20</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col col2">
+				<div class="cont2">
+					<p class="label">CAPTURED <span id="counter">0/6</span></p>
+						<!-- captured pokemon here -->
+						<div class="captured">
+							<div class="capt" id="capt-one">
+								<!-- captured pokemon image and name here -->
+							</div>
+							<div class="capt" id="capt-two">
+								<!-- captured pokemon image and name here -->
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/main.js" type="text/javascript"></script>
+	</body>
+</html>	
