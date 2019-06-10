@@ -13,7 +13,7 @@
         <center><img src="PoKeMon-Catcher.png" height="100px"></center>
     </div>
     <div class="wrapper">
-        asdasasd
+       
     <div class="menu-bar">
         <label >Region: 
         <select id="reg">
@@ -23,25 +23,52 @@
         <label>Location: 
         <select id="loc">
             <option>Select Location</option>
-            <option>1</option>
-            <option>1</option>
+            
         </select>
     </label>
         <label>Area: 
         <select id="area">
             <option>Select Area</option>
-            <option>1</option>
-            <option>1</option>
+            
         </select>
     </label>
     <select name="" id="hid" hidden></select>
-        <button id='explore'><img src="./pokeball.gif" alt="" height="70px;"></button>
+        <button class='explr-btn' id='explore'><img src="./explore.gif" alt="" height="70px;"><img src="./pikachu.gif" alt="" height="40px;"></button>
     </div>
     
 </div>
+<center><span class='notifs hide'>There Are No Pokemons in the Area. Choose Another Area.</span></center>
 <div class="pokemon-wrapper">
-    <div class="wild-pokemon"></div>
-    <div class="captured-pokemon"></div>
+    <div class="wild-pokemon">
+            <span class="ufound"></span>
+        <div id="pokemon-img">
+            
+        </div>
+        <span class='poke-name' id="poke-name"></span>
+        <div class='details'>
+            <div class="stats">
+            </div>
+            <div class="catch-button">
+                    <button class='pokeball' id='catch-pokemon' hidden><img src='./pokeball-clipart-1.png' height=190px; width=190px;/></button>
+            </div>
+        </div>
+    </div>
+    <select name="" id="captured" hidden></select>
+    <div class="captured-pokemon">
+        <h1>CAPTURED POKEMON <span class='catched'>(0/6)</span></h1>
+        <div class="bigbox">
+        <div class='pokebox' id='pokebox1'></div>
+        <div class='pokebox' id='pokebox2'></div>
+        <div class='pokebox' id='pokebox3'></div>
+        
+    </div>
+    <div class="bigbox">
+            <div class='pokebox' id='pokebox4'></div>
+            <div class='pokebox' id='pokebox5'></div>
+            <div class='pokebox' id='pokebox6'></div>
+            
+        </div>
+    </div>
 </div>
 <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
 <script src="./index.js"></script>

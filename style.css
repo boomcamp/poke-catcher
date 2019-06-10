@@ -41,7 +41,9 @@ body{
 .menu-bar button{
     border: none;
     border-radius: 50px;
-    background-color: transparent;
+    background-color: rgba(165, 42, 42, 0.712);
+    position: relative;
+    right: 100px;
 }
 .menu-bar img{
     border: none;
@@ -59,11 +61,87 @@ body{
     width: 40%;
     height: 110%;
     background-color: rgba(240, 248, 255, 0.363);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "PixelarRegularW01-Regular";
 }
 .captured-pokemon{
     border-radius: 10px;
     width: 40%;
     height: 110%;
     background-color: rgba(240, 248, 255, 0.363);
+}
+.ufound{
+    font-family: "PixelarRegularW01-Regular";
+    font-size: 45px;
+}
+#pokemon-img{
+    /* background-color: blue; */
+    height: 250px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    border: 5px solid red;
+    border-radius: 5px;
+}
+
+.wild-pokemon .poke-name{
+    font-size: 50px;
+}
+.details{
+    margin-top: 50px;
+    background-color: rgba(240, 248, 255, 0.658);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10px;
+    
+}
+.stats{
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;    
+}
+.pokeball{
+    background-color: transparent;
+    border-radius: 250px;
+    height: 195px;
+    width: 195px;
+}
+.captured-pokemon{
+    padding-top: 10px;
+    font-family: "PixelarRegularW01-Regular";
+    text-align: center;
+}
+.bigbox{
+    position: relative;
+    left:35px;
+    display: flex;
+    flex-direction: row;
+    height: 45%;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+}
+.pokebox{
+    height: 240px;
+    width: 185px;
+    background-color: rgba(240, 248, 255, 0.658);
+}
+.captured-name{
+    font-size: 30px;
+}
+.notif{
+    font-family: "PixelarRegularW01-Regular";
+    font-size: 20px;
+}
+.hide{
+    display: none;
 }
 
