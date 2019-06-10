@@ -89,7 +89,7 @@ const fetchLocation = (path)=>{
         if(capturedCounter>=6){
             $('#catch-btn').attr('disabled', true); 
             $('.catch-btn').text('POKEDEX FULL')
-            $('#catch-btn').css({'border':'3px solid red'})
+            $('#catch-btn').css({'border':'3px solid red', 'cursor':'not-allowed'})
            
         }
         $('.found-cont-captured').addClass('hide')
@@ -128,14 +128,14 @@ const fetchLocation = (path)=>{
         if(capturedCounter<=6){
         $('.found-cont').addClass('hide')
         $('.found-cont-captured').removeClass('hide')
-        $('.capture-text').text(`YOU'VE CAPTURED ${pokeName}`)
+        $('.capture-text').text(`you've captured ${pokeName}!`)
 
         $('.captured-box').append(`
         <div class="captured-poke">
         <img src="${pokePics}" alt="" width="200px" height="200px" class="img-captured">
         <span class="founded-text" id="founded-text">${pokeName}</span>
         </div>
-        `)
+        `).slideDown()
 
         capturedCounter++;
         $('.cap-countered').text(`${capturedCounter}/6`)
