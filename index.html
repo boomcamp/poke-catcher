@@ -38,23 +38,56 @@
                 </select>
 
             </div>
-            <button class="btn-explore" id ="explorePokemon">Explore</button>
+            <button class="btn-explore" id ="explorePokemon" disabled>Explore</button>
         </div>
 
         <div class="second-container">
-            <div class="encounter">
+            <div class="encounter" id="encounter">
                 <div class="title">ENCOUNTER</div>
-                <div class="poke-card"></div>
+                <div class="poke-card hide" id="poke-card" >
+                    <div class="poke-img" id="poke-img">
+
+                    </div>
+                    <div class="poke-name" id="poke-stats1"></div>
+
+                    <div class="poke-stats" id="poke-stats2"></div>
+
+                    
+                </div>
             </div>
 
             <div class="catch">
-                <img class="" src="./images/Pokemon-Minimal-Background-HD-Wallpaper.jpg" height="80%" width="100%" alt="">
-                <button class="btn-capture">Capture</button>
+                
+                <img class="" src="./images/Pokemon-Minimal-Background-HD-Wallpaper.jpg" height="%" width="100%" alt="">
+                <button class="btn-capture" id="btn-capture" disabled></button>
+                <div class="box-red"></div>
                 
             </div>
 
             <div class="captured">
-                <div class="title">CAPTURED</div>
+                <div class="title" id="catchCount">CAPTURED (0/6)</div>
+                <div class="upper-captured">
+                    <div class="captured-box" id="captured-box1">
+                        <img src="/images/empty_circle-512.png" width="70%" height="50%" alt="" id="pokecon1">
+                    </div>
+                    <div class="captured-box" id="captured-box2">
+                        <img src="/images/empty_circle-512.png" width="70%" height="50%" alt="" id="pokecon2">
+                    </div>
+                    <div class="captured-box" id="captured-box3">
+                        <img src="/images/empty_circle-512.png" width="70%" height="50%" alt="" id="pokecon3">
+                    </div>
+                </div>
+                <div class="lower-captured">
+                    <div class="captured-box" id="captured-box4">
+                        <img src="/images/empty_circle-512.png" width="70%" height="50%" alt="" id="pokecon4">
+                    </div>
+                    <div class="captured-box" id="captured-box5">
+                        <img src="/images/empty_circle-512.png" width="70%" height="50%" alt="" id="pokecon5">
+                    </div>
+                    <div class="captured-box" id="captured-box6">
+                        <img src="/images/empty_circle-512.png" width="70%" height="50%" alt="" id="pokecon6">
+                    </div>
+                </div>
             </div>
 
         </div>
