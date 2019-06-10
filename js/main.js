@@ -64,6 +64,15 @@ $(document).on('click', '#explore', function(e) {
                             `<img src="${spriteModel}">`
                         )
                     })
+                var statArray = [];
+                pokemons.get(pokemon.name)
+                    .then(pokemon => pokemon.stats)
+                    .then(stat => {
+                        stat.map(st => {
+                            statArray.push(st)
+                        })
+                        console.log(statArray)
+                    })
 
             })
             .catch(err => console.log(err))
