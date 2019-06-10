@@ -117,7 +117,7 @@ const fetchAPI = (path) => {
                         
                         pokeCard.classList.remove('hide');
                         var encounters = data.pokemon_encounters;
-                        var randomNumber = Math.floor(Math.random()*(encounters.length-1));
+                        var randomNumber = Math.floor(Math.random()*(encounters.length));
                         var pokemonName = encounters[randomNumber].pokemon.name;
                         
                         // console.log(encounters);
