@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Poke Catcher</title>
  	<link rel="stylesheet" type="text/css" href="index.css"/>
@@ -14,18 +15,48 @@
 
 	</div>
 	<div class="selection">
-		<label for="region">Select Region</label>
-		<br>
-		<select id="region" name="region">
+		<div class="select-box">
+			<label for="region">Select Region</label>
+			<br>
+			<select id="region" name="region">
 		</select>
-		<br>
-		<label for="location">Select location</label>
-		<br>
-		<select id="location" name="location"></select>
+		</div>
+		<div class="select-box">
+			<label for="location">Select location</label>
+			<br>
+			<select id="location" name="location"></select>
+		</div>
+		<div class="select-box">
+			<label for="area">Select area</label>
+			<br>
+			<select id="area" name="area"></select>
+			<button id="explore">Explore</button>
+		</div>
+	</div>
+	<div class="message">Sorry unavailable area</div>
+	<div class="pokemon-content">
+		<div class="pc encounter">
+		  <section class="pc-header">Encounter</section>
+		  <section class="pc-img">
+		  	<span id="pokeName"></span>
+		  	  <center>
+		  		<img id="pokeThumb" />
+
+		   	  </center>
+		  </section>
+		  <section class="pc-footer">
+		  	<span id="captureBTN"></span>
+		  	<ul id="details">
+		  	</ul>
+		  </section>
+		</div>
+		<div class="pc captured">
+			<section class="pc-header">Captures</section>
+			<section></section>
+		</div>
 	</div>
 
-
 </div>
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="poke_js.js"></script>
 </body>
 </html>

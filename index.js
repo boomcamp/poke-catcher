@@ -86,7 +86,6 @@ const api = {
 	  .map(reg => 
 		{ return `<option value="${reg.name}">${reg.name}</option>`; })
 		.join("");
-		regionSelect.dispatchEvent(new Event('change'));
   });
 
   regionSelect.addEventListener('change',function(e) {
