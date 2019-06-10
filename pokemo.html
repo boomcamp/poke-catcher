@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <img src="img/pokemon_logo.png" alt="logo" class="logo">
+        <div class="select">
+            <select class="select-css" id="area">
+            </select>
+
+            <select class="select-css" id="location">
+            </select>
+            
+            <select class="select-css" id="specificArea">
+            </select>
+        </div>
+        <button class="explore-btn" id="explore"><i class="fa fa-search"></i></button>
+    </header>
+
+    <div class="col-container">
+        <div class="column">
+            <div class="col-header">
+                <p>Encounter</p>
+            </div>
+            <div class="noExplored">Please select a location and click the explore button to explore a pokemon</div>
+            <div class="encounter-row1">
+                <div class="half-div">
+                        <p class="explored-poki"> </p> 
+                </div>
+                <div class="half-div explored-pokimage">
+                        <div class="div">
+                                <img class="explored-pokemon">
+                        </div>
+                        <button class="capture-btn" id="capture">Capture</button>
+                </div>
+                 
+                
+            </div>
+
+            <div class="encounter-row2">
+                <p class="details"> DETAILS </p>
+                <div class="base-stat1">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+                <div class="col-header">
+                    <p>Captured <span id="count">0</span>/6</p>
+                </div>
+                <div class="capture-box-con" id="1row">
+
+                </div>
+
+                <div class="capture-box-con" id="2row">
+
+                </div>
+        </div>
+    </div>
+    <script src="pokemo.js"></script>
+</body>
+</html>

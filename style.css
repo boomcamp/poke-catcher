@@ -1,0 +1,504 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-image: url('img/pokemon2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: #444444;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ 
+*{
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px;
+}
+
+.select{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+/* select input */
+.select-css {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 20%;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+.select-css::-ms-expand {
+    display: none;
+}
+.select-css:hover {
+    border-color: #888;
+}
+.select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+.select-css option {
+    font-weight:normal;
+}
+
+/* explore button */
+.explore-btn {
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    width: 6%;
+    right: 0;
+    top: 0;
+    height: 100px;;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(60, 201, 79);
+}
+
+/* explore button */
+.capture-btn {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 10px;
+    width: 25%;
+    margin: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(60, 201, 79);
+}
+
+/* 2 column */
+.col-container{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.col-header{
+    width: 100%;
+    background-color: rgba(247, 240, 240, 0.9);
+    text-transform: uppercase;
+    overflow: hidden;
+    text-align: center;
+}
+
+.column{
+    display: flex;
+    width: 50%;
+    height: 800px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.encounter-row1{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+}
+
+.encounter-row1 p{
+    font-weight: 700;
+}
+
+.encounter-row2{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+}
+
+.details{
+    width: 100%;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background-color: #807d7d;
+    padding: 10px;
+}
+
+.title{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+.logo{
+    height: 60px;
+    width: 140px;
+}
+
+img.explored-pokemon{
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+}
+
+.div{
+    width: 100%;
+}
+
+.half-div{
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+.half-div p.explored-poki{
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 100px 0;
+}
+
+.half-div .explored-pokimage{
+    padding: 150px 0;
+}
+
+.capture-box-con{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    margin-top: 10px;
+}
+
+.capture-box{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+.green{
+    background-color: rgb(124,252,0, 0.2);
+}
+
+.red{
+    background-color: rgb(255,160,122, 0.2);
+}
+
+.yellow{
+    background-color: rgb(255,255,0, 0.2);
+}
+
+.blue{
+    background-color: 	rgb(0,191,255, 0.2);
+}
+
+.purple{
+    background-color: 	rgb(238,130,238, 0.2);
+}
+
+.black{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.base-stat1{
+    display: flex;
+    height: 200px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.base-stat1 span{
+    font-style: italic;
+}
+
+.base-stat1 p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.noExplored{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    opacity: 0.5;
+    font-size: 30px;
+    font-style: italic;
+}
+
+/* delete button */
+.deletebtn{
+    width: 45px;
+    color: #000000;
+    position: absolute;
+    padding: 12px;
+    right: 0;
+    top: 0;
+}
+
+.deletebtn:hover{
+    background-color: red;
+    color: #f1f1f1;
+}
+
+
+@media only screen and (max-width: 1440px){
+    header{
+        display: flex;
+        justify-content: space-around;
+        background-color: rgba(255,255,255,0.8);
+        padding: 10px;
+    }
+
+    /* explore button */
+    .explore-btn {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 700;
+        text-align: center;
+        color: #ffffff;
+        width: 10%;
+        right: 0;
+        top: 0;
+        height: 80px;;
+        position: absolute;
+        box-sizing: border-box;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+        border-radius: .5em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: rgb(60, 201, 79);
+    }
+
+    /* explore button */
+    .capture-btn {
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: 700;
+        color: #ffffff;
+        padding: 10px;
+        width: 31%;
+        margin: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        box-sizing: border-box;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+        border-radius: .5em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: rgb(60, 201, 79);
+    }
+
+    .column{
+        display: flex;
+        width: 50%;
+        height: 500px;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.8);
+        margin: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .encounter-row1{
+        width: 100%;
+        height: 200px;
+        text-align: center;
+    }
+    
+    .encounter-row1 p{
+        font-weight: 700;
+    }
+    
+    .encounter-row2{
+        width: 100%;
+        height: 400px;
+        text-align: center;
+    }
+    
+    .details{
+        width: 100%;
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 2px;
+        font-weight: 700;
+        background-color: #807d7d;
+        padding: 10px;
+    }
+    
+    .title{
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+    }
+    
+    img{
+        height: 100px;
+        width: 100px;
+    }
+    
+    img.explored-pokemon{
+        height: 120px;
+        width: 120px;
+        margin: 5px;
+    }
+
+    .logo{
+        height: 50px;
+        width: 130px;
+    }
+    
+    .div{
+        width: 100%;
+    }
+    
+    .half-div{
+        width: 50%;
+        text-align: center;
+        float: left;
+    }
+    
+    .half-div p.explored-poki{
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 60px 0;
+    }
+    
+    .half-div .explored-pokimage{
+        padding: 150px 0;
+    }
+    
+    .capture-box-con{
+        display: flex;
+        width: 100%;
+        height: 200px;
+        margin-top: 10px;
+    }
+    
+    .capture-box{
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        padding: 15px;
+        position: relative;
+    }
+    
+    .green{
+        background-color: rgb(124,252,0, 0.2);
+    }
+    
+    .red{
+        background-color: rgb(255,160,122, 0.2);
+    }
+    
+    .yellow{
+        background-color: rgb(255,255,0, 0.2);
+    }
+    
+    .blue{
+        background-color: 	rgb(0,191,255, 0.2);
+    }
+    
+    .purple{
+        background-color: 	rgb(238,130,238, 0.2);
+    }
+    
+    .black{
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .base-stat1{
+        display: flex;
+        height: 180px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .base-stat1 span{
+        font-style: italic;
+    }
+    
+    .base-stat1 p{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .noExplored{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+        opacity: 0.5;
+        font-size: 30px;
+        font-style: italic;
+    }
+
+    /* delete button */
+    .deletebtn{
+        width: 45px;
+        color: #000000;
+        position: absolute;
+        padding: 12px;
+        right: 0;
+        top: 0;
+    }
+
+    .deletebtn:hover{
+        background-color: red;
+        color: #f1f1f1;
+    }
+}
