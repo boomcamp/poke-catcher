@@ -3,9 +3,7 @@ html{
 }
 body{
     margin: 0;
-    /* font-family: 'Raleway', sans-serif; */
     font-family: 'Jura', sans-serif;
-    /* font-family:'Pokemon Solid Normal'; */
     letter-spacing: 10px;
     background-image: url('/img/FrenchFastJaguar-max-1mb.gif');
     background-size: 100% ;
@@ -338,4 +336,7 @@ body{
 }
 .float-right{
     float:right
+}
+.backtoLocation{
+    color:#000;
 }
