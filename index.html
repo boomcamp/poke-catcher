@@ -29,14 +29,6 @@
                         <img width="100px" src="./assets/img/map-icon.png" alt="map" style="margin-bottom:35px;"> 
                         <label for="">Explore</label>
                     </div>
-                    <div class="bag">
-                        <img width="100px" src="./assets/img/bag.png" alt="map" style="margin-bottom:20px;"> 
-                        <label for="">Bag</label>
-                    </div>
-                    <div class="pokedex">
-                        <img width="100px" src="./assets/img/pokedex1.png" alt="map" style="margin-bottom:20px;"> 
-                        <label for="">Pokedex</label>
-                    </div>
                 </div>
             </div>
         </div>
@@ -45,16 +37,18 @@
                 <div class="encountered hide" id="encountered">
                     <div class="pokemon-details">
                         <div class="span">
-                        asdasdasdasdasdasdasdasdasdasdasdasdasdasd
-                        asdasdasdasdasdasdasdasdasdasdasdasdasdasd
+                        
                         </div>
                     </div>
-                    <div class="pokemon">sd</div>
+                    <div class="pokemon flex" id="found"></div>
+                    <div id="catch-ball" class="hide" style="margin-top:150px;margin-right: 120px ">
+                            <img id="poke-catch" src="./assets/img/pokeball.gif" alt="">
+                    </div>
                 </div>
                 <img id="pokemon-encounter" class="hide" src="" width="65%" height="100%" alt="">
                 <img id="map-region" class="" src="./assets/img/map-region.png" width="65%" height="100%" alt="">
               
-                <div class="details">
+                <div class="details" id="location-div">
                     <img  src="./assets/img/details.jpg" width="100%" height="100%" alt="">
                     <div class="details-item">  
                         <h2 class="header">Select Region</h2>
@@ -68,6 +62,13 @@
                         <select name="area" class="area" id="area">
                             <option value="none">-----</option>
                         </select>
+                    </div>
+                </div>
+                <div class="details hide" id="bag-pokemon-div">
+                    <img  src="./assets/img/background-square.jpg" width="100%" height="100%" alt="">
+                    <div class="details-item">  
+                    <h2>Pokemon Owned <span id="pokemon-in-bag">0</span></h2>
+                    <div class="pokemons-here"></div>
                     </div>
                 </div>
             </div>
@@ -85,6 +86,25 @@
                         <img  style="padding-top:10px;" src="./assets/img/explore.png" width="50%" height="70%" alt="">
                         <h2>Explore</h2>
                     </button>
+                    <div class="catch-option hide">
+                        <div class="catch">
+                                <button href="#" id="catch-click">
+                                    <img  style="padding-top:50px;" src="./assets/img/catch.png" width="60%" height="70%" alt="">
+                                    Catch Pokemon!
+                                </button>
+                                
+                                <button href="#" id="map-click">
+                                    <img  style="padding-top:20px;" src="./assets/img/map-icon.png" width="70%" height="60%" alt="">
+                                    map
+                                </button>
+                        </div>
+                        <div class="show-map">
+                            <button  id="explore-click">
+                                <img  style="padding-top:40px;" src="./assets/img/explore.png" width="70%" height="60%" alt="">
+                                explore
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

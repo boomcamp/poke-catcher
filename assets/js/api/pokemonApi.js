@@ -30,10 +30,16 @@ function PokemonAreaUrl(pokemonareaUrl){
     )
 }
 
+function getCaptureRate(url){
+    const RateUrl = all.get(url);
+    RateUrl
+    .then(Url => console.log(Url));
+    
+}
 
 
 export default{
     getPokemonObject,
     getPokemonDetailsObject,
-    PokemonAreaUrl,
+    PokemonAreaUrl,getCaptureRate,
 }
