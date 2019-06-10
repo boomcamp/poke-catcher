@@ -127,21 +127,32 @@ function capture(pokemonName , imgSrc){
     setTimeout(function(){
         
         if(captureRand < 10){
-            $('.stat-title').html(`<b style="color:green">${pokemonName} succesfully captured</b>`);
 
-            let insertPokemon = new capturedPokemon(pokemonName , imgSrc);
+            $('.bag-title').html(`Pokemon ${pokemonBag.length+1}/6`)
 
-            pokemonBag.push(insertPokemon);
-            let slotDisp = $(`
-                    <div class="slot">
-                        <img src="${imgSrc}">
-                        <span class="pokemon-name">${pokemonName}</span>
-                    </div>
-            `)    
+            console.log(pokemonBag.length);
+            
 
-            $(`.slot-container`).prepend(slotDisp);
+           if(pokemonBag.length < 6){
+                $('.stat-title').html(`<b style="color:green">${pokemonName} succesfully captured</b>`);
 
-            console.log(pokemonBag);
+                let insertPokemon = new capturedPokemon(pokemonName , imgSrc);
+
+                pokemonBag.push(insertPokemon);
+                let slotDisp = $(`
+                        <div class="slot">
+                            <img src="${imgSrc}">
+                            <span class="pokemon-name">${pokemonName}</span>
+                        </div>
+                `)    
+
+                $(`.slot-container`).prepend(slotDisp);
+
+           }
+           else{
+            $('.stat-title').html(`<b style="color:orange">You cannot carry anymore!</b>`);
+
+           }
      
          
          

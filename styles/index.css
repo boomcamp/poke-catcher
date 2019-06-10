@@ -212,16 +212,19 @@ body{
 
 }
 .bag-title{
+    margin-top:15px;
     padding:15px;
 }
 .slot-container{
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    border:solid 1px;
+   
+  
+    height: 670px;
 }
 .slot{
-    border:solid 1px green;
+ 
     margin:5px;
     height: 25%;
     display: flex;
