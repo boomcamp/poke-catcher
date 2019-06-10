@@ -1,0 +1,296 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('fonts/Pokemon\ Solid.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+    font-family: 'Pokemon';
+    src: url('fonts/Pokemon\ GB.ttf') format('truetype');
+}
+
+.none {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+}
+
+body {
+    background: url('img/background-hero.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.head {
+    background-color: #34445a;
+}
+
+.logo-clipped {
+    display: grid;
+    grid-template-columns: 20px 10px 1fr;
+}
+
+h2 {
+    font-family: 'MyWebFont';
+    letter-spacing: 8px;
+    color: #ffcb04;
+    text-shadow: -1px -1px 0 rgb(32, 115, 209), 1px -1px 0 rgb(32, 115, 209), -1px 1px 0 rgb(32, 115, 209), 1px 1px 0 rgb(32, 115, 209);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(59, 91, 167);
+    text-align: center;
+}
+
+.header {
+    background-color: rgb(52, 68, 90);;
+    margin: 0;
+    padding: 20px;
+}
+
+.gif {
+    
+    width: 280px;
+}
+
+.logo {
+    grid-row: 1;
+    height: auto;
+    width: 200px;
+}
+
+.catcher {
+    padding-left: 17px;
+    margin-top: 50px;
+    z-index: 999;
+    letter-spacing: 6px !important;
+}
+
+.suicune {
+    height: auto;
+    width: 150px;
+    margin-top: 65px;
+}
+
+.explore-btn {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 0px 1fr;
+    justify-content: center;
+}
+
+.pikachu {
+    width: 70px;
+    padding-left: 35px;
+    margin-top: 50px;
+    z-index: 999;
+}
+
+.marg-top {
+    margin: 0;
+    border-radius: 10px;
+    padding: 20px 50px;
+    cursor: pointer;
+    height: 80px;
+    background-image: url('http://getwallpapers.com/wallpaper/full/9/8/0/1044698-grass-pokemon-wallpapers-1920x1200-for-samsung-galaxy.jpg');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+}
+
+.head {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+select {
+    text-transform: capitalize;     
+}
+
+#select-css {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+#select-css::-ms-expand {
+    display: none;
+}
+#select-css:hover {
+    border-color: #888;
+}
+#select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+#select-css option {
+    font-weight:normal;
+}
+
+.main {
+    display: flex;
+}
+
+.before {
+    height: 891.111px !important;
+}
+
+.main > div {
+    height: auto;
+    width: 100%;
+    margin: 10px 50px 0px 50px;
+}
+
+.pokemon-encounter {
+    border-radius: 10px;
+    background-image: url(https://www.desktophut.com/wp-content/uploads/2018/06/gWMcT5nuntnjsmGqHTRu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+.poke-model {
+    background-image: url('https://www.desktophut.com/wp-content/uploads/2018/06/gWMcT5nuntnjsmGqHTRu.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.poke-model, .poke-name, .capture {
+    display: flex;
+    justify-content: center;
+}
+
+.capture {
+    background-color: #2b83c6;
+}
+
+.sprite {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 0;
+}
+
+.poke-name {
+    background-color: #edffa8;}
+
+.poke-name > p {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Pokemon';
+    font-size: 25px;
+    color: white;
+    text-shadow: 3px 2px 1px rgb(0, 0, 0);
+    line-height: 35px;
+}
+
+.poke-stats {
+    background-image: url('http://www.scalsys.com/backgrounds/pokemon-go-background/pokemon-go-background_31767.png');
+    color: white;
+}
+
+.type {
+    height: 35px;
+    width: 35px;
+    margin: 10px 0 0 5px;
+}
+
+.clear {
+    list-style: none;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+ul {
+    padding: 16px;
+    padding-right: 50px;
+    margin: 0;
+}
+
+ul > li {
+    line-height: 60px;
+    letter-spacing: 1px;
+}
+
+.caught-pokemon {
+    border-radius: 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(44,141,152,1) 59%, rgba(0,212,255,1) 100%);
+}
+
+.caught-pokemon > h2 {
+    margin-bottom: 0;
+}
+
+.poke-caught {
+    display: flex;
+    justify-content: center;
+}
+
+.pokeball {
+    width: 150px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.capture > h2 {
+    padding-top: 10px;
+}
+
+.caught {
+    width: 100%
+}
+
+.caught > li {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(32,45,196,1) 100%);
+
+    margin: 5px 100px 30px;
+    border-radius: 10px;
+}
+
+.poke-caught > ul > li {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    line-height: 100px;
+}
+
+.poke-caught > ul > li > img {
+    height: 100px;
+    width: 100px;
+}
+
+.poke-caught > ul > li > label {
+    font-family: 'Pokemon';
+    font-size: 15px;
+    color: white;
+    text-shadow: 2px 2px rgb(83, 83, 83)
+}
+
