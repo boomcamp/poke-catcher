@@ -139,7 +139,7 @@ body{
 }
 
 .explore-btn{
-    padding: 20%;
+    padding: 15%;
     background: #EF5350;
     border: none;
     color: #FFDE00;
@@ -150,6 +150,11 @@ body{
     border: 3px solid #B3A125;  
     cursor: pointer;  
 
+}
+
+.explore-btn:disabled{
+    background: rgb(233, 135, 134);
+    cursor: not-allowed;
 }
 
 .founded-text{

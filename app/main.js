@@ -7,6 +7,8 @@ const locId = $('#loc-inp')
 const areaId = $('#area-inp')
 const exploreBtn = $('#explore-btn')
 var capturedCounter = 0;
+var areaVal;
+ 
 
 const fetchLocation = (path)=>{
     return fetch(`${pokeapiURL}${path}`)
@@ -48,36 +50,61 @@ const fetchLocation = (path)=>{
             .then(res => res.json())
             .then(function(areaRes){
             areaVal = areaRes.areas;
-            $(areaId).append('<option>- select area -</option>')
+            if(areaVal){
+            $(areaId).append('<option value="no-selected">- select area -</option>')
             for(let x in areaVal){
              $(areaId).append(`<option value="${areaVal[x].url}">${areaVal[x].name}</option>`)
             } 
+            }
+            // console.log(areaId.val())
+            if(areaId.val()==='no-selected'){
+            exploreBtn.attr('disabled', true)
+            }else{
+            exploreBtn.removeAttr('disabled')
+            }
         })
+         
         
     })
-   
+
+    
+    
  
     areaId.on('change', function(){
-        locAreaUrl = this.value;    
+        locAreaUrl = this.value;
+        if(areaId.val()==='no-selected'){
+            exploreBtn.attr('disabled', true)
+            }else{
+            exploreBtn.removeAttr('disabled')
+            }
+
+
     })
 
     var pokeName;
     var pokePics;
     
-
+    
     exploreBtn.on('click', function(){
+        if(capturedCounter>=6){
+            $('#catch-btn').attr('disabled', true); 
+            $('.catch-btn').text('POKEDEX FULL')
+            $('#catch-btn').css({'border':'3px solid red'})
+           
+        }
         $('.found-cont-captured').addClass('hide')
         $('.found-cont').removeClass('hide')
         fetch(locAreaUrl)
         .then(res => res.json())
         .then(function(allPoke){
             encounter = allPoke.pokemon_encounters;
-            var randomNum = Math.floor(Math.random()*(encounter.length-1));
-            console.log(randomNum)
+            var randomNum = Math.floor(Math.random()*(encounter.length));
+            // console.log(randomNum)
+            // console.log(encounter)  
             pokeName = encounter[randomNum].pokemon.name ;
-            console.log(pokeName)
+            // console.log(pokeName)
             pokeUrl = encounter[randomNum].pokemon.url ;
-            console.log(pokeUrl)
+            // console.log(pokeUrl)
             $('#founded-text').text(pokeName)
             if(pokeUrl){
             fetch(pokeUrl)
@@ -93,13 +120,16 @@ const fetchLocation = (path)=>{
                 $('#hp').text(details.stats[5].base_stat);
             })
             }
-        })
+        })      
+        
     
     })
 
+    
+
     $('#catch-btn').on('click', function(){
 
-        if(capturedCounter<6){
+        if(capturedCounter<=6){
         $('.found-cont').addClass('hide')
         $('.found-cont-captured').removeClass('hide')
         $('.capture-text').text(`YOU'VE CAPTURED ${pokeName}`)
@@ -115,6 +145,8 @@ const fetchLocation = (path)=>{
         $('.cap-countered').text(`${capturedCounter}/6`)
         }
 
+        // exploreBtn.attr('disabled', true)
+       
     })
         
     })
