@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="initial-scale = 5.0,maximum-scale = 1.0" />
+        <title>Poke-Catcher</title>
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+    </head>
+    
+<body>
+<div class="logo">
+    <div class = "1stRow">
+     <img src="img/pokemons/1.png" alt = "img" class = "navPokemons">
+     <img src="img/pokemons/2.png" alt = "img" class = "navPokemons">
+     <img src="img/pokemons/3.png" alt = "img" class = "navPokemons">
+     <img src="img/pokemons/4.png" alt = "img" class = "navPokemons"> 
+    </div>
+    &nbsp;<h1>CATCH POKEMONS</h1>&nbsp;
+    <div class = "2ndRow">
+     <img src="img/pokemons/5.png" alt = "img" class = "navPokemons">
+     <img src="img/pokemons/6.png" alt = "img" class = "navPokemons">
+     <img src="img/pokemons/7.png" alt = "img" class = "navPokemons">
+     <img src="img/pokemons/8.png" alt = "img" class = "navPokemons">
+        <!--
+     <img src="img/pokemons/9.png" alt = "img" class = "navPokemons">
+     <img src="img/pokemons/10.png" alt = "img" class = "navPokemons">
+-->
+    </div>
+    <!--
+    <img src="img/logo.jpeg" alt = "img" class="logoImg">
+-->
+</div>
+    
+<div class="message" id = "mes">
+       Click "Explore" to start searching for Pokemon
+    </div>
+    
+<div class="drpStyle">
+   
+    <div class="drpDown" >
+    <label> Region: </label>
+    <select name="slct-reg" id="region">
+        <option selected disabled>Choose an Region</option>
+
+    </select>
+    <label>Location: </label>
+        <select name = "locationName" id="location" >
+            <option selected disabled>Choose an Location</option>
+
+        </select>
+    <label>Area: </label>
+        <select name = "areaName" id = "area" >
+            <option selected disabled>Choose an Area</option>
+        </select>
+        
+        <button class="explore" id ="explore"> Explore</button>
+        
+    </div>
+</div>
+
+
+    
+<div class="content">
+    <div class="box">
+        <div class="title">
+        <span>ENCOUNTER</span>
+        </div>
+        <div id = "messageCapture"></div>
+        <div class = "info">
+            <div class = "pad one disabled" id="imgDiv">
+              <!--image
+               
+              -->
+              <div id="youFound">
+              
+            </div>
+              <div class="found" >
+                  <img src="img/bg/1.png" id="myImage" >
+                  <div id="img" >
+  
+                  </div>
+               </div>
+         
+              <center>
+              <div id="name"> </div>  
+               <div style="border: none" id ="captureDiv">
+               <button class = "captureBtn" id = "capture">Capture</button>
+              </div>
+          </center>    
+                   
+             </div>
+        <div class = "pad two disabled" id="detail-div">  
+                <p style="color: blue" id ="detail-title" class="disabled">Details</p>   
+              
+                        <div id ="detail"> 
+                            <!--detail -->
+
+                        </div>
+
+                        <div id = "otherDetail">
+                                
+                        </div>
+                
+        </div>
+        
+    </div>
+    </div>
+    
+    <div class="box">
+         <div class="title">
+        <span> CAPTURED <span id="count">0/6</span> </span>
+        </div>
+        <div class="padd">
+        <div class="pokemons">         
+        
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="main.js"></script>
+<script src="js/changeBg.js"></script>
+
+</body>
+    
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo</title>
+	</head>
+<body>
+	<h1>Changing the Image</h1>
+    <img src="img/bg/1.png" id="myImage" width="100" height="150">
+    <button type="button" id="imgbtn" value="Change" ></button>
+    <script>
+        
+        document.getElementById('imgbtn').addEventListener('click', 
+        
+        function(event) {
+            var image = document.getElementById('myImage');
+            if (image.src.match("1.png")) {
+                image.src = "img/bg/2.jpg";
+            } 
+            else if(image.src.match("2.jpg")){
+                image.src = "img/bg/3.png";
+            }
+            else if(image.src.match("3.png")){
+                image.src = "img/bg/4.png";
+            }
+            else if(image.src.match("4.png")){
+                image.src = "img/bg/5.png";
+            }
+            else if(image.src.match("5.png")){
+                image.src = "img/bg/6.jpeg";
+            }
+            else {
+                image.src = "img/bg/1.png";
+            }
+        }
+        );
+        
+        
+         
+         
+    </script>
+<p><strong>Note:</strong> Click on the "Change" button to Change the water bottle in to the soft drink bottle</p>
+</body>
+</html>
+

@@ -1,0 +1,231 @@
+html{
+     background-color: black;
+}
+
+body{
+    border-radius: 30px;
+    border: 3px solid white;
+    margin: 0 auto;
+    width: 100%;
+    padding: 5px 5px 30px 5px;;
+    background-color: #235df3;
+   
+    
+    height: 145vh;
+    /**
+    background-image: url(../img/wallpaper.jpg);
+ 
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: inherit;
+    background-size: cover;
+  */
+    color: white;
+    box-sizing: border-box;
+    
+}
+h1{
+    text-align: center;
+}
+
+.navPokemons{
+    width: 105px;
+    height: 80px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: rgba(238, 64, 53, 0.9);
+    font-weight: 800;
+    border-radius: 20px;
+}
+
+.drpStyle{
+    background-color: rgba(238, 64, 53, 0.9);
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+select{
+    background-color: aliceblue;
+    width: auto;
+    height: 30px;
+    margin-right: 40px;
+    font-weight: 700;
+}
+.explore{
+    background-color: blue;
+    color: white;
+    border: 1px solid #fed766;
+    border-radius: 20px;
+    padding: 10px;
+    width: 150px;
+}
+.message{
+    width: 80%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #fdf498;
+    color: #2a4d69;
+    border-radius: 50px;
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.title{
+    text-align: center;
+    background-color: rgba(238, 64, 53, 0.9);
+    padding: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.box{
+    width: 49%;
+    border: 1px solid white;
+    background-color: white;
+    height: auto;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 100vh;
+   
+}
+
+.info div{
+    width: auto;
+    margin: 10px 10px 10px 10px;
+    
+}
+
+.pad{
+    background-color: white;
+   
+}
+.padd{
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.found{
+    width: 100%;   
+}
+
+#img{
+    position: absolute;
+    left: 15%;
+    top: 45%;
+    border: none;
+}
+
+.pokemon{
+    width: 250px;
+    height: 250px;
+}
+
+@media (min-width: 1000px){
+    #img{
+     position: absolute;
+     left: 18%;
+     top: 50%;
+     border: none;
+ }
+ }
+
+@media (max-width: 1366px) and (min-height: 768px){
+   #img{
+    position: absolute;
+    left: 15%;
+    top: 55%;
+    border: none;
+}
+}
+
+#myImage{
+    width: 100%;
+    height: 350px;
+}
+
+.det{
+    border: 2px solid blue;
+    color: black;
+    padding: 0px 10px 20px 10px;
+    border-radius: 20px;
+  
+}
+#otherDetail{
+    border: 2px solid blue;
+    color: black;
+    padding: 0px 10px 20px 10px;
+    border-radius: 20px;
+}
+
+label{
+    font-size: 18px;
+    font-weight: 900;
+    margin-left: 20px;
+}
+
+.captured{
+    width: 170px;
+    height: 170px;
+    margin-left: 10px; 
+}
+.pokemons{
+    padding: 30px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    height: auto;
+    background-color:  rgba(255, 255, 255, 0.95); 
+}
+
+.captureBtn{
+    background-color: blue;
+    color: white;
+    border: 1px solid #fed766;
+    border-radius: 20px;
+    padding: 10px;
+    width: 150px;
+}
+p{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
+#name{
+    border: none;
+}
+
+#div_pokemon{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   border: 2px solid blue;
+   margin: 5px;
+}
+
+.disabled{
+    display: none;
+}
