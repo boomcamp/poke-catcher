@@ -1,3 +1,7 @@
+const captured = [];
+let areaPokemonCount = [];
+let temPokemon;
+
 $(document).ready(function() {
     $('#regions').change(function() {
         let regs = $('#regions').val()
@@ -23,17 +27,30 @@ $(document).ready(function() {
                 } else {
                     var areaName;
                     $('#area').html(city.areas
-                        .map(area => {
-                            areaName = area.name;
-                            let areaNewName = areaName.charAt(0).toUpperCase() + areaName.slice(1)
-                            return `<option value="${areaName}">${areaNewName}</option>`
-                        }))
+                            .map(area => {
+                                areaName = area.name;
+                                let areaNewName = areaName.charAt(0).toUpperCase() + areaName.slice(1)
+                                return `<option value="${areaName}">${areaNewName}</option>`
+                            }).join(''))
+                        .trigger('change')
                 }
 
             })
     })
-})
 
+    $('#area').change(function() {
+        let data = $('#area').val()
+        locations.area(data)
+            .then(area => {
+                areaPokemonCount = area.pokemon_encounters
+                if (areaPokemonCount.length) {
+                    $('#explore').attr('disabled', false)
+                } else {
+                    $('#explore').attr('disabled', true);
+                }
+            })
+    })
+})
 
 $(document).on('click', '#explore', function(e) {
     e.preventDefault();
@@ -64,19 +81,42 @@ $(document).on('click', '#explore', function(e) {
                             `<img src="${spriteModel}">`
                         )
                     })
-                var statArray = [];
+
                 pokemons.get(pokemon.name)
                     .then(pokemon => pokemon.stats)
                     .then(stat => {
-                        stat.map(st => {
-                            statArray.push(st)
-                        })
-                        console.log(statArray)
+                        $('.pokestats').html(stat
+                            .map(st => {
+                                return `<p>${st.stat.name}:${st.base_stat}</p>`
+                            }))
                     })
-
+                pokemons.get(pokemon.name)
+                    .then(details => temPokemon = details)
             })
             .catch(err => console.log(err))
     })();
+
+})
+
+$(document).on('click', '#catch', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    if (!temPokemon) {
+        alert('explore area plz')
+    } else {
+        captured.push(temPokemon)
+        $('.pokedex').html(
+            captured.map(poks => {
+                console.log(poks)
+                return `
+                <div class="my-pokemon">
+               <p>${poks.name}</p>
+               <img src="${poks.sprites.front_default}">
+               </div>`
+
+            })
+        )
+    }
 
 })
 

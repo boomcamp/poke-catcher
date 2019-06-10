@@ -115,7 +115,7 @@ div {
     flex: 2;
     display: grid;
     grid-gap: 25px;
-    grid-template-rows: auto auto;
+    grid-template-rows: 2fr 3fr;
     padding: 5px;
 }
 
@@ -213,7 +213,12 @@ div {
 
 .pokebox {
     text-align: center;
-    width: 50%;
+    width: 100%;
+}
+
+.pokedex {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .animateType {
