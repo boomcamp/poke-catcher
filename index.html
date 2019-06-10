@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="icon" href="pokeball.ico" type="images/gif" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <title>PokeCatcher</title>
 </head>
@@ -34,7 +35,14 @@
     <div class="box-container color-me vt323">
         <div class="box-item mid">
             <div class="grid-item">
-                <h3>You Found A: </h3>
+                <div class="catch-btn">
+                    <button class="catch"></button>
+                    <span>Catch!</span>
+                </div>
+                <div class="pokebox">
+
+                </div>
+                <div class="capturePokemon"></div>
             </div>
             <div class="grid-item">
                 <h3>Pokédex data: </h3>
@@ -42,24 +50,24 @@
         </div>
 
         <div class="box-item right">
-            <div class="grid-item select-cont">
-                <label>Regions: </label>
-                <select class="regions">
-                </select>
-                <label>Regions: </label>
-                <select class="city">
-                    <option>Star City</option>
-                </select>
-                <label>Regions: </label>
-                <select class="area">
-                    <option>Area 51</option>
-                </select>
-
+            <div class="grid-item">
+                <div class="select-cont">
+                    <div class="region-container">
+                        <label for="regions">Regions: </label>
+                        <select id="regions" class="selectDesign"></select>
+                    </div>
+                    <div class="city-container">
+                        <label for="city">City: </label>
+                        <select id="city" class="selectDesign"></select>
+                    </div>
+                    <div class="area-container">
+                        <label for="area">Area: </label>
+                        <select id="area" class="selectDesign"></select>
+                    </div>
+                </div>
                 <div class="explore-btn">
-                    <button class="explore"></button>
+                    <button id="explore" class="explore"></button>
                     <span>Explore</span>
-                    <button class="catch"></button>
-                    <span>Catch 'em all!</span>
                 </div>
             </div>
             <div class="grid-item pokemons-cont">
@@ -68,8 +76,8 @@
         </div>
     </div>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./js/design.js"></script>
+    <script src="./js/pokeApi.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

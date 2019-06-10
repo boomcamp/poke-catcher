@@ -79,7 +79,7 @@ div {
 /* Main FLEX BOX */
 
 .color-me {
-    background-color: rgba(250, 246, 246, 0.3);
+    background-color: rgba(250, 246, 246, 0.5);
     color: black;
 }
 
@@ -120,7 +120,8 @@ div {
 }
 
 .mid .grid-item {
-    border: 1px solid red;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black, inset 0 0 0 1px black;
     padding: 5px;
 }
 
@@ -137,7 +138,8 @@ div {
 }
 
 .right .grid-item {
-    border: 1px solid blue;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black, inset 0 0 0 1px black;
     padding: 5px;
 }
 
@@ -148,11 +150,18 @@ div {
 .explore-btn {
     display: flex;
     justify-content: center;
-    margin: 5px;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }
 
-.explore-btn .catch {
+.catch-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catch-btn .catch {
     background-image: url(../images/add-on/pokeball.png);
     background-size: cover;
     background-position: center;
@@ -174,9 +183,26 @@ div {
 
 .select-cont {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+}
+
+.region-container,
+.city-container,
+.area-container {
+    flex: 1;
+    text-align: center;
+    margin: 5px;
+}
+
+.region-container label,
+.city-container label,
+.area-container label {
+    display: block;
+}
+
+.selectDesign {
+    width: 100%;
 }
 
 
@@ -184,3 +210,47 @@ div {
 
 
 /* Main FLEX BOX */
+
+.pokebox {
+    text-align: center;
+    width: 50%;
+}
+
+.animateType {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+
+/* The typing effect */
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+
+/* The typewriter cursor effect */
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange;
+    }
+}
