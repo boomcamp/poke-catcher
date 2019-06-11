@@ -4,6 +4,7 @@ const regionArr = [];
 var locArr = []; 
 var areaArr = [];
 var pokemonArr = [];
+var detArr = [];
 var pokemonImg;
 
 
@@ -91,6 +92,7 @@ document.getElementById('explore').addEventListener('click', pokemonEncounter);
 //pokemon encounter
 function pokemonEncounter() {
     pokemonArr = [];
+    detArr = [];
     var poke = document.getElementById('area');
     var pokeValue = poke.options[poke.selectedIndex].value;
 
@@ -116,13 +118,25 @@ function getImage(img) {
         .then(pImg => pImg.json())
         .then(pokeImgData => pokemonImg = pokeImgData.sprites.front_default)
         .then(function() {
-            console.log(pokemonImg);
+            // console.log(pokemonImg);
             var imgCont = document.querySelector('.poke-img');
             imgCont.src = pokemonImg;
 
             //hidden elements
             document.querySelector('.capture-btn').style.display = 'initial';
             document.querySelector('.poke-img').style.display = 'initial';
+        })
+
+    fetch(img)
+        .then(det => det.json())
+        .then(details => detArr.push(...details.stats))
+        .then(function() {
+            var detData = document.querySelector('.det');
+            detData.innerHTML = '';
+            var dethtml = detArr.map(det => {
+                return `<li><b>${det.stat.name}</b><span id="det-value">${det.base_stat}</span></li>`;
+            }).join('');
+            detData.insertAdjacentHTML('beforeend', dethtml);
         })
 }
 
@@ -134,8 +148,9 @@ function capturedPokemon() {
     var captTwo = document.getElementById('capt-two');
     var captImg = document.querySelector('.poke-img').src;
     var captName = document.querySelector('.poke-name').innerText;
+    var captCount = document.getElementById('.counter');
 
-    if(captTwo.childElementCount < 6)
+    if(captTwo.childElementCount < 6) {
         if(captOne.childElementCount <= 4){
                 var capthtml = `<img src="${captImg}" />
                                 <p>${captName}</p>`;
@@ -151,59 +166,50 @@ function capturedPokemon() {
                     }
                     add();
                     return counter + "/6";
-                    // var added = document.getElementById('counter').innerHTML = add();
                 }
                 // return countPokemon(added);
+
                 document.querySelector('.poke-img').style.display = 'none';
                 document.querySelector('.poke-name').style.display = 'none';
                 document.querySelector('.capture-btn').style.display = 'none';
+                // document.querySelector('.det').style.display = 'none';
 
         }
         else if(captOne.childElementCount > 3 || captOne.childElementCount !== 7) {
             var capthtml = `<img src="${captImg}" />
                             <p>${captName}</p>`;
             captTwo.insertAdjacentHTML('beforeend', capthtml);
-            document.getElementById('counter').innerHTML = countPokemon();
-
-            function countPokemon () {
-                var counter = 0;
-                function add() {
-                    if(counter < 3){
-                        counter++;
-                    }
-                }
-                add();
-                return counter + "/6";
-                // var added = document.getElementById('counter').innerHTML = add();
-            }
 
             document.querySelector('.poke-img').style.display = 'none';
             document.querySelector('.poke-name').style.display = 'none';
             document.querySelector('.capture-btn').style.display = 'none';
+
+            
+
         }
         else {
             alert("Congratulations! You've captured 6 Pokemons!");
+
         }
-    else{
+
+        function countPokemon () {
+            var counter = 0;
+            function add() {
+                if(counter < 3){
+                    counter++;
+                }
+            }
+            add();
+            return counter + "/6";
+            // var added = document.getElementById('counter').innerHTML = add();
+        }
+        // return countPokemon(added);
+
+        captCount.innerHTML = captOne.childElementCount + captTwo.childElementCount;
+    }
+    else {
         alert("Congratulations! You've captured 6 Pokemons!");
         document.getElementById('explore').disabled = true;
     }
 
 }
-
-
-// document.getElementById('capture').onclick = function() { countPokemon() };
-// document.getElementById('capture').addEventListener('click', countPokemon);
-
-// function countPokemon () {
-//     var counter = 0;
-//     function add() {
-//         counter++;
-//     }
-//     add();
-//     return counter;
-// }
-
-// document.querySelector('.capture-btn').style.display = 'none';
-// document.querySelector('.poke-img').style.display = 'none';
-// document.querySelector('.poke-name').style.display = 'none';
