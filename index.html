@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-cont"><img class="img-logo" src="http://pluspng.com/img-png/pokemon-logo-png-file-pokemon-logo-png-500.png"></div>
+        <nav class="navigation">
+            <div class="selection">
+                <select class="select-css" id="region">
+                    <option>Select Region...</option>
+                </select>
+            </div>
+            <div class="selection">
+                    <select class="select-css" id="location">
+                            <option>Select Location..</option>
+                        </select>
+            </div>
+            <div class="selection">
+                    <select class="select-css" id="area">
+                            <option>Select Area...</option>
+                    </select>
+            </div>
+        </nav> 
+    </header>
+    <section class="explore">
+        <div class="btn-explore">
+            <button id="btn-explore">EXPLORE</button>
+        </div>
+    </section>
+    <section class="message">
+        <div class="box-message">
+             Click Explore To Find a Pokemon!
+        </div>
+    </section>    
+    <main class="container">
+        <div class="box" id="poke-capture-detail">
+                
+            <div class="no-poke">Explore The Map To Capture A Pokemon</div> 
+        </div>
+        <div class="box">
+           <div class="poke-status">
+                CAPTURED  <i class="counter normal">0</i> / 6
+           </div>
+           <div class="poke-capture">    
+           </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="script/poke.js"></script>
+</body>
+</html>
