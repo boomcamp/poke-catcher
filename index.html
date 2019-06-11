@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poké Catcher</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link
+     rel="stylesheet"
+     href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+     crossorigin="anonymous"
+   />
+   <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/smashicons-movies-flat/54/56_-_Pokemon_Flat-512.png" type="image/gif" sizes="16x16">
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="images/logo.png" border="0">
+    </div>
+    <section class="loc-wrapper">
+            <div class="box-1">
+                    <div class="box-2">
+                            <div class="box-3">
+                                    <div class="box-4">
+                                            <div class="typewriter">
+                                                <div class="typewriter-text">Hey, Ash! Welcome to Poké Catcher!</div>
+                                            </div>
+                                            <i class="fas fa-caret-down"></i> 
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+    </section>
+
+    <div class="loc-area">
+        <div class="loc">
+            <div class="select">
+                    <select class="regions">
+                    </select>
+                    <div class="select_arrow">
+                    </div>
+            </div>
+
+            <div class="select">
+                    <select class="locations">
+                    </select>
+                    
+                    <div class="select_arrow">
+                    </div>
+            </div>
+
+            <div class="select">
+                    <select class="areas">
+                    </select>
+                    
+                    <div class="select_arrow">
+                    </div>
+            </div>
+
+            <span class='start-btn'>EXPLORE</span>
+            </div>
+            </div>
+            <section class="capture-area">
+                        <div class="capture">
+                                <div class="poke-image">
+                                <img id="poke-image" style="height: 250px">
+                                </div>  
+                               
+                                <div class="poke-ball">
+                                        <img id="poke-ball" style="height: 120px" src="https://media.giphy.com/media/JgCZ2hksM1abS/giphy.gif">
+                                </div>  
+
+                                <div class="desc-box">
+                                                <span class="poke-name"></span>    
+                                                <div class="desc-text">
+                                                         <div class="desc-1">
+                                                                <p id="speed">speed: 100</p>
+                                                                <p id="defense">defense: 100 </p>
+                                                         </div>
+                                                         <div class="desc-1">
+                                                                <p id="sp-defense">special-defense: 100</p>
+                                                                <p id="attack">attack: 100 </p>
+                                                        </div>
+                                                        <div class="desc-1">
+                                                                <p id="sp-attack">special-attack: 100</p>
+                                                                <p id="hp">hp: 100 </p>
+                                                        </div>
+                                                </div>
+
+                                </div>
+                        </div>
+
+                        <div class="limit">
+                                        <div class="limit-box">
+                                                <br>
+                                                YOUR POKEDEX IS FULL
+                                        </div>
+                        </div>
+
+                        <div class="index">
+                                <div class="index-inner">
+                                        <div class="index-title-area">
+                                                <div class="index-text">POKÉDEX</div>
+                                                <div class="index-text-sub">CAUGHT: <span class="ctr">0/6</span>| SEEN: <span class="seen"></span></div>
+                                                <div class="pokedex-wrap">
+                                                        <div class="pokedex">
+
+                                                        </div>
+                                                </div>
+
+                                        </div>
+                                </div>
+                        </div>
+
+                       
+        </section>
+
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
