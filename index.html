@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+    <title>Poke-Catcher!</title>
+</head>
+<body>
+    <header>
+        <div class="app-title-container">
+        </div>
+        <div class="place">
+            <div class="place-container">
+                <div class="place-title white-bold">
+                    Region:
+                </div>
+                <div class="region dropdown">
+                    <select class="select-css" name="regions" id="regions">
+                    </select>
+                </div>
+            </div>
+            <div class="place-container">
+                <div class="place-title white-bold">
+                    Location:
+                </div>
+                <div class="location dropdown">
+                    <select class="select-css" name="locations" id="locations" >
+                        <option>asd</option>
+                    </select>
+                </div>
+            </div>
+            <div class="place-container">
+                <div class="place-title white-bold">
+                    Area:
+                </div>
+                <div class="area dropdown">
+                    <select class="select-css" name="areas" id="areas">
+                        <option>asd</option>
+                    </select>
+                </div>
+            </div>
+            <div class="place-container" id="explore">
+                <img src="img/red-static.gif" class="red-gif">
+                <img src="img/pikachu-static.gif" class="pikachu-gif">
+            </div>
+        </div>
+    </header>
+    <div class="info">
+        <div class="info-content white-bold">
+            Click the sprite to Explore
+        </div>
+    </div>
+    <main class="no-side-border">
+        <div class="divider-encounter bordered">
+            <div class="divider-header white-bold">
+                encounter
+            </div>
+            <div class="encounter">
+                <div class="encounter-header">
+                    
+                </div>
+                <div class="encounter-content">
+                    <div id="wild-pokemon">
+                        
+                    </div>
+                    <div id="wild-pokemon-image">
+
+                    </div>
+                    <div id="catch">
+
+                    </div>
+                </div>
+            </div>
+            <div class="data">
+                <div class="data-divider bordered">
+                    <div id="hp"></div>
+                    <div id="attack"></div>
+                    <div id="defense"></div>
+                    <div id="sp-atk"></div>
+                    <div id="sp-def"></div>
+                    <div id="speed"></div>
+                </div>
+                <div class="data-divider bordered">
+                    <div id="type"></div>
+                    <div id="ability"></div>
+                </div>
+            </div>
+        </div>
+        <div class="divider-pokemons bordered">
+            <div class="divider-header white-bold">
+                pokemons (0/6)
+            </div>
+            <div class="catched">
+                <div class="pokemon bordered empty" id="poke1">
+                    <div class="pokeRelease">
+
+                    </div>
+                    <div class="pokeImg">
+
+                    </div>
+                    <div class="pokeName">
+
+                    </div>
+                </div>
+                <div class="pokemon bordered empty" id="poke2">
+                    <div class="pokeRelease">
+                        
+                    </div>
+                    <div class="pokeImg">
+
+                    </div>
+                    <div class="pokeName">
+
+                    </div>
+                </div>
+                <div class="pokemon bordered empty" id="poke3">
+                    <div class="pokeRelease">
+                        
+                    </div>
+                    <div class="pokeImg">
+
+                    </div>
+                    <div class="pokeName">
+
+                    </div>
+                </div>
+                <div class="pokemon bordered empty" id="poke4">
+                    <div class="pokeRelease">
+                        
+                    </div>
+                    <div class="pokeImg">
+
+                    </div>
+                    <div class="pokeName">
+
+                    </div>
+                </div>
+                <div class="pokemon bordered empty" id="poke5">
+                    <div class="pokeRelease">
+                        
+                    </div>
+                    <div class="pokeImg">
+
+                    </div>
+                    <div class="pokeName">
+
+                    </div>
+                </div>
+                <div class="pokemon bordered empty" id="poke6">
+                    <div class="pokeRelease">
+                        
+                    </div>
+                    <div class="pokeImg">
+
+                    </div>
+                    <div class="pokeName">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gif.js"></script>
+</body>
+</html>
