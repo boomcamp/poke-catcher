@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    
+ 
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Patrick+Hand" />
+    <title>Poke Catcher</title>
+</head>
+<body class="body">
+    <div class="top-header">   
+        <div class="logo-container">
+            <img src="img/logo.png" class="pokemon-img-logo">
+        </div>
+    </div>
+    <div class="poke-header">
+        <div class="container">
+            <div class="region-container" id="region-name">
+                <select name="region-name" id="region-list"  class="slct">
+                       <option>Select Region</option>
+                </select>
+      
+ 
+             
+                    <select name="location-name" id="location-list" class="slct">
+                        <option>Select location</option>
+                    </select>
+                
+
+          
+          
+                    <select name="area-name" id="area-list"  class="slct">
+                             <option>Select Area</option>
+                    </select>
+         
+           
+           
+                <button id="explore" class="explore-btn"><span> Explore</span></button>
+            </div>
+        </div> 
+    </div>
+    <div class="poke-body">
+        <div class="container">
+            <div class="poke-content">
+                <div class="col flex">
+                    <div class="flex-poke-header">
+                        <h3 class="h2-encounter">Encounter</h3>
+                    </div>
+                
+                        <div class="pokemon-item-captured">
+                            <div id="encounter-pokemonshow" class="detailed">
+                                <div id="pokemon-1">
+                                    <div class="found" >
+                                            <img class="img-pokemon opacity"  src="" >
+                                            <div id="btn"> 
+                                                </div>
+                                       
+                                        <h3 class="pokemon-name"></h3>
+                                        <div id="ability">
+                                        <div id="details-list" class="ability-list" >
+                                            
+                                        </div>
+                                      </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                   
+
+                    
+                </div>
+                <div class="col flex captured">
+                        <div class="flex-poke-header green">
+                            <h3 class="h2-encounter">Captured    <span id="count" class="count">0</span>/6</span></h3>
+                        </div>
+                        <div class="pokemon-item-captured">
+                              
+                                <div class="capture-pokemonshow">
+                                    <div id="capture-list" class="details-list">
+                                             
+
+                                    </div>
+                                </div>
+                        </div>
+                       
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+<!-- LOCARION / AREA / REGION script-->
+    <script src="js/region.js"></script>
+    <script src="js/region-list.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/area.js"></script>
+    <script src="js/explore.js"></script>
+
+    
+    
+</body>
+</html> 
