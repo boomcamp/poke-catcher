@@ -56,7 +56,11 @@ const fetchLocation = (path)=>{
              $(areaId).append(`<option value="${areaVal[x].url}">${areaVal[x].name}</option>`)
             } 
             }
-            // console.log(areaId.val())
+            if(areaId.text().length<=15){
+            exploreBtn.text('No pokemon in the area')
+            }else{
+            exploreBtn.text('EXPLORE')
+            }
             if(areaId.val()==='no-selected'){
             exploreBtn.attr('disabled', true)
             }else{
@@ -68,8 +72,6 @@ const fetchLocation = (path)=>{
     })
 
     
-    
- 
     areaId.on('change', function(){
         locAreaUrl = this.value;
         if(areaId.val()==='no-selected'){
@@ -77,8 +79,6 @@ const fetchLocation = (path)=>{
             }else{
             exploreBtn.removeAttr('disabled')
             }
-
-
     })
 
     var pokeName;
