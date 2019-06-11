@@ -43,10 +43,12 @@ $(document).ready(function() {
         locations.area(data)
             .then(area => {
                 areaPokemons = area.pokemon_encounters
-                if (areaPokemons.length) {
+                if (areaPokemons.length !== 0) {
                     $('#explore').attr('disabled', false)
+                    console.log('yes pokemons')
                 } else {
                     $('#explore').attr('disabled', true);
+                    console.log('no pokemons')
                 }
             })
     })
@@ -64,6 +66,7 @@ $(document).on('click', '#explore', function(e) {
             })
             .then(pokemon => areaPokemons[pokemon])
             .then(displayPokemon)
+            .then(mrPokeball)
             .catch(err => console.log(err))
     })();
 
@@ -73,11 +76,16 @@ $(document).on('click', '#catch', function(e) {
     e.stopPropagation();
     e.preventDefault();
     if (!temPokemon) {
-        alert('Explore the area for pokemons!')
+        $('.explore-message').html(`
+        <div class="custom-pokebox"> Explore area for pokemons!
+        <i> <div id="catch" class="meowth"></div><span>Meowth</span></i>
+        </div>`)
     } else {
         if (captured.length === 6) {
             $('#bagMessage').html(
-                `<span class="animateType">You are out of pokeball!</span>`
+                `<div class="custom-pokebox"><span class="animateType">Your bag is full!</span>
+                <i><div id="pokedex" class="mrpokedex"></div><span>Dr. Pokedex</span></i>
+                </div>`
             )
         } else {
             captured.push(temPokemon)
@@ -136,12 +144,16 @@ const displayPokemon = (details) => {
         .then(stat => {
             $('.pokestats').html(stat
                 .map(st => {
-                    return `<p>${st.stat.name}:${st.base_stat}</p>`
+                    return `
+                    <div class="stat-info"><p>${st.stat.name}:${st.base_stat}</p></div>`
                 }))
         })
     pokemons.get(pokemon)
         .then(details => temPokemon = details)
+}
 
+const mrPokeball = () => {
+    $('.explore-message').html('<button id="catch" class="catch"></button><span>Catch!</span>')
 }
 
 const clear = () => {
