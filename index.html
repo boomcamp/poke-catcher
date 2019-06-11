@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>PokeCatcher</title>
+</head>
+<body>
+        <!--header-->
+        <div class="header-container">
+            <img src="images/Pok-Catcher.png" alt="logo" class="logo">
+        </div>
+
+        <div class="selecting-container">
+            <!--selecting Region-->
+            <div class="region-container" id="region-name">
+                    <select name="region-name" id="region-list" class="selection-design">
+                           <!--<option>Default Region</option>-->
+                    </select>
+                </div>
+
+                <!--selecting Location-->
+                <div class="location-container" id="location-name">
+                        <select name="location-name" id="location-list" class="selection-design">
+                               <!--<option>Default location</option>-->
+                        </select>
+                    </div>
+
+                <!--selecting Area-->
+                <div class="area-container" id="area-name">
+                        <select name="area-name" id="area-list" class="selection-design">
+                                <!-- <option>Default Area</option>-->
+                        </select>
+                    </div>
+                <!--explore button-->
+                <div class="button-container">
+                    <button id="explore" class="explore-btn"><span> Explore</span></button>
+                </div>
+        </div>
+
+        <!--text container-->
+        <div class="text-container">
+            <h4>Click "<span class="exploredword">Explore</span>" to start searching for Pokemon</h4>
+        </div>
+
+        <div class="body-container">
+
+                <!--encounter container-->
+                <div class="encounter-container">
+                        <div class="textcontent-h3">
+                            <div class="textcontainer">
+                                    <h3>encounter</h3>
+                            </div>
+                        </div>
+                        
+                        <div id="encounter-pokemonshow" class="detailed">
+                            <fieldset id="pokemon-1">
+                                <div class="found" >
+                                    <div class="pokemon-container">
+                                        <img class="img-pokemon"  src="" >
+                                        <h3 class="titled"></h3>
+                                        <div id="btn"></div>
+                                    </div>
+                                    <div class="pokemondetails-container">
+                                        <div id="details-list" class="details-list" >
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                               
+                            </fieldset>
+                        </div>
+                </div>
+
+                    <!--My Pokemon-->
+                    <div class="capture-container">
+                            <div class="textcontent-h3">
+                                <div class="textcontainer">
+                                    <h3>My Pokemons 
+                                        <span class="capture-list">
+                                            <span id="count" class="count">0</span>/6</span>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="captured-container">
+                                    <div id="capture-pokemonshow" class="capture-pokemonshow">
+                                             <ul id="capture-list" class="captured" >
+                                             </ul>
+                                            
+                                    </div> 
+                            </div>
+                       
+                    </div>
+        </div>
+        
+
+        
+        <!--js script-->
+        <script src="js/region.js"></script>
+        <script src="js/location.js"></script>
+        <script src="js/area.js"></script>
+        <!--<script src="js/main_encounter.js"></script>-->
+        <script src="js/regionlist.js"></script>
+        <script src="js/explore.js"></script>
+        <!--<script src="js/region.js"></script>-->
+</body>
+</html>
