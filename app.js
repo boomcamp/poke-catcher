@@ -23,18 +23,18 @@ $(document).ready(function(){
     });
   });
 
-
+ 
   //fetch
   var arrRegions = [];
   fetch('https://pokeapi.co/api/v2/region/')
     .then((response => response.json())) 
     .then((response) => {
-        console.log('1');
+        // console.log('1');
         return response.results
         })
     .then((response) => { 
         // add all the regions dropdown
-        console.log(response);
+        // console.log(response);
         response.forEach(element => {
             $('#region-select').append(`
             <option>
@@ -57,8 +57,8 @@ $(document).ready(function(){
                    .then((response => response.locations))  
                    .then((response) => { 
                     // add all the cities dropdown
-                    console.log('locations in region');
-                    console.log(response);
+                    // console.log('locations in region');
+                    // console.log(response);
 
                     $('#city-select').find('option').remove(); //cleans the city dropdown for previous populations  //fixes bug where selecting regions keeps adding the cities
                     response.forEach(element => {
@@ -74,16 +74,16 @@ $(document).ready(function(){
                     });
                     
                     var getTheUrl = element.url;
-                    console.log('getTheUrl ' + getTheUrl); 
+                    // console.log('getTheUrl ' + getTheUrl); 
 
                 getUrl = getTheUrl; // passes it outside of scope
-                console.log('getURL' +getUrl); //debugger    
+                // console.log('getURL' +getUrl); //debugger    
                 }
                 
             });  
       
         regionUrl = getUrl; // gets the region url from inner scopes
-        console.log(regionUrl + 'region url');
+        // console.log(regionUrl + 'region url');
         });
         
         $('#city-select').on('change', function (){
@@ -128,22 +128,129 @@ $(document).ready(function(){
             
            
         })
-
-        $('#explore').on('click', function(){
-            var loc = 'https://pokeapi.co/api/v2/location-area/?limit=700';
-            fetch(loc)
-            .then((response => response.json())) 
-            .then(response => console.log(response))
-            .then(response => {
-                // get selected area, compare to array
-            })
-        })
-
-
      
     })
+    .then(() => {
+        $('#explore').on('click', function(){
+            //check if area is empty
+            var selectedArea = $('#area-select').children("option:selected").val();
+            if (typeof selectedArea == 'undefined'){
+                // console.log('no area');
+            }
+            else{
+                var loc = 'https://pokeapi.co/api/v2/location-area/?limit=700';
+                fetch(loc)
+                .then((response => response.json())) 
+                .then(response => response.results)
+                .then(response => {
+                    // console.log(selectedArea);
+                    var getUrl ; 
+                    response.forEach(element => {
+                        if(selectedArea == element.name){
+                            getUrl = element.url
+                        }
+                        });
+                    return getUrl            
+                })
+                .then((url) => { //pokemons
+                    fetch(url)
+                    .then((response => response.json()))
+                    .then(response => response.pokemon_encounters)
+                    .then(response => { // get rand pokemon
+                            var min = 0; 
+                            var max = response.length;  
+                            var random =Math.floor(Math.random() * (+max - +min)) + +min; 
+                            return JSON.stringify(response[random].pokemon)
+                    })
+                    .then((response)=>{
+                        data = JSON.parse(response);
+                        // console.log(response + 'the king is here')
+                        x = response;
+                        //insert pokename
+                        $('#poke-name').html(data.name)
+                   
+                        //insert capture button, remove previous if it exists
+                        if ($("#capture")){
+                            $("#capture").remove();
+                        }
+                        $(".left-box").append("<button id='capture'>Capture</button>");
+                        
+                        $("#capture").click(() => { // when a pokemon gets captured
+                            // console.log('capture')
+                            $('#poke-name').html('CAPTURED!!! <br> <br> CLICK EXPLORE TO FIND MORE POKEMON')
+                            $("#poke-sprite").attr("src",'#');
+                            $(".right-box").empty();
+                            $(".right-box").append("<h4>Details</h4>");
+                            $("#capture").remove();
+                            $("#add-pokemon").attr("src",response.front_default);
+                            
+                        })
+                        return data.url
+                    })
+                    .then(url => { // get sprites
+                        fetch(url)
+                        .then((response => response.json()))
+                        .then(response => { // insert stats
+
+                            //remove previous stats if it exists
+                            $(".right-box").empty();
+                            $(".right-box").append("<h4>Details</h4>");
+                            // console.log('stats');
+                            var stats = response.stats;
+                            stats.map( element => {
+                                $(".right-box").append(`<span>${element.stat.name}: </span>${element.base_stat} <br>`);
+                                // console.log(element.base_stat, element.stat.name )
+                            })
+                            
+                            return response
+                        })
+                        .then(response => response.sprites)
+                        .then(response => {// places image in DOM
+                            $("#poke-sprite").attr("src",response.front_default);
+                            // console.log(response.back_default);
+                          
+                            $("#capture").click(() => {
+                                var count = $(".background-pokemon").children().length;
+                                $(".bottom").append(`<img src="${response.front_default}" alt="" id="add-pokemon">`);
+                                var uniqueID = count.toString();
+                                $(".background-pokemon").append(`<div class='bg-pokemon-child' id='${uniqueID}'><div>`);
+                                var imageUrl = response.front_default;
+                                $(`#${uniqueID}`).css("background-image", "url(" + imageUrl + ")");
+                                // console.log('loop'); 
+                                function loop() { // floating pokemon
+                                    $('#add-pokemon').css({'margin-top':0});
+                                    $('#add-pokemon').animate ({
+                                        'margin-top': '+=5',
+                                    }, 1000, 'linear', function() {
+                                        {
+                                            $('#add-pokemon').animate ({
+                                                'margin-top': '-=5',
+                                            }, 1000, 'linear', function() {
+                                                
+                                                loop();
+                                            });
+                                        }
+                                        loop();
+                                    });
+                                }
+                                loop();
+                                                        
+                            })
+                            
+                            return response
+                        })
+                       
+                    })  
+                })
+                .catch(err => console.log(err))
+            }
+
+          
+        })
+        
+    })
     
-  
+    
     .catch(function(err) {
         console.error(err);
 });
