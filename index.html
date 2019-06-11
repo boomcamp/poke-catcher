@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+  <title>Poke Catcher</title>
+</head>
+<body class="bg">
+  <main>
+    <header class="container">
+      <div class="row">
+          <div class="col-12 header">
+            <div class="row">
+              <div class="col-2 logo">
+                  <img class="logo-2" src="assets/images/logo-2.png" alt="logo">
+                  <img class="img-logo" src="assets/images/logo.png" alt="logo">
+              </div>
+              <div class="col-10 head">
+                  <label for="select-region" class="explore">Region :</label>
+                  <select class="select-style region" id="select-region"></select>
+
+                  <label for="select-location" class="explore">Location :</label>
+                  <select class="select-style" id="select-location"></select>
+
+                  <label for="select-area" class="explore">Area :</label>
+                  <select class="select-style" id="select-area"></select>
+
+                  <img class="explore pokeball" src="assets/images/pokeball.png" alt="pokeball">
+              </div>
+            </div>
+          </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 section-one battlefield">
+
+          <div class="row">
+            <div class="col-8 pokemon">
+            </div>
+
+          </div>
+
+
+          <div class="row ash">
+            <div class="col-5" id="ash">
+              <img class="ash-img" src="assets/images/ash.png" alt="ash">
+              <img class="capture-ball" src="assets/images/pokeball.png" alt="ash">
+
+              <div class="box intro-box">
+                  <label class="details">Catch Pokemon Now!</label>
+              </div>
+              <div class="box intro-box captured">
+                  <label class="details captured-details">Yeah, you captured it!</label>
+              </div>
+            </div>
+
+          <div class="col-7">
+            <div class="box stats">
+              <label class="details">STATS</label><br>
+              <ul class="statsList">
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-12 section-two">
+            <div class="row">
+              <ul class="col-11 capture-list">
+              </ul>
+              <p class="col-1 max-capture">0/6</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </main>
+  
+  <script src="app/script/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</body>
+</html>
