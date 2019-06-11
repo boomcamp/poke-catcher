@@ -99,17 +99,14 @@ const fetchLocation = (path)=>{
         .then(function(allPoke){
             encounter = allPoke.pokemon_encounters;
             var randomNum = Math.floor(Math.random()*(encounter.length));
-            // console.log(randomNum)
-            // console.log(encounter)  
             pokeName = encounter[randomNum].pokemon.name ;
-            // console.log(pokeName)
             pokeUrl = encounter[randomNum].pokemon.url ;
-            // console.log(pokeUrl)
-            $('#founded-text').text(pokeName)
+            
             if(pokeUrl){
             fetch(pokeUrl)
             .then(res => res.json())
             .then(function(details){
+                $('#founded-text').text(pokeName)
                 pokePics = details.sprites.front_default;
                 $('#poke-image').attr('src', pokePics);
                 $('#speed').text(details.stats[0].base_stat)  
@@ -123,13 +120,17 @@ const fetchLocation = (path)=>{
         })      
     })
 
+    
+
     $('#catch-btn').on('click', function(){
 
         if(capturedCounter<=6){
         $('.found-cont').addClass('hide')
         $('.found-cont-captured').removeClass('hide')
         $('.capture-text').text(`you've captured ${pokeName}!`)
-
+        $('.capture-text').append(`<br><span class='capture-subtext'>click <span class="text-red">explore</span> to find more<span>`)
+            
+        
         $('.captured-box').append(`
         <div class="captured-poke">
         <img src="${pokePics}" alt="" width="200px" height="200px" class="img-captured">
@@ -147,6 +148,8 @@ const fetchLocation = (path)=>{
         
     })
 }
+
+
 
 fetchLocation('region')
 
