@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dangrek&display=swap');
 
 	* {
 		padding: 0;
@@ -6,21 +7,26 @@
 		box-sizing: border-box;
 	}
 	body {
-		background: url('poke_bg.jpg');
+		background: url('bg.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
-		font-family: 'Yanone Kaffeesatz', sans-serif;
+		/*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+		font-family: 'Dangrek', cursive;
 	}
 	.header {
-
+		width: 95%;
+		background-size: contain;	
 		display: flex;
+		background-repeat: no-repeat;
+		background-position: center;
 		flex-direction: row;
-		background-color: red;
 		height: 100px;
+		background: rgba(102, 204, 255,0.5);
+		margin:auto;
 	}
 	.logo {
 		height: 100px;
-		/*background-image:url('pokelogo.jpg');*/
+		background-image:url('pokelogo.jpg');
 		width:200px;
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -28,21 +34,25 @@
 	.text {
 		padding: 30px;
 		font-size: 1.8em;
-		color:#fff;
+		color:#000;
 
 	}
 	.selection { 
+		padding:20px;
 		justify-content: center;
 		display:flex;
 	}
 	label {
 		font-size: 1.4em;
+		color:#fff;
 	}
 	select {
 		font-size: 0.8em;
 		height: 40px;
 		padding: 5px;
 		border-radius: 10px;
+		background: red;
+		color:white;
 	}
 	.select-box {
 		width:30%;
@@ -55,25 +65,29 @@
 		text-align: center;
 	}
 	#explore {
+		color:#fff;
+		background: red;
 		border: none;
 		width:90px;
 		border-radius: 10px;
 		height: 40px;
 	}
 	.pokemon-content {
+		margin-top:10px;
 		display: flex;
 		justify-content: space-around;
 	}
 	.pc {
 		text-align: center;
 		width: 45%;
+		height:660px;
 		background: rgba(102, 204, 255,0.5);
 	}
 	.pc-header {
 		background: #000;
 		width:100%;
 		color:#fff;
-		font-size: 1.4em;
+		font-size: 1.6em;
 		text-align: center;
 	}
 	.pc-img img {
@@ -81,9 +95,14 @@
 		height: 300px;
 	}
 	#pokeName {
-		font-size: 2em;
+		font-size: 1.3em;
+		background:red;
+	}
+	ul {
+		list-style-type: none;
 	}
 	#details {
+		padding:15px;
 		font-size: 1.3em;
 	}
 	#captureBTN button {
@@ -93,4 +112,30 @@
 		font-size: 1.2em;
 		border-radius: 10px;
 		border:none;
+		background: red;
+		color:#fff;
+	}
+	#pokeStorage {
+		align-content: center;
+		margin-top:10px;
+		width:100%;
+		justify-content:space-around;
+		display: flex;
+		flex-wrap:wrap;
+		flex-direction: row;
+	}
+	.cpImg {
+		border-radius: 10px;
+		width:33%;
+		background:rgba(124,252,0,0.4);
+	}
+	#pokeStorage h1 {
+		background: blue;
+		color:#fff;
+		text-transform:uppercase;
+		background: rgba(102, 204, 255,0.5);
+
+	}
+	.cpImg img {
+		width:280px;
 	}

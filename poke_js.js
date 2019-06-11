@@ -20,6 +20,12 @@ const capture = document.getElementById('captureBTN');
 
 var capturedPokemon = [];
 
+const pokeStorage = document.getElementById('pokeStorage');
+
+const encounter_block = document.getElementById('encounter_block');
+
+const capturedSize = document.getElementById('capturedSize');
+
 function get(action) {
 	return fetch(baseURL+action).then(reg => reg.json());
 }
@@ -102,7 +108,6 @@ function pokemon(pokemons) {
 		showDetails(poke);
 		const thumb = poke.sprites.front_default;
 		pokeThumb.src = thumb;
-
 	});
 }
 
@@ -114,5 +119,19 @@ function showDetails(pokeDetails) {
 
 capture.addEventListener('click',function(e) {
 	fetch(baseURL+'pokemon/'+e.target.value).then(res => res.json()).then(data => { capturedPokemon.push(data); 
-		capturedPokemon.map(cp=>console.log(cp.sprites.front_default))});
+		// capturedPokemon.map(cp=>console.log(cp))});
+	
+		var current = capturedPokemon.length;
+		if(current < 7) {
+		capturedSize.innerHTML = 'Pokemon captured '+current+'/6';	
+		pokeName.innerHTML = '<h1>You have captured '+e.target.value;
+
+		pokeStorage.innerHTML = capturedPokemon.map(cp => {return '<div class="cpImg"><h1>'+cp.name+'</h1>'+'<img src="'+cp.sprites.front_default+'"/></div>'}).join('');
+		} else { pokeName.innerHTML = 'Full storage'}
+		details.innerHTML = '';
+		
+		captureBTN.innerHTML ='';
+		pokeThumb.src = '';
+		console.log();
+		 });
 	});
