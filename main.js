@@ -116,7 +116,13 @@ function getImage(url){
         document.getElementById('hp').innerText = hp;
         document.getElementById('pokemon-image').src = pImage;
     });
-
 }
 
+var c = document.getElementById('catch');
+c.addEventListener("click", () => {
+    console.log('catch');
+    var deck = document.getElementById("deck");
+    var clone = deck.firstElementChild.cloneNode(true)
+    deck.prepend(clone);
+});
 

@@ -2,16 +2,26 @@ body, html {
     margin: 0;
     font-family: 'Source Code Pro', monospace;
 }
+body {
+    background: linear-gradient(to right, #16222a, #3a6073); 
+}
 .menu {
-    border: 1px dotted black;
+    margin: 10px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .menu select {
-    border: 1px dotted green;
-    width: 100%;
+    border: none;
+    background: #0346ad;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+    width: calc(100% / 3 - 10px);
     padding: 10px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
 }
 
 .menu option {
@@ -19,12 +29,19 @@ body, html {
 }
 
 .container {
-    border: 1px dotted green;
+    border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+}
+
+.background {
+    background-image: url('img/bg2.gif');
+    background-size: cover;
+    border: 15px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px 10px 0 0;
 }
 
 .details {
@@ -65,7 +82,7 @@ span#name {
 img#pokemon-image {
     border: 1px solid #bbb;
     align-self: center;
-    background-image: url('3.gif');
+    background-image: url('img/3.gif');
     background-size: cover;
     display: block;
     height: 230px;
@@ -74,64 +91,104 @@ img#pokemon-image {
 }
 button#explore {
     padding: 10px;
-    border: none;
+    outline: none;
+    border: 5px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     background: rgb(228, 67, 67);
     color: white;
     margin-top: 20px;
+    width: 145px;
 }
 
 button#catch {
     padding: 10px;
-    border: none;
+    outline: none;
+    border: 5px solid rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    background: rgb(54, 54, 233);
+    background: #0346ad;
     color: white;
     margin-top: 20px;
+    width: 145px;
 }
 
 .deck {
-    border: 1px dotted black;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 15px solid rgba(0, 0, 0, 0.5);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 20px
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .card-holder {
-    *border: 1px dotted red;
     border-radius: 10px;
-    height: 250px;
-    width: 200px
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    height: 200px;
+    width: 150px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
 }
 .back {
     background: linear-gradient(to right, #0575e6, #021b79);
-    display: flex;
-    justify-content: center;
 }
 
 .back > img {
-    opacity: 0.7;
+    opacity: 0.8;
     margin: auto 0;
-   
 }
 
 .front {
     background: linear-gradient(to right, #f7971e, #ffd200);
-    padding: 10px;
-    display: flex;
 }
 
 .front > div {
     background: #fff;
     border-radius: 5px;
-    width: 100%;
+    width: 90%;
+    height: 90%;
     display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.front > div > div {
-    border: 1px solid gray;
-    background: #
-    height: 100px;
-    width: 100px;
+.front img {
+
+}
+
+.front h2 {
+   color: #333;
+}
+
+@media (min-height: 720px){
+    body {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ccc; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
