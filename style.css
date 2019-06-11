@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'Pokemon Solid';
+    src:  url('font/Pokemon__Normal/Pokemon.woff');
+    font-style: normal;
+    font-stretch:normal;
+  }
+*{
+    margin: 0 auto;
+    font-family: 'Pokemon Solid';
+    
+}
+
+
+body{
+    background-image: url('images/pokeword2.jpg');
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.header{
+    display: flex;
+}
+/*navigation*/
+
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    margin-top: 50px;
+    
+}
+label{
+    font-size: 50px;
+    color: yellow;
+    text-shadow:
+		-2px -2px 0 blue,
+		2px -2px 0 blue,
+		-2px 2px 0 blue,
+		2px 2px 0 blue;
+}
+.option{
+    font-size: 20px;
+}
+.poke-button {
+    color: #235df3;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    background-color: #ffcd04;
+    border: 3px solid #235df3;
+    border-radius: 3px;
+    font-family: 'Pokemon Solid';
+    font-size: 40px;
+}
+/*main content*/
+.message-container {
+    font-size: 40px;
+    margin-top: 20px;
+    background-color: #ffcd04;
+    padding: 8px;
+    border-radius: 18px;
+    text-align: center;
+    width: 50%;
+    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
+  }
+
+  
+  .body-container{
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  
+  .encounter-container{
+    font-size: 30px;
+    height: 700px;
+    flex: 1;
+    box-sizing: border-box;
+    background-color:rgba(236, 229, 229, 0.75);
+    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
+    margin: 8px;
+  }
+.textcontent-h3{
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    height: 70px;
+}
+.textcontainer{
+  background-color:rgba(240, 12, 12, 0.5);
+  color: yellow;
+  text-shadow: -2px -2px 0 blue, 2px -2px 0 blue, -2px 2px 0 blue, 2px 2px 0 blue;
+  padding: 8px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.detailed{
+    display: flex;
+}
+fieldset{
+    width: 100%; 
+    margin-top: 1%;
+    height: 550px;
+    border: none;
+}
+.found{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 550px;
+    margin: 0 auto;
+}
+ /*mypokemon container*/
+   .capture-container{
+    font-size: 30px;
+    height: 700px;
+    flex: 1;
+    box-sizing: border-box;
+    background-color:rgba(236, 229, 229, 0.75);
+    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
+    margin: 8px;
+}
+.capture-list{
+    color:red;
+}
+  
+.list{
+  margin-top: 30px;
+  width: 50%;
+}
