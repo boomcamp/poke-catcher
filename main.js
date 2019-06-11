@@ -1,4 +1,3 @@
-
 //Initialize the first regions, location, and area by default
 getRegion('https://pokeapi.co/api/v2/region');
 getLocation('https://pokeapi.co/api/v2/region/1');
@@ -73,7 +72,8 @@ l.addEventListener("change", () => {
 });
 var a = document.getElementById('areas');
 
-
+var pName;
+var pImage;
 
 // Generate a random pokemon
 var e = document.getElementById('explore');
@@ -85,13 +85,11 @@ e.addEventListener("click", () => {
         console.log(datap);
         var num = datap.pokemon_encounters.length
         var random = Math.floor(Math.random() * num);
-        var pName = datap.pokemon_encounters[random].pokemon.name;
-        console.log(datap.pokemon_encounters[random].pokemon.id); 
+        pName = datap.pokemon_encounters[random].pokemon.name;
         var pUrl = datap.pokemon_encounters[random].pokemon.url;
-        document.getElementById('name').innerHTML = pName;
-        //console.log(pName);
-        //console.log(pUrl);
         getImage(pUrl);
+        document.getElementById('name').innerHTML = pName;
+        document.getElementById('catch').disabled = false; 
     });
 });
 
@@ -99,9 +97,8 @@ function getImage(url){
     fetch(url)
     .then((img) => img.json())
     .then((datai) => {
-        var pImage = datai.sprites.front_default//back_default;
-        //console.log(pImage);
-        console.log(datai);
+        pImage = datai.sprites.front_default//back_default;
+        //console.log(datai);
         var sp = datai.stats[0].base_stat; //speed
         var sdef = datai.stats[1].base_stat; //special defense
         var satk = datai.stats[2].base_stat; //special attack
@@ -117,12 +114,58 @@ function getImage(url){
         document.getElementById('pokemon-image').src = pImage;
     });
 }
+myDeck = ['psyduck']; //storage of all caught pokemon
 
 var c = document.getElementById('catch');
 c.addEventListener("click", () => {
-    console.log('catch');
-    var deck = document.getElementById("deck");
-    var clone = deck.firstElementChild.cloneNode(true)
-    deck.prepend(clone);
+    var exist = isCatched(pName)
+    console.log(exist);
+    if(exist === false) {
+        //get the template then clone it
+        var deck = document.getElementById("deck");
+        var clone = deck.firstElementChild.cloneNode(true)
+        //prepend then add details
+        deck.prepend(clone);
+       
+        myDeck.push(pName);
+        console.log(myDeck);
+        document.getElementById('fcard-img').src = pImage;
+        document.getElementById('fcard-name').innerText = pName;
+        //diplay the message saying congrats
+        document.getElementById('msg-name').innerText = pName;
+        document.getElementById('warning').style.display = 'none';
+        document.getElementById('message').style.display = 'block';
+        //hide the message after 3s
+        setTimeout(() => {
+            document.getElementById('message').style.display = 'none';
+        }, 3000)
+    }
+    else {
+         //diplay the message saying warning
+         document.getElementById('message').style.display = 'none';
+         document.getElementById('warning').style.display = 'block';
+         //hide the message after 3s
+         setTimeout(() => {
+             document.getElementById('warning').style.display = 'none';
+         }, 2000)
+    }
 });
 
+//return true if pokemo is catched
+function isCatched(pokemon) {
+    var found;
+    for(let x of myDeck) {
+        if(x === pokemon) {
+            found = true;
+            break;
+        }
+    }
+    if(found === true){
+        return true;
+    }
+    else {
+        return false;
+    }
+
+
+}

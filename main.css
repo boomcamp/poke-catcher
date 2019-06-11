@@ -94,7 +94,7 @@ button#explore {
     outline: none;
     border: 5px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    background: rgb(228, 67, 67);
+    background: #e44343;
     color: white;
     margin-top: 20px;
     width: 145px;
@@ -109,6 +109,33 @@ button#catch {
     color: white;
     margin-top: 20px;
     width: 145px;
+}
+
+button#catch:disabled {
+    background: #8696af;
+    color: #ccc;
+}
+
+#message {
+    border: 5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background: #ffd200;
+    padding: 10px;
+    margin-top: 10px;
+    color: #222;
+    font-size: 11px;
+    display: none;
+}
+
+#warning {
+    border: 5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background: #e44343;
+    padding: 10px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 11px;
+    display: none;
 }
 
 .deck {
@@ -158,12 +185,9 @@ button#catch {
     flex-direction: column;
 }
 
-.front img {
-
-}
-
 .front h2 {
    color: #333;
+   text-transform: uppercase; 
 }
 
 @media (min-height: 720px){
