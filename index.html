@@ -15,8 +15,7 @@
 				<div class="b-header-left">
 					<span>
 						<label for="regions">Select Region :</label>
-						<select class="select region" id="regions" name="regions">
-							<!-- <option selected disabled>Select here</option> -->
+						<select class="select region" id="regions" name="regions">				
 						</select>
 					</span>
 					<span id="select-loc">
@@ -42,18 +41,50 @@
 					<p>Pokemon Encounter</p>
 				</div>
 				<div class="b-items-left-body">
-					<div class="body-encounter">
-						
+					<div class="body-encounter">				
+						<div class="body-encounter-fr">
+							<div class="pokemon-img">
+								<div class="pokemon-name"><p class="poke-name"></p></div>
+								<div class="poke-img">
+								
+								</div>
+							</div>
+							<div class="pokemon-stats">
+								<div class="stats-title">
+									<p class="p-title">Pokemon Stats<p>
+								</div>
+								<div class="pokemon-stats-m">
+									<div class="poke-stats">
+									<div class="ul-left">
+										<ul class="poke-ul-l"></ul>
+									</div>
+									<div  class="ul-right">
+										<ul class="poke-ul-r"></ul>
+									</div>
+								</div>
+								</div>
+							</div>					
+						</div>						
+					 	<div class="capture-fr">				
+					 	    <img src="img/pokeball2.gif" class="pokeball">
+					 	</div>
+					 	<div class="note-poke">
+					 		<span class="hidden"></span>
+							<p id="show">Click this pokeball to capture</p>
+						</div>
 					</div>
+					
 				</div>
+
 			</div>
 			<div class="body-items-right">
 				<div class="b-items-right-head">
-					<p>Pokemon Captured</p>
+					<p>Pokemon Captured <span id="captured-span"></span></p>
 				</div>
 				<div class="b-items-right-body">
 					<div class="body-captured">
-						
+						<div class="body-captured-fr">			
+						</div>
 					</div>
 				</div>
 			</div>
