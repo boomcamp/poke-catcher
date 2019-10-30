@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.main-wrapper {
+  height: 100vh;
+  width: 500px;
+  overflow: auto;
+  background: url("../img/big-bg.png") center no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: auto;
+}
+
+.main-page-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #3e3c41;
+  padding: 10px;
+  z-index: 1;
+}
+
+.logo-container {
+  width: 100px;
+}
+.logo {
+  width: 100%;
+}
