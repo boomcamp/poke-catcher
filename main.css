@@ -1,0 +1,57 @@
+body,html
+{
+    background-color:blue;
+}
+.head
+{
+    height: 90px;
+    width: 100%;
+    background-color: rgb(238, 64, 11);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+label
+{
+    color: black;
+    font-weight: bold;
+} 
+select
+{
+   padding: 5px 100px; 
+   border-radius: 3px;
+}  
+.img-logo
+{
+    width: 210px;
+    height: 75px;
+}
+.explore
+{
+    width: 70px;
+    height: 60px;
+    background-color: oldlace;
+    border-radius: 100%;
+    padding: 5px;
+}
+.data-cont
+{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80vh;
+}
+.pokemon-cont
+{
+width: 47%;
+height: 100%;
+background-color: whitesmoke;
+}
+.bag-cont
+{
+background-color: whitesmoke;
+width: 47%;
+height: 100%;
+}
