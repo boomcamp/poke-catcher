@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <title>Pokemon Catcher</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header>
+            <img class="logo" src="assets/img/pokemon-logo.png" />
+            <div class="map">
+                <div class="region">Region:
+                    <select id="selectRegion">
+                        <option>Please Select a Region</option>
+                    </select>
+                </div>
+                <div class="location">Location:
+                    <select id="selectLocation">
+                        <option>Please Select a Region</option>
+                    </select>
+                </div>
+                <div class="area">Area:
+                    <select id="selectArea">
+                        <option>Please Select a Location</option>          
+                    </select>
+                </div>
+            </div>
+            <div class="explore-btn">
+                <button id="explore-btn">Explore<i class="fa fa-search"></i></button>
+            </div>
+        </header>
+        <div class="container">
+            <div class="encounter"> 
+                <div class="wild-pokemon-battle">   
+                    <img id="wild-pokemon-img"></img>
+                    <h1 id="wild-pokemon-name" value="asd"></h1>         
+                </div>
+                <div class="wild-pokemon-stats">                    
+                    <h2>Stats:</h2>
+                    <div class="ul-stats">
+                        <ul id="pokeStatList">
+                        </ul>
+                    </div>
+                </div>
+                <div class="wild-pokemon-catch">
+                    <button class="capture-btn" id="capture-btn">> Attack!</button>
+                </div>
+            </div>
+            <div class="pokedex">
+                <div class="pokedex-header-screen"><h1>Captured Pokemon</h1></div>
+                <div class="pokemons-captured">
+                    <table id="pokedex">
+                    </table>
+                </div>
+            </div>
+        </div>    
+    </main>
+    <!-- <audio id="pokemon-bg-intro">
+        <source src="assets/bg-music/Pokemon Blue Red - Opening.mp3" type="audio/mpeg">
+    </audio> -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

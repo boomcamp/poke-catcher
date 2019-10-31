@@ -1,0 +1,233 @@
+html, body{
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: auto;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    height: 100%;
+}
+
+main{
+    height: 100%;
+    background: url(../img/explore-bg.jpg);
+    z-index: -100;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    background: #ef5350;
+    height: 70px;
+    flex-direction: row;
+}
+
+.logo{
+    height: 150px;
+    width: auto;
+    margin: -40px 0 0 20px;
+}
+
+.map{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.region, .location, .area{
+    color: #fff;
+    margin: 0 20px;
+}
+
+.explore-btn{
+    padding: auto;
+    margin: auto 20px auto 0;
+}
+
+.explore-btn > button{
+    font-family: 'Press Start 2P', cursive;
+    color: #ef5350;
+    background: #fff;
+    height: 50px;
+    width: 150px;
+    border-radius: 24px;
+    border: 1px solid #fff;
+    font-size: 0,7rem; 
+    outline: none;
+}
+
+.explore-btn > button:hover{
+    outline: none;
+    background: #ffcb05;
+    border: 5px solid #3c5aa6;
+    color: #fff;
+}
+
+.explore-btn > button > i{
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.container{
+    display: flex;
+    height: 75%;
+    padding: 10px;
+    margin: 30px auto 0;
+    border-radius: 16px;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+}
+
+.encounter{
+    display: flex;
+    flex-direction: column;
+    width: 64%;
+    height: 100%;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.pokedex{
+    display: flex;
+    flex-direction: column;
+    width: 64%;
+    height: 100%;
+    margin: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    justify-content: space-between;
+    background: #ef5350;
+}
+
+.pokedex-header-screen{
+    height: 60px;
+    width: 95%;
+    background: #fff;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.pokedex-header-screen > h1{
+    color: #000;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.pokemons-captured{
+    height: 85%;
+    width: 95%;
+    background: #fff;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.pokemons-captured > table{
+    margin: auto;  
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    font-size: 1rem;
+}
+
+.caught-pokemon-image{
+    width: 25%;
+}
+
+.caught-pokemon-name{
+    width: 75%;
+    text-align: center;
+}
+
+.wild-pokemon-battle{
+    background: url("../img/pokemon.png");
+    background-size: 100% 100%;
+    margin: auto;
+    height: 55%;
+    width: 90%;
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wild-pokemon-stats{
+    background: url("../img/stats.png");
+    background-size: 100% 100%;
+    margin: auto;
+    height: 30%;
+    width: 90%;
+    border-radius: 16px;
+}
+
+.wild-pokemon-stats > h2{
+    margin: 35px 0 0 40px;
+    font-size: 1rem;
+}
+
+.ul-stats{
+    margin: auto;
+}
+
+#pokeStatList > li{
+    margin: 5px auto auto 10px;
+    font-size: 1rem;
+}
+
+.wild-pokemon-catch{
+    margin: auto;
+    height: 10%;
+    width: 90%;
+    border-radius: 16px;
+    align-content: stretch;
+}
+
+.capture-btn{
+    font-family: 'Press Start 2P', cursive;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    font-size: 1rem;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.capture-btn:hover{
+    outline: none;
+    background: #ffcb05;
+    border: 5px solid #3c5aa6;
+    color: red;
+}
+
+.hide{
+    display: none;
+}
+
+.search{
+    background: url("../img/SpotlessGrimBat.gif");
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;;
+}
+
+#wild-pokemon-img{
+    height: 40%;
+    margin: 8vh auto 0 42vh; 
+    animation: mover 0.5s infinite  alternate;
+}
+
+@keyframes mover {
+    100% { transform: translateY(-5px); }
+}
+
+#wild-pokemon-name{
+    align-self: auto;
+    margin: auto;
+    font-size: 1.4rem;
+}
