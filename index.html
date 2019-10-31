@@ -9,21 +9,45 @@
     <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="map-clickable">
-        <div class="map">
-            <span>Show Map</span>
-        </div>
+
+    <section class="back-to-menu">
+        <h1>&lt; MENU</h1>        
     </section>
-    
-    <section class="all-map-container">
-        <div class="region">
-                <div class="map-region-container" data-id="region-name">
-                    <h2>Johto</h2>
-                </div>
+
+    <section class="menu">
+
+        <img src="./Graphics/pokemon-logo.png" class="logo"></div>
+
+        <div class="selectable-menu">
+            <div class="map-select map-clickable">
+                <h1 class="map-select-text">MAP</h1>
+            </div>
+
+            <div class="map-select">
+                    <h1 class="map-select-text">OPTIONS</h1>
+            </div>
+
+            <div class="map-select">
+                    <h1 class="map-select-text">CREDITS</h1>
+            </div>
         </div>
     </section>
 
-    <section class="explore-map-container">
+    <!-- <section class="map-clickable">
+        <div class="map">
+            <span>Show Map</span>
+        </div>
+    </section> -->
+    
+    <section class="all-map-container">
+        <div class="region">
+                <!-- <div class="map-region-container" data-id="region-name">
+                    <h2>Johto</h2>
+                </div> -->
+        </div>
+    </section>
+
+    <!-- <section class="explore-map-container">
             <div class="explore-map">
                 <h2 class="explore-btn">EXPLORE</h2>
             </div>
@@ -35,7 +59,15 @@
             <div class="explore-map">
                     <h2 class="catch-btn">CATCH</h2>
             </div>
-    </section>  
+    </section> -->
+    
+    <section class="new-map-select">
+        <div class="map-hover map-region jhoto">
+            <h2 data-name="regionname">
+                JHOTO
+            </h2>
+        </div>
+    </section>
 
     <section class="catched">
         <!-- <div class="poke-container" name='sample'>
@@ -45,6 +77,54 @@
         </div> -->
     </section>
 
+    <div class="background-overlay"></div>
+
+    <section class="location-selectables">
+        <div class="location-header-text">
+            <h1 class="region-to-location-name"><span class="deactivate">REGION: </span>JOHTO</h1>
+        </div>
+        <div class="region-location-container">
+        </div>
+    </section>
+
+    <!-- map and encounters-->
+
+    <section class="exploration-number-five">
+
+        <div class="map-on-game map-clickable"></div>
+        
+        <div class="exploring-text">
+            <h1>EXPLORING . . .</h1> 
+            <div class="exploring"></div>
+        </div>
+
+        <div class="background-overlay second-overlay"></div>
+
+        
+        <div class="catched-pokemon"></div>
+    </section>
+
+    <section class="catching-poke">
+        <div class="pokemon-details">
+                <img class="pf-pokemon">
+                <div class="pokemon-name-stat">
+                </div>
+        </div>
+
+        <div class="catch-em-all">
+            <img src="./Graphics/pokeball.png" width="200px">
+            <h1>TRY TO CATCH 'EM</h1>
+        </div>
+        
+    </section>
+
+    <section class="mypokemons">
+    </section>
+
+    <section class="menu-on-game">
+        <h1>&lt;Menu</h1>
+        <h1 class="my-pokemons">MY POKEMONS</h1>
+    </section>
 
     <script type="module" src="./components/main.js"></script>
 </body>

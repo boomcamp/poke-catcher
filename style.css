@@ -5,10 +5,13 @@
 }
 
 body{
-    background: rgb(228, 228, 228);
+    background: #F2EB88;
     font-family: 'Questrial', sans-serif;
+    /* background: url('./Graphics/Wallpaper-menu-1.png') no-repeat; */
+    /* background:url('./Graphics/ash-journeying-preffered.gif'); */
+    /* background-size: cover; */
+    /* background-size: 1000vh; */
 }
-
 
 .map-clickable .map{ 
     display: flex;
@@ -95,7 +98,7 @@ body{
 }
 
 .catched{
-    width: 1000px;
+    /* width: 1000px; */
     height: 200px;
     background-color: rgb(201, 201, 201);
     position: fixed;
@@ -120,3 +123,336 @@ body{
 }
 
 
+/* Graphics */
+
+
+.logo{
+    /* background: url('./Graphics/pokemon-logo.png'); */
+    width: 350px;
+    margin: 0 auto;
+}
+
+.menu{
+   display: flex;
+   width: 500px;
+   justify-content: center;
+   margin: 0 auto;
+   align-items: center;
+   flex-direction: column;
+}
+
+.selectable-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1.5px solid #2C7BBF; */
+    background: #41AED9;
+    padding: 10px;
+}
+
+.selectable-menu .map-select{
+    width: 330px;
+    padding: 10px 30px;
+    margin: 10px;
+    border: 9px solid #2C7BBF;
+    display: flex;
+    justify-content: center;
+    background: #F2EB88;
+}
+
+.map-select-text{
+    color:rgb(20, 77, 125);
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+}
+
+.map-select:hover{
+    cursor: pointer;
+    border: 9px solid #2C7BBF;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background: #F2A172;
+}
+
+.map-region{
+    width: 15%;
+    height: 100vh;
+    /* border: 9px solid #2C7BBF; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #F2EB88;
+    font-size: 200%;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.johto{
+    background: url('./Graphics/jhoto.jpg');
+    background-position: 21% 78%;
+}
+
+.kalos{
+    background: url('./Graphics/khalos.jpg');
+    background-position: 50% 5%;
+}
+
+.kanto{
+    background: url('./Graphics/kanto.jpg');
+    background-position: 18% 56%;
+}
+
+.unova{
+    background: url('./Graphics/unova.jpg');
+    background-position: 42% 57%;
+}
+
+.hoenn{
+    background: url('./Graphics/hoenn.jpg');
+    background-position: 16% 71%;
+}
+
+.sinnoh{
+    background: url('./Graphics/sinnoh.jpg');
+    background-position: 40% 59%;
+}
+
+.alola{
+    background: url('./Graphics/kanto.jpg');
+    background-position: 76% 54%;
+}
+
+.map-hover:hover{
+    opacity: 1;
+}
+
+.back-to-menu{
+    position: absolute;
+    margin: 20px;
+    z-index: 100;
+    cursor: pointer;
+    color:  #2C7BBF;
+}
+
+/* location selectables */
+.location-selectables{
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 9px solid #2C7BBF;    
+    padding: 20px;
+    background: #41AED9;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin-top: -250px; /* Half the height */
+    margin-left: -250px; /* Half the width */
+
+    z-index: 33;
+}
+
+.location-header-text{
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 9px solid #2C7BBF;
+    background: #F2EB88;
+}
+
+.location-header-text h1{
+    padding: 10px 0;
+}
+
+
+.region-location-container{
+    margin: 29px 0 10px 0;
+    background: #F2EB88;
+    width: 450px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 500px;
+    border: 9px solid #2C7BBF;
+}
+
+
+.region-location-container h1{
+    padding: 6px 5px;
+    cursor: pointer;
+}
+
+.region-location-container h1:hover{
+    color: #2C7BBF;
+}
+
+
+/* background overlay */
+.background-overlay{
+    background: black;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+/* .deactivate{
+    color: rgb(163, 163, 163);
+} */
+
+.exploration-number-five{
+    background: url('./Graphics/ash-journeying.gif');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+}
+
+.map-on-game{
+    background: url('./Graphics/map-small.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border: 9px solid #2C7BBF;
+    margin: 20px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+}
+
+.exploring-text{
+    background: url('./Graphics/exploring.gif');
+    /* width: 100px; */
+    height: 100px;
+    background-size: cover;
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    color: #F2EB88;
+}
+
+.exploring-text{
+    margin: 0 auto;
+}
+
+.map-on-game:hover{
+    box-shadow: 0px 1px 10px 0px black;
+    border: 9px solid #F2A172;
+}
+
+.second-overlay{
+    z-index: -1;
+}
+
+/* catching-poke */
+.catching-poke{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./Graphics/catch-bg.png') no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemon-details{
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+    /* border: 1px solid black; */
+}
+
+.pf-pokemon{
+    margin: 0 auto;
+    width: 300px;
+    /* margin-top: 25%; */
+}
+
+.pokemon-name-stat{
+    width: 300px;
+    border: 9px solid #2C7BBF;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background: #41AED9; */
+    background: #F2EEAC;
+    color: #2C7BBF;
+}
+
+.pokemon-name-stat h1{
+    width: 250px;
+    padding: 10px;
+    /* border: 9px solid #2C7BBF; */
+    background: #F2EEAC;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2C7BBF;
+}
+
+.catch-em-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.catch-em-all h1{
+    color: #F2EB88;
+    padding: 20px;
+}
+
+.mypokemons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    background: #F2EEAC;
+    border: 9px solid #2C7BBF;
+    position: absolute;
+    margin: 0 auto;
+    top: 30%;
+    left: 41%;
+}
+
+
+.menu-on-game{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menu-on-game h1{
+    margin: 50px;
+    color: #2C7BBF;
+}
+
+
+/* Color Theme Swatches in Hex */
+.Pokémon-fanart-1-hex { color: #2C7BBF; }
+.Pokémon-fanart-2-hex { color: #41AED9; }
+.Pokémon-fanart-3-hex { color: #F2EB88; }
+.Pokémon-fanart-4-hex { color: #F2EEAC; }
+.Pokémon-fanart-5-hex { color: #F2A172; }

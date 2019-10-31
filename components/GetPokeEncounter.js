@@ -1,9 +1,8 @@
 export default function GetEncounters(area) {
-    // console.log(location)
     fetch(`https://pokeapi.co/api/v2/location-area/${area}`)
     .then(data=>data.json())
     .then(showEncounterable)
-    .catch(e=>alert(e));
+    .catch(e=>console.info(e));
 
 }
 
@@ -16,6 +15,12 @@ function showEncounterable(area){
     pokemons = pokemons.map(poke=>{
         return poke.pokemon.name;
     });
+
+    // if(pokemons){
+    //     document.querySelector('.explore-map-container').style.display = 'block';
+    // }else{
+    //     document.querySelector('.explore-map-container').style.display = 'none';
+    // }
 }
 
 
@@ -24,7 +29,8 @@ export function randomEncounter(){
     pokename = pokemons[Math.floor(Math.random() * pokemons.length)];
 
     getPokemon(pokename);
-    document.querySelector('.pokename').innerHTML = pokename;
+
+    // document.querySelector('.pokename').innerHTML = pokename;
 }
 
 
@@ -39,14 +45,18 @@ function showPokemon(pokemon){
     
     let pokestat = '';
 
+    // console.log(pokemon);
+
+    pokestat += `<h1 class="name-poke" data='${pokename}'>${pokename.toString().toUpperCase()}</h1>`
+
     pokemon.stats.map(pstat =>{
-        pokestat += `<h3 class="hp">${pstat.stat.name} : ${pstat.base_stat}</h3>`
+        pokestat += `<h3 class="hp">${pstat.stat.name.toString().toUpperCase()} : ${pstat.base_stat.toString().toUpperCase()}</h3>`
     });
 
     pokeSprite = pokemon.sprites.front_default;
 
     document.querySelector('.pf-pokemon').setAttribute('src', pokeSprite);
-    document.querySelector('.pokestats').innerHTML = pokestat;
+    document.querySelector('.pokemon-name-stat').innerHTML = pokestat;
 
     // console.log(pokemon.sprites.front_default);
 }
@@ -56,11 +66,12 @@ export function catchPokemon(){
         name: pokename,
         sprite : pokeSprite
     }
-
-    catched.push(newcatched);
+    if(catched.length < 6)
+        catched.push(newcatched);
 
     let catchedisplay = '';
 
+    
     catched.map(pokemon=>{
         catchedisplay += `<div class="poke-container" data-name='${pokemon.name}'>
         <img src="${pokemon.sprite}" class="pf-pokemon-c" alt="" width="200px">
@@ -68,7 +79,9 @@ export function catchPokemon(){
     </div>`
     });
 
-    document.querySelector('.catched').innerHTML = catchedisplay;
+    document.querySelector('.mypokemons').innerHTML = catchedisplay;
+
+    
 }
 
 var pokemons = '';
