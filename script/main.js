@@ -1,4 +1,6 @@
-let regions, locations, areas, captured=1;
+import get from './pokeApi.js'
+
+let captured=1;
 
 const regionSelect = document.querySelector(".region");
 const locationSelect = document.querySelector(".location");
@@ -15,20 +17,15 @@ statText.setAttribute("class", "stat");
 captureBtn.setAttribute("class", "captureBtn")
 captureBtn.textContent = "CAPTURE";
 
-    function get(path) {
-        return fetch(`https://pokeapi.co/api/v2/` + path)
-        .then(res => res.json())
-    };
-    
     get(`region/`).then(data => {
-        regions = data.results
+        var regions = data.results
         regionSelect.innerHTML = regions.map((x, i) => `<option value="${regions[i].name}">${regions[i].name}</option>`)
         regionSelect.dispatchEvent(new Event('change'));
     });
 
     regionSelect.addEventListener("change", function(){
         get(`region/${regionSelect.value}`).then(data => {
-            locations = data.locations
+            var locations = data.locations
             locationSelect.innerHTML = locations.map((x, i) => `<option value="${locations[i].name}">${locations[i].name}</option>`)
             locationSelect.dispatchEvent(new Event('change'));
         });
@@ -36,7 +33,7 @@ captureBtn.textContent = "CAPTURE";
 
     locationSelect.addEventListener("change", function(){
         get(`location/${locationSelect.value}`).then(data => {
-            areas = data.areas
+            var areas = data.areas
             areaSelect.innerHTML = areas.map((x, i) => `<option value="${areas[i].name}">${areas[i].name}</option>`)
             areaSelect.dispatchEvent(new Event('change'));
         });
@@ -57,11 +54,11 @@ captureBtn.textContent = "CAPTURE";
     // -------------------------- EXPLORE EVENT -------------------------- //
     explore_btn.addEventListener("click", function(){
         get(`location-area/${areaSelect.value}`).then(data => {
-            encounter = data.pokemon_encounters
+            var encounter = data.pokemon_encounters
             explored_pokemon.innerHTML = `<p class="explored_txt">${encounter[Math.floor(Math.random()*(0+encounter.length))].pokemon.name}</p>`
 
             get(`pokemon/${explored_pokemon.textContent}`).then(data => {
-                stats = data.stats
+                var stats = data.stats
                 pokeImg.setAttribute("src", `${data.sprites.front_default}`)
                 statText.innerHTML = 
                 `Speed: ${stats[0].base_stat}<br>
@@ -81,19 +78,34 @@ captureBtn.textContent = "CAPTURE";
     // -------------------------- CAPTURE EVENT -------------------------- //
     captureBtn.addEventListener("click", function(){
         if(captured <= 6){
-            var capturedPoke = document.createElement("div");
-            var capturePokeImg = document.createElement("img");
-            var capturePoketext = document.createElement("p")
+            var poke_name = document.querySelector(".explored_txt").textContent;
+            var pokeball = document.createElement("img");
+            var center = document.createElement("center");
+            explored_pokemon.innerHTML = "";
+            pokeball.setAttribute("src", "../img/pokeball.gif")
+            center.append(pokeball)
+            explored_pokemon.append(center);
 
-            capturePokeImg.setAttribute("src" ,pokeImg.src);
-            capturePoketext.innerHTML = document.querySelector(".explored_txt").textContent;
+            // var pokeball = document.getElementsByClassName("pokeball");
+            // console.log(pokeball)
+            // pokeball.setAttribute("style", "display:block;");
 
-            capturedPoke.append(capturePokeImg)
-            capturedPoke.append(capturePoketext)
-            captured_pokemon.append(capturedPoke)
-            document.querySelector(".captured_header").innerHTML = `Captured ${captured}/6`
+            setTimeout(() => {
+                // explored_pokemon.removeChild(center);    
+                var capturedPoke = document.createElement("div");
+                var capturePokeImg = document.createElement("img");
+                var capturePoketext = document.createElement("p")
 
-            explored_pokemon.innerHTML = `<p class="success_captured">You've Successfully Captured ${document.querySelector(".explored_txt").textContent}</p>`;
-            captured ++
+                capturePokeImg.setAttribute("src" ,pokeImg.src);
+                capturePoketext.innerHTML = poke_name;
+
+                capturedPoke.append(capturePokeImg)
+                capturedPoke.append(capturePoketext)
+                captured_pokemon.append(capturedPoke)
+                document.querySelector(".captured_header").innerHTML = `Captured ${captured}/6`
+
+                explored_pokemon.innerHTML = `<p class="success_captured">You've Successfully Captured ${poke_name}</p>`;
+                captured ++
+            }, 3000);
         }
     });
