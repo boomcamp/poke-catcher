@@ -1,0 +1,27 @@
+body {
+   background: url(../../assets/images/temp.gif);
+   background-size: 110%;
+   box-sizing: border-box;
+   margin: 0;
+   background-repeat: no-repeat;
+   padding: 0;
+   background-position: -96px -13px;
+}
+
+.game {
+   margin-top: 21%;
+   margin-left: 26.3%;
+   background: transparent;
+   border: none;
+}
+
+.poke-ball {
+   width: 25%;
+}
+
+#explore {
+   position: absolute;
+   top: 482px;
+   width: 100px;
+   left: 47.3%;
+}
