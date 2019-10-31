@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Poke Catcher</title>
 </head>
 <body>
@@ -16,56 +17,65 @@
         <div class="first">
             <div class="drop-down">
                 <div class="labels">
-                    <label for="regions"> Regions
+                    <label for="regions"> Regions<br><br>
                         <select name="regions" id="regions">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                                <option value="">wasddsads</option> 
                         </select>
                     </label>
 
-                    <label for="location"> Location
+                    <label for="location"> Location<br><br>
                         <select name="location" id="location">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                                <!-- <option value="">wasddsads</option>  -->
                         </select>
                     </label>
 
-                    <label for="area"> Area
-                        <select name="area" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                    <label for="area"> Area<br><br>
+                        <select name="area" id="area">
+                                <!-- <option value="">wasddsads</option>  -->
                         </select>
                     </label>
                 </div>
-                <button class="explore">explore</button>
+                <button class="btn explore" id="exp">explore</button>
             </div>
+
             <div class="encounter-capt">
                 <div class="encounter">
-                    <h1>You found a...</h1>
+                    <h1 class="found">You found a...</h1>
+                    <div id="pic"></div>
+                    <div id="poke"></div>
                 </div>
-                <div class="details">
-                    <div class="box-details">
-                        <h1>details</h1>
-                        <div class="det">
-                            <div class="first-det">
-                                <li>details</li>
-                                <li>details</li>
-                                <li>details</li>
-                            </div>
-
-                            <div class="sec-det">
-                                <li>details</li>
-                                <li>details</li>
-                                <li>details</li>
-                            </div>
-                        </div> 
-                    </div>    
-                    <button class="capt">Capture</button>
+                <div id="istats">
+                    <h1 >Stats</h1>
+                    
                 </div>
+                <button class="btn capt" id="capture">Capture</button>
             </div>
+            <!-- <div>
+                <div class="encounter-capt">
+                    <div class="encounter">
+                        <h1>You found a...</h1>
+                        <div id="pic"></div>
+                        <div id="poke"></div>
+                    </div>
+                    <div class="details">
+                        <h1>details</h1>
+                            <div class="det">
+                                <div class="first-det">
+                                    <li>details</li>
+                                    <li>details</li>
+                                    <li>details</li>
+                                    <li>details</li>
+                                    <li>details</li>
+                                    <li>details</li>
+                                </div>
+                                
+                            </div> 
+                        
+                    </div> 
+                </div> 
+                <button class="capt">Capture</button>      
+            </div> -->
+            
         </div>
 
         <div class="second">
