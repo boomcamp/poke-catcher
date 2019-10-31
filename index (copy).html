@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Poke Catcher</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section>
+    <article>
+      <div>
+        <label for="regions">Region
+          <select name="regions" id="regions"></select>
+        </label>
+        <label for="locations">Location
+          <select name="locations" id="locations"></select>
+        </label>
+        <label for="areas">Area
+          <select name="areas" id="areas"></select>
+        </label>
+        <button class="btn bttn btn-hover teal" id="explore">Explore</button>
+      </div>
+      <p id="message">Click "Explore" to start searching for a Pokemon</p>
+        <div id="encounterDetails" class="details">
+      </div>
+    </article>
+    <article>
+      <section>
+        <header>
+          <div class="btn-bg Pokemon">
+            <div class="btn-group">
+              <div class="btn ball">
+                <button>
+                  <div class="pokemon-ball"></div>
+                  <a id="capturedTotal">Pokémon Catcher! 0/6<span data-letters="Pokémon Catcher!"></span><span data-letters="Pokémon Catcher!"></span></a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
+      <ul id="captureDetails">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </article>
+  </section>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
