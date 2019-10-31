@@ -4,6 +4,11 @@ html {
 	margin: 0%;
 }
 
+@font-face {
+	font-family: "visitor";
+	src: url(./visitor2.ttf) format("truetype");
+}
+
 .select-css {
 	display: block;
 	font-size: 16px;
@@ -69,18 +74,26 @@ html {
 	display: flex;
 	justify-content: center;
 	padding: 10px;
+	height: 600px;
+	max-height: 600px;
 }
 
 .col-2 {
 	flex: 1;
+	/* background: url(../images/bg1.jpg); */
+	background-position: left;
+	padding: 10px;
+	text-align: center;
 }
 
 .col-6 {
 	flex: 3;
+	padding: 0 24px;
 }
 
 label {
-	font-family: "Montserrat", sans-serif;
+	font-family: "visitor", sans-serif;
+	font-size: 3em;
 }
 
 .options {
@@ -88,8 +101,162 @@ label {
 }
 
 .exp img {
-	width: 75px;
 	padding-top: 15px;
 	display: block;
 	margin: auto;
+}
+
+.exp img:hover {
+	cursor: pointer;
+}
+
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+	to {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+@keyframes hvr-pulse-grow {
+	to {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+.exp img:hover {
+	-webkit-animation-name: hvr-pulse-grow;
+	animation-name: hvr-pulse-grow;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	animation-direction: alternate;
+}
+
+.poke-box {
+	height: 59%;
+	background: url(../images/bg1.jpg);
+	background-size: cover;
+	background-position-y: -50px;
+	border: 5px solid #2853bb;
+}
+
+.pokemon {
+	width: 222px;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-20px);
+	}
+}
+.pokemon {
+	animation: bounce 0.2s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.poke-stat {
+	height: 41%;
+	border: 5px solid black;
+}
+
+.poke-stat img {
+	position: relative;
+	width: 79px;
+	top: -35px;
+	left: 43%;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+}
+
+.poke-stat img:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.img-h {
+	margin-top: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#pokemon-name {
+	margin: 0;
+	font-family: "visitor";
+	font-size: 4em;
+	background: #0000007a;
+	color: white;
+	text-align: center;
+}
+
+table {
+	width: 80%;
+	margin: auto;
+	font-family: "visitor";
+	font-size: 29px;
+}
+
+#pokemon-catch img {
+	width: 150px;
+}
+
+#poke-list {
+	overflow: auto;
+	height: 100%;
+}
+
+#count {
+	font-family: "visitor";
+	font-size: 31px;
+	margin: 0;
+}
+
+#poke-list p {
+	font-family: "visitor";
+	font-size: 25px;
+}
+
+.message-captured {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+#explore-msg {
+	margin: 19% 0;
+	font-family: "visitor";
+	font-size: 3em;
+	background: #0000007a;
+	color: white;
+	text-align: center;
+	padding: 39px 0;
+}
+
+#poke-list::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #f5f5f5;
+}
+
+#poke-list::-webkit-scrollbar {
+	width: 5px;
+	background-color: #f5f5f5;
+}
+
+#poke-list::-webkit-scrollbar-thumb {
+	background-color: #000000;
+	border: 2px solid #555555;
 }

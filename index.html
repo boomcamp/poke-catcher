@@ -26,32 +26,51 @@
 					</div>
 					<div class="options">
 						<label for="">Area</label>
-						<select class="select-css" id="areas">
-							<option>Apples</option>
-							<option>Bananas</option>
-							<option>Grapes</option>
-							<option>Oranges</option>
-						</select>
+						<select class="select-css" id="areas"> </select>
 					</div>
-
 					<div class="exp">
-						<img src="./assets/images/pokeball.png" alt="" />
+						<img src="./assets/images/explore.png" class="img-tbn" alt="" id="explore" />
 					</div>
 				</div>
 				<div class="col-6">
-					<div class="main-con">
-						<div class="c">
-							box1
+					<div class="poke-box" id="poke-image">
+						<div class="message-captured" id="overlay">
+							<p id="explore-msg">
+								You've got <span id="cpoke"></span>! <br />
+								Explore to find more Pokemon!
+							</p>
 						</div>
-						<div class="c">
-							<div class="containers">
-								box2
-							</div>
-							<div class="message">message</div>
-						</div>
+
+						<p id="pokemon-name"></p>
+						<div class="img-h"></div>
+					</div>
+					<div class="poke-stat">
+						<img src="./assets/images/pokeball.png" alt="" id="capture" />
+
+						<table>
+							<thead>
+								<th width="50%" style="text-align:left">Stats</th>
+								<th width="50%"></th>
+							</thead>
+							<tr>
+								<td>Hp: <span id="hp"></span></td>
+								<td>Speed: <span id="speed"></span></td>
+							</tr>
+							<tr>
+								<td>Attack: <span id="attack"></span></td>
+								<td>Special-Attack: <span id="special-attack"></span></td>
+							</tr>
+							<tr>
+								<td>Defense: <span id="defense"></span></td>
+								<td>Special-Defense: <span id="special-defense"></span></td>
+							</tr>
+						</table>
 					</div>
 				</div>
-				<div class="col-2">s</div>
+				<div class="col-2" id="pokemon-catch">
+					<p id="count">Pokemon: <span id="id-count"></span>/6</p>
+					<div id="poke-list"></div>
+				</div>
 			</div>
 		</div>
 
