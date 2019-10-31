@@ -205,7 +205,7 @@ function renderEncounter(pokemon) {
       </div>   
     </fieldset>
     <fieldset class="bg2">
-      <legend>Status</legend>
+      <legend>Stats</legend>
       <ul>${pokemon.stats.map(s => `<li class="li-style">${s.stat.name}: ${s.base_stat}</li>`).join("")}</li>
     </fieldset>
     `;
