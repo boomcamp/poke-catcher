@@ -14,10 +14,12 @@
           <h1>Region:</h1>
           <select name="" id="region"> </select>
           <h1>Location:</h1>
-          <select name="" id="location">
+          <select name="" id="location" disabled>
+            <option disabled selected>Choose location</option>
           </select>
           <h1>Area:</h1>
-          <select name="" id="area">
+          <select name="" id="area" disabled>
+            <option disabled selected>Choose region</option>
           </select>
         </div>
 
@@ -33,22 +35,50 @@
           <h1>Encounter</h1>
           <div class="laogan" id="laogan">
             <img src="images/poke-logo.jpg" alt="" />
-          <h2>Zoobat</h2>
-          <button class="capture-btn" id="capture">Capture!</button>
+            <h2>Find a pokemon!</h2>
+            <button class="capture-btn" id="capture">Capture!</button>
           </div>
-          
-            <h3>Details:</h1>
-              <ul>
-                <li>asd</li>
-                <li>asd</li>
-              </ul>
+          <div class="detalye" id="detalye">
+            <h3>Details:</h3>
+            <ul></ul>
+          </div>
         </div>
-        
+
         <div class="box b">
-          <h1>Captured</h1>
+          <h1>Captured <span id="caps">0/6</span></h1>
+          <div class="pokemon-container" id="pokemon_container">
+            <div class="asd" id="1">
+             <img src="images/pokeball.png" alt="" />
+             <h2>Find a pokemon!</h2>
+            </div>
+            <div class="asd" id="2">
+             <img src="images/pokeball.png" alt="" />
+             <h2>Find a pokemon!</h2>
+            </div>
+            <div class="asd" id="3">
+                <img src="images/pokeball.png" alt="" />
+                <h2>Find a pokemon!</h2>
+            </div>
+            <div class="asd" id="4">
+                <img src="images/pokeball.png" alt="" />
+                <h2>Find a pokemon!</h2>
+            </div>
+            <div class="asd" id="5">
+                <img src="images/pokeball.png" alt="" />
+                <h2>Find a pokemon!</h2>
+            </div>
+            <div class="asd" id="6">
+                <img src="images/pokeball.png" alt="" />
+                <h2>Find a pokemon!</h2>
+            </div>
+            
+            
+            
+          </div>
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
