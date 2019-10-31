@@ -40,14 +40,14 @@ body{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
 }
 
 .explore_btn{
     border: none;
     background: #2a5693;
     color: #99d0e2;
-    margin: 10px 0 0 0;
+    margin: 0 0 0 0;
     padding: 12px 0;
 }
 
@@ -65,7 +65,7 @@ body{
     padding: 12px 0;
 }
 
-.explored_txt, .captured_pokemon{
+.explored_txt, .captured_pokemon, .success_captured{
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
@@ -95,3 +95,12 @@ body{
     cursor: pointer;
 }
 
+.success_captured{
+    color: green;
+}
+
+select{
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 0 15px 0;
+}

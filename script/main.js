@@ -7,7 +7,6 @@ const explore_btn = document.querySelector("#explore");
 const explored_pokemon = document.querySelector(".explored_pokemon");
 const captured_pokemon = document.querySelector(".captured_pokemon");
 
-
 const pokeImg = document.createElement("img");
 const statText = document.createElement("p");
 const captureBtn = document.createElement("button");
@@ -16,23 +15,19 @@ statText.setAttribute("class", "stat");
 captureBtn.setAttribute("class", "captureBtn")
 captureBtn.textContent = "CAPTURE";
 
-    // function fetch(){
-    //     fetch(`https://pokeapi.co/api/v2/` + )
-    //     .then(res => res.json())
-    // }
-
-    fetch("https://pokeapi.co/api/v2/region/")
-    .then(res => res.json())
-    .then(data => {
+    function get(path) {
+        return fetch(`https://pokeapi.co/api/v2/` + path)
+        .then(res => res.json())
+    };
+    
+    get(`region/`).then(data => {
         regions = data.results
         regionSelect.innerHTML = regions.map((x, i) => `<option value="${regions[i].name}">${regions[i].name}</option>`)
         regionSelect.dispatchEvent(new Event('change'));
     });
 
     regionSelect.addEventListener("change", function(){
-        fetch(`https://pokeapi.co/api/v2/region/${regionSelect.value}`)
-        .then(res => res.json())
-        .then(data => {
+        get(`region/${regionSelect.value}`).then(data => {
             locations = data.locations
             locationSelect.innerHTML = locations.map((x, i) => `<option value="${locations[i].name}">${locations[i].name}</option>`)
             locationSelect.dispatchEvent(new Event('change'));
@@ -40,9 +35,7 @@ captureBtn.textContent = "CAPTURE";
     });
 
     locationSelect.addEventListener("change", function(){
-        fetch(`https://pokeapi.co/api/v2/location/${locationSelect.value}`)
-        .then(res => res.json())
-        .then(data => {
+        get(`location/${locationSelect.value}`).then(data => {
             areas = data.areas
             areaSelect.innerHTML = areas.map((x, i) => `<option value="${areas[i].name}">${areas[i].name}</option>`)
             areaSelect.dispatchEvent(new Event('change'));
@@ -60,16 +53,14 @@ captureBtn.textContent = "CAPTURE";
         } 
     });
 
+
+    // -------------------------- EXPLORE EVENT -------------------------- //
     explore_btn.addEventListener("click", function(){
-        fetch(`https://pokeapi.co/api/v2/location-area/${areaSelect.value}`)
-        .then(res => res.json())
-        .then(data => {
+        get(`location-area/${areaSelect.value}`).then(data => {
             encounter = data.pokemon_encounters
             explored_pokemon.innerHTML = `<p class="explored_txt">${encounter[Math.floor(Math.random()*(0+encounter.length))].pokemon.name}</p>`
 
-            fetch(`https://pokeapi.co/api/v2/pokemon/${explored_pokemon.textContent}`)    
-            .then(res => res.json())
-            .then(data => {
+            get(`pokemon/${explored_pokemon.textContent}`).then(data => {
                 stats = data.stats
                 pokeImg.setAttribute("src", `${data.sprites.front_default}`)
                 statText.innerHTML = 
@@ -87,6 +78,7 @@ captureBtn.textContent = "CAPTURE";
         })
     });
 
+    // -------------------------- CAPTURE EVENT -------------------------- //
     captureBtn.addEventListener("click", function(){
         if(captured <= 6){
             var capturedPoke = document.createElement("div");
@@ -101,8 +93,7 @@ captureBtn.textContent = "CAPTURE";
             captured_pokemon.append(capturedPoke)
             document.querySelector(".captured_header").innerHTML = `Captured ${captured}/6`
 
-            explored_pokemon.innerHTML = `You've Successfully Captured ${document.querySelector(".explored_txt").textContent}`;
+            explored_pokemon.innerHTML = `<p class="success_captured">You've Successfully Captured ${document.querySelector(".explored_txt").textContent}</p>`;
             captured ++
         }
     });
-
