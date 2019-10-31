@@ -1,0 +1,333 @@
+  html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../images/Pokemon.jpg');
+}
+
+h3{
+  font-family: 'Tillana', cursive;
+  font-weight: bold;
+}
+
+.fill-container {
+  width: 100%;
+  height: 100%;
+}
+
+.selection-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px;
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  font-family: 'Happy Monkey', cursive;
+
+}
+
+.selection-header img.logo {
+  position: relative;
+  width: 270px;
+  top: -140px;
+  left: -50px;
+}
+
+.selection-header label {
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+.poke-button {
+  color: #235df3;
+  font-weight: bold;
+  width: 9  0px;
+  height: 30px;
+  background-color: #6FC4E9;
+  border: 2px solid #235df3;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.explore{
+  font-family: 'Faster One', cursive;
+  height: 40px;
+  width: 100px;
+}
+
+.poke-button:focus {
+  outline: none;
+}
+
+.poke-button:hover {
+  cursor: pointer;
+}
+
+.poke-button:disabled {
+  background-color: gray;
+  border-color: gray;
+  color: lightgray;
+  cursor: not-allowed;
+}
+
+.logo-container {
+  max-height: 35px;
+  max-width: 100px;
+  margin-right: 8px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 51px);
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.message-container {
+  background: linear-gradient(to right bottom, #5ce0a2, #05d9f5);
+  opacity: 0.8;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
+  font-size: 25px;
+  font-family: 'Faster One', cursive;
+}
+
+.r-drop-down, .l-drop-down, .a-drop-down{
+  background-color: #6FC4E9;
+  height: 40px;
+  width: 100px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  outline: none;
+  border: 2px solid #235df3;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.l-drop-down, .a-drop-down{
+  width: 180px;
+}
+
+.content{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.title{
+  text-align: center;
+  background: linear-gradient(to right, #b610b8, #f50558);
+  padding: 10px;
+  font-weight: bold;
+}
+
+.encounterTitle, .capturedTitle{
+  font-size: 20px;
+  font-family: 'Happy Monkey', cursive;
+  color: white;
+}
+
+.encounterBox, .capturedBox{
+  width: 49%;
+  border: 1px solid white;
+  background-color: white;
+  opacity: 0.9;
+  height: auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+  height: 75vh;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.info div{
+  width: auto;
+}
+.pad{
+  background-color: white;
+  margin: 10px 10px 10px 10px;
+}
+.padd{
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.one{
+  border-radius: 20px;
+  background: linear-gradient(to right bottom, #5ce0a2, #05d9f5); 
+  border: 2px solid blue;
+}
+.two{
+  height: 500px;
+  border-radius: 20px;
+  margin: 0px 10px 10px 10px;
+}
+.found{
+  width: 100%;  
+  height: 150px; 
+  display: flex;
+  justify-content: center;
+}
+
+#img{
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  border: none;
+}
+
+.pokemon{
+  width: 200px;
+  height: 200px;
+  margin-top: -40px;
+}
+
+/* @media (min-width: 1000px){
+  #img{
+   position: absolute;
+   left: 18%;
+   top: 50%;
+   border: none;
+}
+}
+
+@media (max-width: 1366px) and (min-height: 768px){
+ #img{
+  position: absolute;
+  left: 15%;
+  top: 55%;
+  border: none;
+}
+} */
+
+#myImage{
+  width: 100%;
+  height: 350px;
+}
+
+.det{
+  border: 2px solid blue;
+  color: black;
+  padding: 0px 10px 20px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+#otherDetail{
+  color: black;
+  border-radius: 20px;
+}
+#otherDetail, #detail{
+  background: linear-gradient(to right bottom, #5ce0a2, #05d9f5);
+  border: 2px solid blue;
+}
+label{
+  font-size: 18px;
+  font-weight: 900;
+  margin-left: 20px;
+}
+
+.captured{
+  width: 170px;
+  height: 170px;
+  margin-left: 10px; 
+}
+.pokemons{
+  padding: 30px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  height: auto;
+  background-color:  rgba(255, 255, 255, 0.95); 
+}
+
+.captureBtn{
+  background-color: #6FC4E9;
+  color: blue;
+  border: 2px solid blue;
+  border-radius: 20px;
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
+  font-family: 'Faster One', cursive;
+  font-size: 15px;
+  outline: none;
+  margin-bottom: 10px;
+}
+p{
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+#name{
+  border: none;
+}
+
+#div_pokemon{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid blue;
+  margin: 5px;
+  border-radius: 20px;
+  background: linear-gradient(to right bottom, #5ce0a2, #05d9f5);
+}
+
+.disabled{
+  display: none;
+}
+
+.ecounterTitle{
+  font-family: 'Shadows Into Light', cursive;
+}
+
+center{
+  margin-top: -40px;
+}
+
+.detailTitle{
+  font-family: 'Righteous', cursive;
+  font-style: italic;
+}
+.statVal{
+  font-size: 22px
+}
+.abilityCon, .statVal{
+  font-family: 'Patrick Hand', cursive;
+}
+
+.pokemonName{
+  text-transform: uppercase;
+  font-family: 'Chango', cursive;
+}
+.pokNameCap{
+  color: blue;
+  font-family: 'Happy Monkey', cursive;
+}
+.captureMes, .captureMes1{
+  font-family: 'Shadows Into Light', cursive;
+}
+.captureMes1{
+  text-transform: uppercase;
+}
+.pokeBall{
+ margin: 0px 160px 0px 160px;
+}
