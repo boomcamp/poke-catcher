@@ -17,18 +17,14 @@ label {
 }
 select {
   padding: 5px 100px;
-  border-radius: 3px;
+  border-radius: 20px;
+  font-size: inherit;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: rgba(0, 163, 255, 0.4);
 }
 .img-logo {
   width: 210px;
   height: 75px;
-}
-.explore {
-  width: 70px;
-  height: 60px;
-  background-color: oldlace;
-  border-radius: 100%;
-  padding: 5px;
 }
 .data-cont {
   margin-top: 40px;
@@ -37,10 +33,56 @@ select {
   width: 100%;
   height: 80vh;
 }
+
+.data-cont p {
+  font-family: inherit;
+  font-size: 30px;
+  text-align: center;
+}
+.pokemon-cont,
+.bag-cont {
+  width: 47%;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 30px;
+  align-items: center;
+}
+/* buttons */
+.captureBtn {
+  width: auto;
+  height: 90px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.explore {
+  width: 70px;
+  height: 60px;
+  border-radius: 100%;
+  padding: 5px;
+}
+/* pokemon data */
+.title {
+  background-color: rgba(235, 6, 6, 0.5);
+  width: 100%;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  height: 70px;
+}
+.poke-img {
+  width: auto;
+  height: 350px;
+  margin: -21.875% 0;
+}
 .status {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  border: 3px solid black;
+  width: 90%;
+  border-radius: inherit;
 }
 .status p {
   margin: 5px auto;
@@ -50,6 +92,13 @@ select {
   flex-direction: column;
   align-items: center;
 }
+.encounter-con h1 {
+  margin: 5px auto;
+}
+.encounter-con p {
+  padding-top: 300px;
+}
+/* bag container */
 .poke-cont {
   margin: 0 auto;
   background-color: rgba(235, 6, 6, 0.5);
@@ -58,66 +107,28 @@ select {
   border-top-left-radius: 30px;
   height: 70px;
 }
-.pokemon-cont {
-  width: 47%;
-  height: 83vh;
-  background-color: rgba(255, 255, 255, 0.5);
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  border-radius: 30px;
-}
-.title {
-  background-color: rgba(235, 6, 6, 0.5);
+.pokemon {
+  height: 75vh;
   width: 100%;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  height: 70px;
-}
-.bag-cont {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 47%;
-  height: 83vh;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-radius: 30px;
-}
-.data-cont p {
-  font-family: inherit;
-  font-size: 30px;
-  text-align: center;
-}
-.captureBtn {
-  width: auto;
-  height: 90px;
-  margin-top: 110px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-left: 150px;
 }
 .pokemon-image {
   width: auto;
   height: 400px;
   margin: -21.875% 0;
 }
-.encounter-con p {
-  margin: 0 auto;
-}
-.encounter-con h1 {
-  margin: 5px auto;
-  margin-bottom: 130px;
-}
-.poke-img {
-  width: auto;
-  height: 350px;
-  margin: -21.875% 0;
-}
-
-.pokemon {
-  height: 75vh;
-  width: 100%;
+.poke-div {
   display: flex;
-  flex-wrap: wrap;
-  padding-top: 40px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20pt;
+}
+.poke-div span {
+  margin-top: 10px;
 }
 
 @-webkit-keyframes hvr-pulse-grow {
@@ -135,8 +146,8 @@ select {
 .explore:hover {
   -webkit-animation-name: hvr-pulse-grow;
   animation-name: hvr-pulse-grow;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -147,8 +158,8 @@ select {
 .captureBtn:hover {
   -webkit-animation-name: hvr-pulse-grow;
   animation-name: hvr-pulse-grow;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
