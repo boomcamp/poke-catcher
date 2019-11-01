@@ -71,7 +71,7 @@ function clearbag() {
   for (a = 0; a < 6; a++) {
     bag2.innerHTML += `
               <div class="bag-content">
-                <img src="../img/pokeball.png" />
+                <img src="img/pokeball.png" />
                 <span>Empty Slot</span>
               </div>`;
   }
