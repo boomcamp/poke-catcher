@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Listo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+      <div class="topnav">
+          <img class="logo" src="img/Pokemon-Logo-PNG-Free-Pic.png">
+          <div class ="region"> Region 
+              <select class="region-output" id="region-output" style="width: 250px; height: 40px;">
+               <option hidden>Select Region</option>
+               </select>
+          </div>
+          <div class ="location"> Location 
+              <select class="loc-output" id="loc-output" style="width: 250px; height: 40px;">
+              <option hidden>Select Location</option>
+              </select> 
+         </div> 
+            <div class ="area">Area
+                <select class = "area-output" id="area-output" style="width: 250px; height: 40px;">
+                  <option hidden>Select Area</option>
+                  </select>
+            </div>
+                <input type="button" class="button" id="getpoke" value="Explore" style="width: 90px;">
+  </div>
+            <div class="message-container"></div>
+    <div class="main">
+       <div class="left-container">
+             <div class="encounter">Encounter</div>
+                 <div class="flex-container">
+                     <div class="found">
+                        
+                       <div class="found-poke"> 
+                       </div>  
+                       <button id="tn-captured" class="button-captured">Capture</button>       
+                     </div> 
+                     <div class="details">
+                   
+                       <div class = poke-detail></div>
+                     </div>
+                  </div>
+      </div>
+
+ <div class="right-container">
+           <div class="captured">Captured</div>
+               <div class="flex-container">
+                  <div class="list-captured">
+              
+                  </div>
+              </div>
+          </div>
+  </div>
+      </div>
+   
+    <script src="main.js"></script>
+    <script src="eventhandler.js"></script>
+  </body>
+</html>
