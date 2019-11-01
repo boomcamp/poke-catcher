@@ -170,7 +170,7 @@ body {
 /* captured */
 .captured-pokemon {
   width: 100%;
-  height: 275px;
+  height: 250px;
   background: white;
   border: 1px solid black;
   margin: 5px auto;
@@ -185,4 +185,14 @@ body {
 .poke-captured section {
   border: 2px solid black;
   margin: 5px;
+}
+
+.captured-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.captured-poke {
+  flex: 1;
 }

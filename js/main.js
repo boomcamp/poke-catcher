@@ -2,7 +2,7 @@ $(document).ready(function() {
   const pokeapiURL = "https://pokeapi.co/api/v2/";
 
   const regId = $("#region");
-  const locId = $("#location");
+  const locationId = $("#location");
   const areaId = $("#area");
   const exploreBtn = $("#explore-btn");
   var capturedCounter = 0;
@@ -25,22 +25,22 @@ $(document).ready(function() {
         // sort
         regId.on("change", function() {
           locationURL = this.value;
-          $(locId).html("");
+          $(locationId).html("");
           $(areaId).html("");
           return fetch(locationURL)
             .then(res => res.json())
             .then(function(locRes) {
               locValue = locRes.locations;
-              $(locId).append("<option>- select location -</option>");
+              $(locationId).append("<option>- select location -</option>");
               for (let x in locValue) {
-                $(locId).append(
+                $(locationId).append(
                   `<option value="${locValue[x].url}">${locValue[x].name}</option>`
                 );
               }
             });
         });
 
-        locId.on("change", function() {
+        locationId.on("change", function() {
           areaURL = this.value;
           areaId.html("");
           return fetch(areaURL)
@@ -104,12 +104,18 @@ $(document).ready(function() {
                     $("#founded-text").text(pokeName);
                     pokePics = details.sprites.front_default;
                     $("#poke-image").attr("src", pokePics);
-                    $("#speed").text(details.stats[0].base_stat);
-                    $("#sp-defense").text(details.stats[1].base_stat);
-                    $("#sp-attack").text(details.stats[2].base_stat);
-                    $("#defense").text(details.stats[3].base_stat);
-                    $("#attack").text(details.stats[4].base_stat);
-                    $("#hp").text(details.stats[5].base_stat);
+                    $("#speed").text("Speed: " + details.stats[0].base_stat);
+                    $("#sp-defense").text(
+                      "SP-Defense: " + details.stats[1].base_stat
+                    );
+                    $("#sp-attack").text(
+                      "SP-Attack: " + details.stats[2].base_stat
+                    );
+                    $("#defense").text(
+                      "Defense: " + details.stats[3].base_stat
+                    );
+                    $("#attack").text("Attack: " + details.stats[4].base_stat);
+                    $("#hp").text("HP: " + details.stats[5].base_stat);
                   });
               }
             });
@@ -118,28 +124,28 @@ $(document).ready(function() {
         // captured pokemon
         $("#catch-btn").on("click", function() {
           if (capturedCounter <= 6) {
-            $(".found-cont").addClass("hide");
-            $(".found-cont-captured").removeClass("hide");
-            $(".capture-text").text(`you've captured ${pokeName}!`);
-            $(".capture-text").append(
-              `<br><span class='capture-subtext'>click <span class="text-red">explore</span> to find more<span>`
-            );
-
             $(".captured-box").append(`
         <div class="captured-poke">
         <img src="${pokePics}" alt="" width="200px" height="200px" class="img-captured">
         <span class="founded-text" id="founded-text">${pokeName}</span>
         </div>
         `);
-
             capturedCounter++;
-            $(".cap-countered").text(`${capturedCounter}/6`);
+            $("#title").text(`CAPTURE POKEMON (${capturedCounter}/6)`);
+            $(".image").val("");
+            $(".name").val("");
+            $(".stats").val("");
           }
-
-          // exploreBtn.attr('disabled', true)
         });
       });
   };
 
   fetchLocation("region");
 });
+
+// $(".found-cont").addClass("hide");
+// $(".found-cont-captured").removeClass("hide");
+// $(".capture-text").text(`you've captured ${pokeName}!`);
+// $(".capture-text").append(
+//   `<br><span class='capture-subtext'>click <span class="text-red">explore</span> to find more<span>`
+// );
