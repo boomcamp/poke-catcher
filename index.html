@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>POKEMON CATCHER</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body style="background-image: url(img/bg.jpg);background-size:100% 130vh;background-repeat: no-repeat;">
+     <div class="headTab">
+        <img style ="-webkit-transform: scaleX(-1);
+        transform: scaleX(-1);"src="img/gastly.gif" class="logo"> 
+        <img src="img/pokelogo.png" class="logo"> 
+        <img src="img/gastly.gif" class="logo"> 
+        
+     </div>
+     <hr>
+     <div class="mainContainer">
+     <div class="placeSelectors" align="center">
+      <label for="regions">
+        Region:
+        <select name="regions" id="regions" size="1">
+            <option value="" selected disabled hidden>Choose here</option>
+        </select>
+      </label>
+      <label for="locations">
+        Location:
+        <select name="locations" id="locations" size="1">
+            <!-- <option value="" selected disabled hidden>Choose here</option> -->
+        </select>
+      </label>
+      
+      <label for="areas">
+        Area:
+        <select name="areas" id="areas" size="1">
+            
+        </select>
+      </label>
+      <button id="explore">explore</button>
+    </div>
+    <hr>
+     <div class="container1" >
+        <div class="stats" align="center" class="stats" align="center" style="background-image: url(img/ghost.gif);background-size:100% 50vh;background-repeat: no-repeat;">
+            
+       </div>
+       <div class="pokeImage" align="center" class="stats" align="center" style="background-image: url(img/pokeback.png);background-size:100% 50vh;background-repeat: no-repeat;" >
+      
+       <img src="" alt="">
+       </div>
+       <div id="capturer"><img src="img/pokeball.gif" height="100vh"></div>
+      
+     </div><br>
+     <div id="cap">
+       <div id = "pukeCatch" >
+
+       </div>
+    </div>
+  </div>
+     <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+body{
+  font-family: 'Yeon Sung', cursive;
+  padding: 0%;
+  margin: 0%;
+  overflow-y:hidden ;
+  overflow-x:hidden ;
+}
+.headTab{
+  border: 1px solid black;
+  height: 10vh;
+  background-color:#0009;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.logo{
+  margin-left: 30px;
+  height: 9vh;
+  width: 16%;
+  
+}
+.mainContainer{
+  background-color: #0009;
+  height: 100vh;
+}
+.placeSelectors{
+  margin-top: 0px;
+  height: 10vh;
+  color: rgb(92, 92, 95); 
+  width: 80%;
+  background-color: #0005;
+  line-height: 90px;
+  margin-left: 10%;
+  border-radius: 10px;
+}
+#explore{
+  background-color: rgb(84, 87, 84);
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-family: 'Yeon Sung', cursive;
+}
+.regions{
+  margin-right: 10%;
+}
+.content{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.container1{
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  /* //background-color: chocolate; */
+  width: 80%;
+  margin-left: 15%;
+}
+.stats{
+  border-radius:6px;
+  height: 30vh;
+  width: 30%;
+  border: 1px solid black;
+  background-color: #0005;
+ 
+}
+#locations{
+  width: 25%;
+  padding: 10px 15px;
+  border-radius: 4px;
+   border: 2px solid black;
+  background-color: rgb(128, 193, 201)2, 180, 177);
+  font-family: 'Yeon Sung', cursive;
+  font-size:1vw;
+}
+#regions{
+  width: 25%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 2px solid black;
+  background-color: rgb(177, 173, 165)2, 180, 177);
+   font-family: 'Yeon Sung', cursive;
+   font-size:1vw;
+}
+#areas{
+  width: 25%;
+  padding: 10px 15px;
+  border-radius: 4px;
+   border: 2px solid black;
+  background-color: rgb(177, 173, 165)2, 180, 177);
+   font-family: 'Yeon Sung', cursive;
+   font-size:1vw;
+}
+.reg{
+  margin-left:100px;
+ 
+}
+.captured{
+  
+  display: flex;
+  justify-content: center;
+  border-radius:6px;
+  height: 20vh;
+  width: 90%;
+  border: 1px solid black;
+  background-color: #0005;
+  margin-top: 10px;
+  margin-left: 80px;
+  margin-right: 20px;
+}
+.pokeImage{
+  border-radius:6px;
+  height: 50vh;
+  width: 30%;
+  border: 1px solid black;
+  background-color: #0005;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 2px 3px 5px #ccc;
+}
+.name{
+  /* margin-left: 10%; */
+  color: rgb(33, 34, 34);
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-size:1.5vw
+}
+.statsHead{
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+label{
+  display: inline;
+  color: #fff;
+ 
+}
+.stats{
+  width: 20%;
+  margin-right: 6%;
+  height: 50vh;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 2px 3px 5px #ccc;
+}
+.statusName{
+  color: white;
+}
+.stat{
+   text-align: justify;
+   margin-left: 10%;
+   margin-top: 6%;
+   font-size: 1.3vw;
+}
+span{
+  color: rgb(233, 71, 71);
+}
+.real{
+  margin-top: 100px;
+}
+#cap{
+  height: 20vh;
+  border: 1px solid black;
+  width: 50%;
+  background-color: #0005;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  border-radius:25px;
+  visibility: hidden;
+}
+#capturer{
+  margin-right: 10%;
+}
+.pukemo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #111;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 2px 3px 5px #ccc;
+}
+#pukeCatch{
+ 
+  width: 100%;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
