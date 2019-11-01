@@ -19,18 +19,14 @@
       <!-- sorting -->
       <section>
         <div class="sort flex align-items-center justify-content-center">
-          <span class="sort-header"
-            >EXPLORE <br />
+          <span class="sort-header">EXPLORE <br />
             THE <br />
-            AREA</span
-          >
+            AREA</span>
           <div class="sort-location flex flex-direction-column">
             <label for="region">Region:</label>
             <select name="region" id="region"></select>
-
             <label for="location">Location:</label>
             <select name="location" id="location"></select>
-
             <label for="area">Area:</label>
             <select name="area" id="area"></select>
           </div>
@@ -39,31 +35,32 @@
       <!-- pokemon data -->
       <section>
         <div class="poke-data flex justify-content-center align-items-center">
-          <!-- <div class="poke-image">
-            <span class="pokemon">POKEMON</span>
-          </div> -->
-          <aside id="info-block">
+          <aside class='poke-image'>
             <section class="file-marker">
-              <div>
-                <div class="box-title">
+              <div style="height: 320px;">
+                <div class="box-title flex justify-content-center align-content-center align-items-center flex-direction-column">
                   POKEMON
                 </div>
+                <div class="image flex flex-direction-column justify-content-center align-content-center align-items-center">
+                  <h5>Test</h5>
+                </div>
+                <div class="name flex flex-direction-column justify-content-center align-content-center align-items-center">
+                  <h5>Test</h5>
+                </div>
               </div>
-              <button>CAPTURE</button>
+              <div class="capture-btn flex justify-content-center align-items-center">
+              <button id="capture">CAPTURE</button>
+            </div>
             </section>
           </aside>
-          <!-- <div class="poke-stats">
-            <span
-              >POKEMON <br />
-              STATS <br
-            /></span>
-          </div> -->
-          <aside id="info-block-stats">
+          <aside class="poke-stats">
             <section class="file-marker">
-              <div>
-                <div class="box-title-stats">
+              <div style="height: 332px;">
+                <div class="box-title margin-stats">
                   STATS
-                  
+                </div>
+                <div class="stats flex flex-direction-column justify-content-center align-content-center align-items-center">
+                  <h5>Test</h5>
                 </div>
               </div>
             </section>
@@ -71,20 +68,12 @@
       </section>
       <!-- captured pokemon -->
       <section>
-        <!-- <div class="captured-pokemon flex justify-content-center align-items-center">
-          <div class="poke-image">
-            <span
-              >CAPTURED <br />
-              POKEMONS <br
-            /></span>
-          </div>
-        </div> -->
         <div class="captured-pokemon flex justify-content-center align-items-center">
-        <aside id="info-block">
+        <aside class="poke-captured">
           <section class="file-marker">
-            <div>
-              <div class="box-title">
-                CAPTURED POKEMON
+            <div style="height: 310px; width: 480px;">
+              <div class="box-title margin-captured">
+                CAPTURED POKEMON (0/6)
               </div>
             </div>
           </section>

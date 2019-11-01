@@ -1,4 +1,4 @@
-import get from "../js/pokeApi";
+import get from "../js/pokeApi.js";
 
 let captured = 1;
 
