@@ -1,4 +1,4 @@
-import get from "./pokeApi.js";
+import get from "../js/pokeApi";
 
 let captured = 1;
 
@@ -8,13 +8,13 @@ const areaSelect = document.querySelector("#area");
 const explore_btn = document.querySelector("#explore");
 // const explored_pokemon = document.querySelector(".explored_pokemon");
 // const captured_pokemon = document.querySelector(".captured_pokemon");
-const pokeImg = document.createElement("img");
-const statText = document.createElement("p");
-const captureBtn = document.createElement("button");
-pokeImg.setAttribute("class", "pokeImg");
-statText.setAttribute("class", "stat");
-captureBtn.setAttribute("class", "captureBtn");
-captureBtn.textContent = "CAPTURE";
+// const pokeImg = document.createElement("img");
+// const statText = document.createElement("p");
+// const captureBtn = document.createElement("button");
+// pokeImg.setAttribute("class", "pokeImg");
+// statText.setAttribute("class", "stat");
+// captureBtn.setAttribute("class", "captureBtn");
+// captureBtn.textContent = "CAPTURE";
 
 get(`region/`).then(data => {
   var regions = data.results;
@@ -55,7 +55,7 @@ areaSelect.addEventListener("change", function() {
   }
 });
 
-// -------------------------- EXPLORE EVENT -------------------------- //
+// explore button on click
 explore_btn.addEventListener("click", function() {
   get(`location-area/${areaSelect.value}`).then(data => {
     var encounter = data.pokemon_encounters;
@@ -78,7 +78,7 @@ explore_btn.addEventListener("click", function() {
   });
 });
 
-// -------------------------- CAPTURE EVENT -------------------------- //
+// capture event
 captureBtn.addEventListener("click", function() {
   if (captured <= 6) {
     var poke_name = document.querySelector(".explored_txt").textContent;

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
-    <main class="main-wrapper">
+    <main class="main-wrapper flex flex-direction-column">
       <section>
-        <header class="main-page-header">
+        <header class="main-page-header flex justify-content-center align-content-center">
           <div class="logo-container">
             <a href="#"><img class="logo" src="img/logo.png" alt="logo"/></a>
           </div>
@@ -18,13 +18,13 @@
       </section>
       <!-- sorting -->
       <section>
-        <div class="sort">
+        <div class="sort flex align-items-center justify-content-center">
           <span class="sort-header"
             >EXPLORE <br />
             THE <br />
             AREA</span
           >
-          <div class="sort-location">
+          <div class="sort-location flex flex-direction-column">
             <label for="region">Region:</label>
             <select name="region" id="region"></select>
 
@@ -38,7 +38,7 @@
       </section>
       <!-- pokemon data -->
       <section>
-        <div class="poke-data">
+        <div class="poke-data flex justify-content-center align-items-center">
           <!-- <div class="poke-image">
             <span class="pokemon">POKEMON</span>
           </div> -->
@@ -49,26 +49,47 @@
                   POKEMON
                 </div>
               </div>
+              <button>CAPTURE</button>
             </section>
           </aside>
-          <div class="poke-stats">
+          <!-- <div class="poke-stats">
             <span
               >POKEMON <br />
               STATS <br
             /></span>
-          </div>
-        </asid="info-block">
+          </div> -->
+          <aside id="info-block-stats">
+            <section class="file-marker">
+              <div>
+                <div class="box-title-stats">
+                  STATS
+                  
+                </div>
+              </div>
+            </section>
+          </aside>
       </section>
       <!-- captured pokemon -->
       <section>
-        <div class="captured-pokemon">
+        <!-- <div class="captured-pokemon flex justify-content-center align-items-center">
           <div class="poke-image">
             <span
               >CAPTURED <br />
               POKEMONS <br
             /></span>
           </div>
-        </div>
+        </div> -->
+        <div class="captured-pokemon flex justify-content-center align-items-center">
+        <aside id="info-block">
+          <section class="file-marker">
+            <div>
+              <div class="box-title">
+                CAPTURED POKEMON
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
       </section>
     </main>
     <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
