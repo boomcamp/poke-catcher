@@ -85,20 +85,27 @@ document.getElementById('exp').addEventListener('click', function(){
     counter = 1;
 $(document).ready(function(){ 
 
+
+
     $('.encounter-capt').hide()
 
 
     $('.explore').on('click', function(){
+        $('.encounter-capt').show() 
+        $('.encounter').show()
+        $('#istats').show() 
         
-        
-        $('.encounter-capt').show()  
-        
+    })
+
+    $('#area').on('click', function(){
+        $('#exp').attr('disabled', false)
     })
 
     console.log(area)
     $('.capt').on('click', function(){
         $('.second').show()  
         $('.second').css('height', 'auto')
+        $('.encounter-capt').hide() 
     })
     
     
