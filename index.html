@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Poke-Catcher Menor </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="styles/styles.css"
+      type="text/css"
+      title="no title"
+      charset="utf-8"
+    />
+    <!-- <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> -->
+  </head>
+  <body>
+<div class="main">
+    <div class="header">
+          <div class="logo">
+            <img class="img1" src="logo.png" ></img>
+            <img class="gif" src="gif2.gif" ></img>
+          </div>
+
+    
+    <div class="selectors">
+      <div class="reg-div">
+      <label for="regions" class="region">
+        Region:
+        <select name="regions" class="regions" id="region-list" size="1"></select>
+      </label>
+    </div>
+    <div class="loc-div">
+      <label for="locations">
+        Location:
+        <select name="locations" class="locations" id="location-list" size="1"></select>
+      </label>
+    </div>
+    <div class="area-div">
+      <label for="areas">
+        Area:
+        <select name="areas" class="areas" id="area-list" size="1"  ></select>
+      </label>
+    </div>
+    </div>
+    <!-- <button id="explore" class="poke-button">Find</button> -->
+    <img class="poke-button" id="explore" src="search1.png" title="Explore"></img>
+         
+  </div> 
+    <div class="catch-culomn">
+        <div class="first-column" >
+          <div id="pokemon-1">
+            <div class="pokecatch" >
+                <div class="pokemon-container">
+                    <img class="img-pokemon"  src="" >
+                    <h3 class="titled"></h3>
+                    <div id="btn"></div>
+                </div>
+                
+            </div>
+           
+          </div>
+  
+        </div>
+        <div class="details">
+          <div class="pokemondetails-container">
+            <div id="details-list" class="det ails-list" >
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="list">  
+      <div class="list-catch" >
+          <h3>My Pokemons <span class="capture-list1"><span id="count" class="count">0</span>/6</span> </h3>
+      <div class="cap">
+      <div class="captured-container">
+        <div id="capture-pokemonshow" class="capture-pokemonshow">
+                 <div id="capture-list" class="captured" ></div>  
+
+
+      </div>
+      </div>
+      </div>  
+    </div>
+    </div>
+    
+
+  </div>
+<script src="./app/scripts/app.js"></script>
+<!-- <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script> -->
+</body>
+
+</html> 
