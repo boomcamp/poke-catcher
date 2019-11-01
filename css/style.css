@@ -1,0 +1,289 @@
+body{
+  margin:0;
+  padding:0px;
+  overflow-x:hidden;
+  height:100%;
+  background-image:url("../img/bodybg.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.header{
+  width:100%;
+  display:flex;
+  background: #2e7d32;
+  height:100px;
+  padding:10px;
+  
+}
+.right{
+  width:900px;
+  background: none;
+  float:right;
+  border-radius: 0px;
+}
+.left{
+  margin-right:20px;
+  width:900px;
+  background: none;
+  float:left;
+}
+.left img{
+  float: right;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+.logo img{
+  align-items: center;
+  height: 100px;
+}
+.main{
+
+  height:850px;
+  padding-top:10px;
+  padding-left:200px;
+  padding-right:200px;
+}
+.selectors-content{
+  align-items: center;
+  justify-content: center;
+  height:100px;
+  background: #2e7d32 ;
+  display:flex; 
+  font-family: 'Courier New', Courier, monospace;
+  color:white;
+  text-transform:uppercase;
+  border: solid 2px white;  
+}
+.selectors-content select{
+  width:200px;
+  height:40px;
+  margin-right:20px;
+  background:#4caf50;
+  color:white;
+  font-size:16px;
+  border-radius: 5px;
+  border: solid 2px white;  
+}
+.selectors-content button{
+  width:100px;
+  height:40px;
+  margin-left:20px;
+  background:#4caf50;
+  border: solid 2px white;  
+  color:white;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+.pokemon{
+  margin-top:10px;
+  margin-bottom:10px;
+  display:flex;
+  flex-direction: row;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+.pokemon .ball{
+  margin-top:250px;
+  margin-left:330px;
+}
+.encounter{
+  background-image:url("../img/bg.jpeg");
+  border: solid 2px white;  
+  width:50%;
+  padding:10px;
+  line-height: 75px;
+  font-size: 20px;
+  height:350px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size:cover;
+  color:white;
+}
+.encounter img{
+  height:200px;
+  width:250px;
+  margin-left:230px;
+}
+.encounter em{
+  margin-top:-60px;
+  display: flex;
+  justify-content: center;
+  text-transform:uppercase;
+  font-style: normal;
+  font-weight:bold;
+}
+.encounter .ball{
+ margin-top: -10px;
+}
+.encounterDetails{
+  background-image:url("../img/bg.jpeg");
+  border: solid 2px white;    
+  width:50%;
+  padding:10px;
+  line-height: 75px;
+  font-size: 20px;
+  height:350px;
+  background-repeat: no-repeat;
+  background-size:cover;
+  color:white;
+  padding-left:50px;
+}
+.encounterDetails h3{
+ color:white;
+ display:flex;  
+ margin-top:-10px;
+}
+.captured{
+  margin-top:10px;
+  margin-bottom:10px;
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  height:320px;
+  background: #2e7d32;
+  border: solid 2px white;  
+}
+.details{
+  color:white;
+  line-height:40px;
+}
+
+.ball {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin: 30px auto;
+  border-radius: 50%;
+  background-image: -webkit-radial-gradient(60% 50%, circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), -webkit-linear-gradient(-90deg, #D00 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+  background-image: -moz-radial-gradient(60% 50%, circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), -moz-linear-gradient(-90deg, #D00 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+  -o-radial-gradient(60% 50%, circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%),
+  background-image: -o-linear-gradient(-90deg, #D00 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+  background-image: radial-gradient(60% 50%, circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), linear-gradient(-90deg, #D00 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+}
+
+.button {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  background-color: #FFF;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #666, 0 0 0 10px #fff, 0 0 0 16px #3f3f3f;
+  margin: 45%;
+}
+
+.ball:hover {
+  cursor: pointer;
+  -webkit-animation: shake .1s;
+  animation-iteration-count: 2;
+  cursor: pointer;
+  -moz-animation: shake .1s;
+  animation-iteration-count: 2;
+  cursor: pointer;
+  -o-animation: shake .1s;
+  animation-iteration-count: 2;
+  cursor: pointer;
+  animation: shake .1s;
+  animation-iteration-count: 2;
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+  }
+}
+
+@-moz-keyframes shake {
+  0%,
+  100% {
+    -moz-transform: rotate(-5deg);
+  }
+  50% {
+    -moz-transform: rotate(5deg);
+  }
+}
+
+@-o-keyframes shake {
+  0%,
+  100% {
+    -o-transform: rotate(-5deg);
+  }
+  50% {
+    -o-transform: rotate(5deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+.captured > .pokeCaptured {
+  background-image:url("../img/cardd.jpg");
+  width: 16.66%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  background-size:cover;
+  animation: fadein 2s;
+  -moz-animation: fadein 3s; 
+  -webkit-animation: fadein 3s;
+  -o-animation: fadein 3s;  
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { 
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { 
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { 
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.pokeCaptured img{
+  margin-top:30px;
+  width:70%;
+}
+.pokeCaptured em{
+  margin-top:-25px;
+  color:#ffffce ;
+  display: flex;
+  justify-content: center;
+  text-transform:uppercase;
+  font-style: normal;
+  font-weight:bold;
+}

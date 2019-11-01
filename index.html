@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Poke-Catcher</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  
+<body>
+    <header class="header">
+        <div class="right">
+          <img src="img/crownwhite.png" height="100%"> 
+        </div>
+        <div class="logo">
+          <img src="img/logo.png">
+        </div>
+        <div class="left">
+            <img src="img/crownwhite.png" height="100%">
+        </div>
+    </header>
+    <main class="main">
+        <div class="selectors-content">
+            <label for="regions">
+                Region:
+                <select name="regions" id="regions" size="1">
+                  <option>select-region</option>
+                </select>
+              </label>
+              <label for="locations">
+                  Location:
+                  <select name="locations" id="locations" size="1"></select>
+              </label>
+              <label for="areas">
+                    Area:
+                    <select name="areas" id="areas" size="1"></select>
+              </label>
+              <button id="explore" class="explore" ><span>Explore</span></button>
+        </div>
+        <div class="pokemon">
+            <div class="encounter">
+                
+            </div>
+            <div class="ball" title="Click to captured!"><div class="button"></div></div>
+            <div class="encounterDetails">
+            </div>
+        </div>
+        <div class="captured"> 
+            
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
