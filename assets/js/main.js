@@ -4,14 +4,24 @@ const locations = document.querySelector("#locations");
 const areas = document.querySelector("#areas");
 const exploreBtn = document.querySelector("#explore");
 const captureBtn = document.querySelector("#capture");
+const pokemonName = document.querySelector("#pokemon-name");
+const overlay = document.querySelector("#overlay");
+const idCount = document.querySelector("#id-count");
+const imgH = document.querySelector(".img-h");
 
-var captured = [],
+var captured = new Array(),
 	count = 0,
 	explore = false,
-	stat = false;
+	stat = false,
+	stat_c = false;
 
-document.querySelector("#id-count").innerHTML = count;
-document.querySelector("#overlay").style = "display:none";
+//onload
+
+ballCount();
+idCount.innerHTML = count;
+overlay.style = "display:none";
+document.querySelector("#exploring").style = "display :none";
+
 //events
 
 regions.addEventListener("change", function() {
@@ -23,19 +33,37 @@ locations.addEventListener("change", function() {
 });
 
 exploreBtn.addEventListener("click", function() {
-	document.querySelector("#pokemon-name").style = "display:block";
-	document.querySelector(".img-h").style = "display:flex";
-	document.querySelector("#overlay").style = "display:none";
-	document.querySelector(".img-h").style = "display:flex";
+	if (areas.value) {
+		document.querySelector("#exploring").style = "display:block";
 
-	explore = false;
-	explorePokemon();
+		imgH.style = "display:none";
+		pokemonName.style = "display:none";
+		overlay.style = "display:none";
+		captureBtn.style = "visibility:hidden";
+		setTimeout(function() {
+			document.querySelector("#exploring").style = "display :none";
+			imgH.style = "display:flex";
+			pokemonName.style = "display:block";
+			captureBtn.style = "visibility:visible";
+			explorePokemon();
+		}, 2000);
+
+		// pokemonName.style = "display:block";
+		// document.querySelector(".img-h").style = "display:flex";
+		// overlay.style = "display:none";
+		// document.querySelector(".img-h").style = "display:flex";
+
+		explore = false;
+		stat_c = true;
+	}
 });
 
 captureBtn.addEventListener("click", function() {
-	if (explore != true)
-		if (count < 6) stackPokemon();
-		else alert("Only 6 pokemons can be carried!");
+	if (stat_c) {
+		if (explore != true)
+			if (count < 6) stackPokemon();
+			else alert("Out of pokeballs!");
+	} else alert("Click explore to find Pokemon!");
 });
 
 //fetch
@@ -49,8 +77,7 @@ fetch(`${baseUrl}region`)
 	})
 	.catch(error => console.error());
 
-//functions
-
+//location
 function getLocations() {
 	fetch(regions.value)
 		.then(response => response.json())
@@ -61,6 +88,8 @@ function getLocations() {
 		});
 }
 
+//areas
+
 function getAreas() {
 	fetch(locations.value)
 		.then(response => response.json())
@@ -70,6 +99,11 @@ function getAreas() {
 		});
 }
 
+function displaySelect(arr, target) {
+	target.innerHTML = arr.map(e => `<option value="${e.url}">${e.name[0].toUpperCase() + e.name.slice(1)}</option>`);
+}
+
+//explore pokemon
 function explorePokemon() {
 	fetch(areas.value)
 		.then(response => response.json())
@@ -78,9 +112,7 @@ function explorePokemon() {
 		});
 }
 
-function displaySelect(arr, target) {
-	target.innerHTML = arr.map(e => `<option value="${e.url}">${e.name[0].toUpperCase() + e.name.slice(1)}</option>`);
-}
+//functions
 
 function getPokemon(arr) {
 	var pId = Math.floor(Math.random() * arr.length);
@@ -88,11 +120,9 @@ function getPokemon(arr) {
 	fetch(arr[pId].pokemon.url)
 		.then(response => response.json())
 		.then(function(pokemon) {
-			document.querySelector(
-				".img-h"
-			).innerHTML = `<img id="p-img" src="${pokemon.sprites.front_default}" name="${pokemon.name}" class="pokemon"/>`;
+			imgH.innerHTML = `<img id="p-img" src="${pokemon.sprites.front_default}" name="${pokemon.name}" class="pokemon"/>`;
 
-			document.querySelector("#pokemon-name").innerHTML = pokemon.name.toUpperCase();
+			pokemonName.innerHTML = pokemon.name.toUpperCase();
 			return new Promise(function(resolve, reject) {
 				resolve(pokemon);
 			});
@@ -104,18 +134,70 @@ function getPokemon(arr) {
 }
 
 function stackPokemon() {
-	var name = document.getElementById("pokemon-name").innerText;
+	var name = pokemonName.innerText;
 	var pic = document.getElementById("p-img").src;
 
 	captured.push({ name: `${name}`, url: `${pic}` });
-	document.querySelector("#poke-list").innerHTML = captured.reverse().map(x => `<img src="${x.url}" alt="" /><p>${x.name}</p>`);
-	count++;
 
-	document.querySelector("#id-count").innerHTML = count;
-	document.querySelector("#pokemon-name").style = "display:none";
+	showStackPokemon();
+
+	count++;
+	ballCount(captured.length);
+
+	//pokemon count
+	idCount.innerHTML = count;
+
+	//hide poke
+	pokemonName.style = "display:none";
 	document.querySelector(".img-h").style = "display:none";
-	document.querySelector("#overlay").style = "display:block";
-	document.querySelector("#cpoke").innerHTML = document.querySelector("#pokemon-name").innerText;
+
+	//show message
+	overlay.style = "display:block";
+	document.querySelector("#cpoke").innerHTML = pokemonName.innerText;
 
 	explore = true;
+}
+
+//pokeball display
+
+function ballCount(c = 0) {
+	var ballC = "";
+	var bCount = 6 - c;
+
+	if (c >= 0) for (i = 6; i > c; i--) ballC += `<img src="./assets/images/pokecount.png" alt="" width="30"/>`;
+	document.querySelector("#ball").innerHTML = ballC;
+
+	if (bCount == 0) document.querySelector("#ball").innerHTML = "Out of pokeballs";
+}
+
+//display poke stack
+
+function showStackPokemon(arr) {
+	var str = "";
+	captured
+		.reverse()
+		.map(
+			(x, i) =>
+				(str += `<div><span class="remove" id="${i}" onclick="remove(this)">Remove</span><img src="${x.url}" alt="" /><p>${x.name}</p></div>`)
+		);
+
+	document.querySelector("#poke-list").innerHTML = str;
+}
+
+//removing pokemon
+function remove(e) {
+	count--;
+
+	if (captured.length == 1) captured.pop();
+	else captured.splice(e.getAttribute("id"), 1);
+	ballCount(captured.length);
+	var str = "";
+	captured.map(
+		(x, i) =>
+			(str += `<div><span class="remove" id="${i}" onclick="remove(this)">Remove</span><img src="${x.url}" alt="" /><p>${x.name}</p></div>`)
+	);
+
+	document.querySelector("#poke-list").innerHTML = str;
+
+	idCount.innerHTML = count;
 }

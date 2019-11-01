@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Pokemon Catcher</title>
+		<link rel="icon" href="/assets/images/pokeball.png" />
 		<link rel="stylesheet" href="./assets/css/style.css" />
 		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
 	</head>
@@ -33,6 +34,12 @@
 					</div>
 				</div>
 				<div class="col-6">
+					<span id="ball"
+						><img src="./assets/images/pokecount.png" alt="" width="30"/><img
+							src="./assets/images/pokecount.png"
+							alt=""
+							width="30"/><img src="./assets/images/pokecount.png" alt="" width="30"
+					/></span>
 					<div class="poke-box" id="poke-image">
 						<div class="message-captured" id="overlay">
 							<p id="explore-msg">
@@ -41,6 +48,7 @@
 							</p>
 						</div>
 
+						<div id="exploring"></div>
 						<p id="pokemon-name"></p>
 						<div class="img-h"></div>
 					</div>
@@ -68,7 +76,7 @@
 					</div>
 				</div>
 				<div class="col-2" id="pokemon-catch">
-					<p id="count">Pokemon: <span id="id-count"></span>/6</p>
+					<p id="count">Pokemon: <span id="id-count"></span></p>
 					<div id="poke-list"></div>
 				</div>
 			</div>
