@@ -8,29 +8,21 @@ let once = true;
 
 function defaultProps(){
     document.querySelector('.region').style.display = "none";
-    // document.querySelector('.explore-map-container').style.display = 'none';
-
     // new
     toggle('.new-map-select');
     toggle('.back-to-menu');
     toggle('.location-selectables');
     toggle('.background-overlay');
-
     // for field
     toggle('.exploration-number-five');
-
     fhide('.map-on-game');
     toggle('.catching-poke');
- 
     // hide pokemons
     toggle('.mypokemons');
-
     // hide in-game-menu
     toggle('.menu-on-game');
-
     //hide pokeball
     toggle('.catching');
-
     fhide('.iscaptured');
 }
 
@@ -56,10 +48,6 @@ let stopcurrentExploration = false;
 document.querySelectorAll('.map-clickable').forEach(element => {
 
     element.addEventListener('click', function(){
-        // document.querySelector('.menu').style.display = 'none';
-
-        console.log('map-cliclable');
-    
         toggle('.menu', 'flex');
         toggle('.new-map-select', 'flex');
     
@@ -90,10 +78,6 @@ document.querySelector('.back-to-menu').addEventListener('click',function(){
     fhide('.location-selectables');
     fhide('.background-overlay');
     document.querySelector('body').style.background = '#F2EB88';
-    console.log('back to menu');
-
-    
-
 });
 
 
@@ -123,22 +107,15 @@ document.querySelector('.background-overlay').addEventListener('click',function(
     once = true;
 })
 
-// after region -> location selections
-document.querySelector('.region-location-container').addEventListener('click', function(e){
-
-    console.log('region-location-container');    
-    
+document.querySelector('.region-location-container').addEventListener('click', function(e){        
     if(once){
-        console.log('get area');    
+
         document.querySelector('.region-to-location-name').innerHTML = e.target.getAttribute('data-name');
         GetArea(e.target.getAttribute('data-name'));
         once = false;
+
     }else if(e.target.getAttribute('data-area')){
-
-        console.log('get encounters');    
-
         GetEncounters(e.target.getAttribute('data-name'))
-
         toggle('.exploration-number-five');
         fhide('.new-map-select');
         fhide('.menu');
@@ -156,9 +133,6 @@ document.querySelector('.region-location-container').addEventListener('click', f
     } 
 });
 
-let preventthis = false;
-
-//after exploring
 function exploring(){
 
     document.querySelector('.catching-poke').style.display = 'none'
@@ -181,12 +155,10 @@ function proceedCatch(){
 
         document.querySelector('.pokemon-details').style.display = 'flex';
         
-        
         //hide pokeball
         fhide('.catch-em-all');
 
         document.querySelector('.explore-or-catch').style.display = 'flex';
-
     }
 }
 
@@ -277,3 +249,5 @@ document.querySelectorAll('.explore-again').forEach(element=>{
 });
 
 defaultProps();
+
+let preventthis = false;

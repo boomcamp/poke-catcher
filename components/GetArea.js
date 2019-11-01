@@ -13,12 +13,6 @@ function showArea(location){
 
     console.log(location.areas.length);
     
-    // location.areas.map(area=>{
-    //     alllocations +=`<div class="map-area-container" data-rname="${area.name}">
-    //                         <h2 data-rname="${area.name}">${area.name}</h2>
-    //                  </div>`
-    // });
-
     if(location.areas.length < 1)
         alllocations = `<h1 data-name="nodata">No Areas Available</h1>`
     else{
@@ -26,6 +20,6 @@ function showArea(location){
             alllocations +=`<h1 data-name="${area.name}" data-area="yes">${area.name}</h1>`;
         });
     }
-    // document.querySelector('.region').innerHTML = alllocations;    
+ 
     document.querySelector('.region-location-container').innerHTML = alllocations;    
 }

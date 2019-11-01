@@ -15,12 +15,6 @@ function showEncounterable(area){
     pokemons = pokemons.map(poke=>{
         return poke.pokemon.name;
     });
-
-    // if(pokemons){
-    //     document.querySelector('.explore-map-container').style.display = 'block';
-    // }else{
-    //     document.querySelector('.explore-map-container').style.display = 'none';
-    // }
 }
 
 
@@ -29,8 +23,6 @@ export function randomEncounter(){
     pokename = pokemons[Math.floor(Math.random() * pokemons.length)];
 
     getPokemon(pokename);
-
-    // document.querySelector('.pokename').innerHTML = pokename;
 }
 
 
