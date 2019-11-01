@@ -30,30 +30,33 @@
             <div class="pokedata">
                 <div class="trainer">
                     <div class="pokemon-speak"><label for="pokemonname" class="pokemonname"id="pokemonname" style="margin-left:50px;"></label></div>
-                    <div class="trainer-char"></div>
+                    <div class="trainer-char"><img class="tc" src="/images/ash.png" width="300" height="300" alt=""></div>
                     <div class="trainer-todo">
-                        <div style="margin-left: 50px;margin-top: 10px;">
-                            <button>Capture</button>
+                        <div style="margin-left: 50px;margin-top: 60px;">
+                            <button id="capture">Capture</button>
                             <button id="explore">Explore</button>
-                            <button>Pokeballs</button>
                             <hr>
                             <label for="">Captured Pokemon</label>
+                            <div class="pokedex"></div>
                         </div>
                     </div>
                 </div>
                 <div class="pokemon">
                     <div class="pokemon-char" id="pokemon-char"></div>
-                    <div class="trainer-speak"><p>Catch that pokemon or let it flee?</p></div>
+                    <div class="trainer-speak"><p id="t-speak"></p></div>
                     <div class="pokemon-data">
-                        <label style="color: red">Pokemon Stats:</label>
-                        <ul>
-                            <li id="li1"></li>
-                            <li id="li2"></li>
-                            <li id="li3"></li>
-                            <li id="li4"></li>
-                            <li id="li5"></li>
-                            <li id="li6"></li>
-                        </ul>
+                        <div style="margin-top: 100px">
+                            <label style="color: red; margin-top: 30px">Pokemon Stats:</label>
+                            <ul class="stat">
+                                <li id="li1"></li>
+                                <li id="li2"></li>
+                                <li id="li3"></li>
+                                <li id="li4"></li>
+                                <li id="li5"></li>
+                                <li id="li6"></li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

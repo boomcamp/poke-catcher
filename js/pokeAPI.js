@@ -11,11 +11,13 @@ function getData(url){
     return response.json();
     })
 }
+var capturedpokemon = [];
 var Selectarea = document.getElementById('area')
 var Selectregions = document.getElementById('regions')
 var Selectlocations = document.getElementById('locations')
 var explore = document.getElementById('explore')
-
+document.getElementById('pokemonname').innerHTML = "No Pokemon!"
+document.getElementById('t-speak').innerHTML = "Lets Find rare Pkemon"
 getData('https://pokeapi.co/api/v2/region/')
 .then(function(region){
    region.results.forEach(regions => {
@@ -89,13 +91,14 @@ explore.addEventListener('click', function(){
             })
             
             var capImage = document.createElement('img')
-            capImage.setAttribute('class', 'capture-btn')
+            capImage.setAttribute('class', 'bounce')
             capImage.width = 200;
             capImage.height = 200;
-            
-            capImage.setAttribute('src', `${encPoke.sprites.front_default}`)
-            console.log(stats)
-
+            capImage.setAttribute('data-id', `${encPoke.name}`)
+            capImage.setAttribute('data-src', `${encPoke.sprites.front_default}`)
+            capImage.src = `${encPoke.sprites.front_default}`
+            //console.log(stats)
+            //console.log(encPoke.sprites.front_default);
             document.getElementById("pokemon-char").append(capImage);
             var pokemonname = `${encPoke.name}`.toUpperCase()
             document.getElementById('pokemonname').append(pokemonname);
@@ -115,4 +118,35 @@ explore.addEventListener('click', function(){
         })
 
     })
+    tspeak.innerHTML = "Lets explore!"
 })
+var count = 0;
+var capture = document.getElementById('capture')
+var char = document.getElementById('pokemon-char')
+var pokedex = document.getElementsByClassName('pokedex')
+var cappoke = document.getElementsByClassName('bounce')
+var tspeak = document.getElementById('t-speak')
+capture.addEventListener('click',function(e){
+    e.preventDefault();
+    if(count < 6){
+        let div = document.createElement('div');
+        div.className = "pokecap";
+        div.innerHTML = `
+            <img src='${char.firstChild.getAttribute("src")}'/>
+        `;
+        document.querySelector('.pokedex').append(div);
+        count++;
+    }else{
+        alert("Pokemon Bag is Full!")
+    }
+    document.getElementById("pokemon-char").innerHTML = ""
+    document.getElementById('pokemonname').innerHTML = ""
+    tspeak.innerHTML = "Nice Catch"
+    document.getElementById('li1').innerHTML= ""
+    document.getElementById('li2').innerHTML= ""
+    document.getElementById('li3').innerHTML= ""
+    document.getElementById('li4').innerHTML= ""
+    document.getElementById('li5').innerHTML= ""
+    document.getElementById('li6').innerHTML= ""
+    
+});
