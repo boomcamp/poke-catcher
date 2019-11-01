@@ -376,8 +376,10 @@ body{
 .pokemon-details{
     display: flex;
     justify-content: space-evenly;
-    width: 600px;
+    width: 900px;
     /* border: 1px solid black; */
+    margin-left: 25%;
+    margin-bottom: 20%;
 }
 
 .pf-pokemon{
@@ -410,6 +412,8 @@ body{
 }
 
 .catch-em-all{
+    position: absolute;
+    bottom: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -419,20 +423,23 @@ body{
 .catch-em-all h1{
     color: #F2EB88;
     padding: 20px;
+    display: none!important;
 }
 
 .mypokemons{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 400px;
     background: #F2EEAC;
     border: 9px solid #2C7BBF;
     position: absolute;
     margin: 0 auto;
     top: 30%;
-    left: 41%;
+    left: 10%;
+    flex-wrap: wrap;
+}
+
+.pokemons-here{
+    display: flex;
 }
 
 
@@ -449,6 +456,56 @@ body{
     color: #2C7BBF;
 }
 
+
+
+.explore-or-catch{
+    display: flex;
+    justify-content: center;
+    /* align-items: ; */
+    flex-direction: column;
+    padding: 20px;
+    color: #F2EB88;
+    background: #2C7BBF;
+    margin: 10px;
+    height: 100px;
+    width: 200px;
+}
+
+.explore-or-catch h1{
+    width: 160px;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #F2EB88;
+}
+
+.explore-or-catch h1:hover{
+    color: #2C7BBF;
+    background: #F2EB88;
+}
+
+.iscaptured{
+    position: absolute;
+    top: 39%;
+    left: 38%;
+    width: 500px;
+    background:  #F2EB88;
+    /* height: 100px; */
+    border: 9px solid #2C7BBF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.you-captured-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 90%;
+    margin-bottom:50px ;
+}
 
 /* Color Theme Swatches in Hex */
 .Pokémon-fanart-1-hex { color: #2C7BBF; }

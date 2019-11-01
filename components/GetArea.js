@@ -23,7 +23,7 @@ function showArea(location){
         alllocations = `<h1 data-name="nodata">No Areas Available</h1>`
     else{
         location.areas.map(area=>{
-            alllocations +=`<h1 data-name="${area.name}">${area.name}</h1>`;
+            alllocations +=`<h1 data-name="${area.name}" data-area="yes">${area.name}</h1>`;
         });
     }
     // document.querySelector('.region').innerHTML = alllocations;    

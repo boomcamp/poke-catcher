@@ -21,13 +21,17 @@ function defaultProps(){
 
     fhide('.map-on-game');
     toggle('.catching-poke');
-
+ 
     // hide pokemons
     toggle('.mypokemons');
 
     // hide in-game-menu
     toggle('.menu-on-game');
-    console.log('called');
+
+    //hide pokeball
+    toggle('.catching');
+
+    fhide('.iscaptured');
 }
 
 function toggle(className, type){
@@ -46,11 +50,15 @@ function fhide(className){
     return ref.style.display = 'none';
 }
 
+let stopcurrentExploration = false;
+
 
 document.querySelectorAll('.map-clickable').forEach(element => {
 
     element.addEventListener('click', function(){
         // document.querySelector('.menu').style.display = 'none';
+
+        console.log('map-cliclable');
     
         toggle('.menu', 'flex');
         toggle('.new-map-select', 'flex');
@@ -67,20 +75,10 @@ document.querySelectorAll('.map-clickable').forEach(element => {
         fhide('.background-overlay');
         fhide('.map-on-game');
         fhide('.menu-on-game');
-
+        fhide('.catching-poke');
 
         preventthis = false;
-
-        // if(document.querySelector('.region').style.display === 'none'){
-        //     document.querySelector('.region').style.display = "flex";
-        //     document.querySelector('.explore-map-container').style.display = 'none';
-    
-        //     GetRegion();
-        // }else{
-        //     document.querySelector('.region').style.display = "none";
-        //     defaultProps();
-        //     document.querySelector('.explore-map-container').style.display = 'block';
-        // }
+        stopcurrentExploration = true;
     }); 
 });
 
@@ -92,27 +90,30 @@ document.querySelector('.back-to-menu').addEventListener('click',function(){
     fhide('.location-selectables');
     fhide('.background-overlay');
     document.querySelector('body').style.background = '#F2EB88';
+    console.log('back to menu');
+
+    
 
 });
 
 
 document.querySelector('.new-map-select').addEventListener('click',function(e){
-    // toggle('.new-map-select');
-    // toggle('.back-to-menu');
+
     document.querySelector('.region-to-location-name').innerHTML = e.target.getAttribute('data-name');
 
     toggle('.location-selectables','flex');
     toggle('.background-overlay');
-
-    // fhide('.exploration-number-five');
     
     GetAllLocations(e.target.getAttribute('data-name'))
     once = true;    
+
+    console.log('new map select');
+
 });
 
 document.querySelector('.background-overlay').addEventListener('click',function(e){
-    console.log(preventthis);
-    
+
+    console.log('background overlay');
 
     if(!preventthis){
         toggle('.background-overlay');
@@ -124,12 +125,17 @@ document.querySelector('.background-overlay').addEventListener('click',function(
 
 // after region -> location selections
 document.querySelector('.region-location-container').addEventListener('click', function(e){
+
+    console.log('region-location-container');    
     
     if(once){
+        console.log('get area');    
         document.querySelector('.region-to-location-name').innerHTML = e.target.getAttribute('data-name');
         GetArea(e.target.getAttribute('data-name'));
         once = false;
-    }else{
+    }else if(e.target.getAttribute('data-area')){
+
+        console.log('get encounters');    
 
         GetEncounters(e.target.getAttribute('data-name'))
 
@@ -140,68 +146,134 @@ document.querySelector('.region-location-container').addEventListener('click', f
         fhide('.location-selectables');
         toggle('.map-on-game');
         fhide('.background-overlay');
-        
-        toggle('.menu-on-game');
+        toggle('.menu-on-game' , 'flex');
 
-        pokecatch();
+        stopcurrentExploration = false; 
+
+        exploring();
 
         preventthis = true;
-
-        console.log(preventthis);
     } 
 });
 
 let preventthis = false;
 
-function pokecatch(){
-    setTimeout(function(){
+//after exploring
+function exploring(){
+
+    document.querySelector('.catching-poke').style.display = 'none'
+    document.querySelector('.exploration-number-five').style.display = 'flex'
+
+   setTimeout(function(){
         randomEncounter();
+        proceedCatch();
+    },2000);    
+
+}
+
+function proceedCatch(){
+    if(!stopcurrentExploration){
+
+        console.log('proccedding')
+
         toggle('.catching-poke','flex');
         toggle('.exploration-number-five');
-    },2000);
+
+        document.querySelector('.pokemon-details').style.display = 'flex';
+        
+        
+        //hide pokeball
+        fhide('.catch-em-all');
+
+        document.querySelector('.explore-or-catch').style.display = 'flex';
+
+    }
 }
+
+
+document.querySelector('.catch-this-try').addEventListener('click',function(){
+    //show pokeball
+    document.querySelector('.catch-em-all').style.display = 'flex';
+
+    //hide poke options
+    toggle('.explore-or-catch');
+
+    document.querySelector('.pokemon-details').style.width = '800px';
+    document.querySelector('.pokemon-details').style.marginLeft = '18%';
+    document.querySelector('.catch-em-all').style.opacity = '1';
+});
+
+
+document.querySelector('.menu-on-game .menu-ref').addEventListener('click', function(){
+
+    console.log('menu-ref');
+
+    fhide('.exploration-number-five');
+    fhide('.catching-poke');
+    fhide('.location-selectables');
+    fhide('.background-overlay');
+    toggle('.menu', 'flex');
+    fhide('.menu-on-game');
+    document.querySelector('body').style.background = '#F2EB88';
+
+    fhide('.mypokemons');
+    fhide('.iscaptured');
+
+});
 
 document.querySelector('.catch-em-all').addEventListener('click', function(){
 
-    catchPokemon();
-    pokecatch();
+    console.log('catch em all');
+    
+    document.querySelector('.catch-em-all').style.animationName = 'pokeballmove';
+    document.querySelector('.catch-em-all').style.opacity = '0';
 
-    toggle('.catching-poke');
-    toggle('.exploration-number-five');
+
+    setTimeout(function(){
+        toggle('.catching');
+        let forPokePos = document.getElementsByClassName('pf-pokemon');
+        document.getElementsByClassName('catching')[0].style.left = forPokePos[0].offsetLeft + 'px';
+        document.getElementsByClassName('catching')[0].style.top = forPokePos[0].offsetTop + 'px';
+        fhide('.pokemon-details');
+    },1000);
+
+    setTimeout(function(){
+
+        let pokename = document.querySelector('.name-poke').getAttribute('data-name');
+
+        document.querySelector('#captured-pokemon-name').innerHTML = pokename;
+
+        fhide('.catching')
+        toggle('.iscaptured', 'flex')
+        catchPokemon();
+
+        document.querySelector('.catch-em-all').style.animationName = 'none';
+        
+    },3000)
 
 });
-    
+
 document.querySelector('.my-pokemons').addEventListener('click', function(){
 
    toggle('.mypokemons');
+
 });
 
+document.querySelectorAll('.show-pokemons').forEach(element=>{
+    element.addEventListener('click', function(){
 
-// document.querySelector()
-//commment out this. old region select
-// document.querySelector('.region').addEventListener('click',function(e){
-//     if(!document.querySelector('.map-location-container')&&!document.querySelector('.map-area-container')){
-//         GetAllLocations(e.target.getAttribute('data-rname'));
-//     }else if(!document.querySelector('.map-area-container')){
+        toggle('.mypokemons');
+        toggle('.iscaptured', 'flex')
+     
+     });
+});
 
-//         GetArea(e.target.getAttribute('data-rname'));
-//     }else{
+document.querySelectorAll('.explore-again').forEach(element=>{
+    element.addEventListener('click', function(){
 
-//         GetEncounters(e.target.getAttribute('data-rname'));
-
-//         document.querySelector('.region').style.display = "none";
-//         defaultProps();
-        
-//     }
-// });
-
-// document.querySelector('.explore-btn').addEventListener('click', function(){
-//     randomEncounter();
-// });
-
-
-// document.querySelector('.catch-btn').addEventListener('click',function(){
-//     catchPokemon();
-// });
+        exploring();
+        fhide('.iscaptured');
+     });
+});
 
 defaultProps();

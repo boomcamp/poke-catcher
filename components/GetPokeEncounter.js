@@ -45,9 +45,7 @@ function showPokemon(pokemon){
     
     let pokestat = '';
 
-    // console.log(pokemon);
-
-    pokestat += `<h1 class="name-poke" data='${pokename}'>${pokename.toString().toUpperCase()}</h1>`
+    pokestat += `<h1 class="name-poke" data-name='${pokename}'>${pokename.toString().toUpperCase()}</h1>`
 
     pokemon.stats.map(pstat =>{
         pokestat += `<h3 class="hp">${pstat.stat.name.toString().toUpperCase()} : ${pstat.base_stat.toString().toUpperCase()}</h3>`
@@ -58,14 +56,15 @@ function showPokemon(pokemon){
     document.querySelector('.pf-pokemon').setAttribute('src', pokeSprite);
     document.querySelector('.pokemon-name-stat').innerHTML = pokestat;
 
-    // console.log(pokemon.sprites.front_default);
 }
 
 export function catchPokemon(){
+
     let newcatched = {
         name: pokename,
         sprite : pokeSprite
     }
+
     if(catched.length < 6)
         catched.push(newcatched);
 
@@ -79,9 +78,8 @@ export function catchPokemon(){
     </div>`
     });
 
-    document.querySelector('.mypokemons').innerHTML = catchedisplay;
+    document.querySelector('.pokemons-here').innerHTML = catchedisplay;
 
-    
 }
 
 var pokemons = '';

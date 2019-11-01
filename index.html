@@ -7,10 +7,11 @@
     <title>PokeNoir</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./animation.css">
 </head>
 <body>
 
-    <section class="back-to-menu">
+    <section class="back-to-menu menu-ref">
         <h1>&lt; MENU</h1>        
     </section>
 
@@ -109,21 +110,48 @@
                 <img class="pf-pokemon">
                 <div class="pokemon-name-stat">
                 </div>
+
+                <div class="explore-or-catch">
+                    <h1 class="explore-again">Explore Again</h1>
+                    <h1 class="catch-this-try">Try to Catch</h1>
+                </div>
         </div>
 
         <div class="catch-em-all">
             <img src="./Graphics/pokeball.png" width="200px">
             <h1>TRY TO CATCH 'EM</h1>
         </div>
-        
     </section>
 
     <section class="mypokemons">
+            <div class="explore-or-catch">
+                    <!-- <h1 class="explore-again">Explore Again</h1> -->
+                    <h1 class="show-pokemons">Back</h1>
+            </div>
+            <section class="pokemons-here"></section>
     </section>
 
     <section class="menu-on-game">
-        <h1>&lt;Menu</h1>
+        <h1 class="menu-ref">&lt;Menu</h1>
         <h1 class="my-pokemons">MY POKEMONS</h1>
+    </section>
+
+
+    <div class="catching">
+
+    </div>
+
+    <section class="iscaptured">
+            <div class="you-captured-container">
+                <div class="captured-caption">
+                        <h1>You've captured <span id='captured-pokemon-name'>Pika</span></h1> 
+                </div>
+                
+            </div>
+            <div class="explore-or-catch">
+                    <h1 class="explore-again">Explore Again</h1>
+                    <h1 class="show-pokemons">My Pokemons</h1>
+            </div>
     </section>
 
     <script type="module" src="./components/main.js"></script>
