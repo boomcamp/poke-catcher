@@ -17,21 +17,21 @@
         <div class="first">
             <div class="drop-down">
                 <div class="labels">
-                    <label for="regions"> Regions<br><br>
-                        <select name="regions" id="regions">
-                                <option value="">wasddsads</option> 
+                    <label for="regions"><span class="text-d"> Regions</span><br><br>
+                        <select name="regions" class="reg-drpdown" id="regions">
+                                <option value="" disabled selected>Please Select a Region</option>
                         </select>
                     </label>
 
-                    <label for="location"> Location<br><br>
-                        <select name="location" id="location">
-                                <!-- <option value="">wasddsads</option>  -->
+                    <label for="location"><span class="text-d"> Location</span><br><br>
+                        <select name="location" class="reg-drpdown" id="location">
+                                <option value="" disabled selected>  Select Location</option>
                         </select>
                     </label>
 
-                    <label for="area"> Area<br><br>
-                        <select name="area" id="area">
-                                <!-- <option value="">wasddsads</option>  -->
+                    <label for="area"> <span class="text-d">Area</span><br><br>
+                        <select name="area" class="reg-drpdown" id="area">
+                                <option value="" disabled selected>  Select Area</option>
                         </select>
                     </label>
                 </div>
@@ -79,12 +79,23 @@
         </div>
 
         <div class="second">
-          <h1>Captured 0/6</h1>
-        </div>
+          <h4 id="counterCapt">Captured 0/6</h4>
+
+          <div class="captured-out" id="captured">
+            
+            <!-- <div class="captured-img"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png" alt=""></div>
+            <div class="captured-name"><h4>wasd</h4></div> -->
+          </div>
+
+         </div>
 
     </div>
 
+    
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
     <script src="index.js"></script>
+    
+
     
 </body>
 </html>

@@ -1,9 +1,8 @@
-
 function region(){
     fetch('https://pokeapi.co/api/v2/region')
     .then((res) => res.json())
     .then((data) => {
-        let output = '';
+        let output = ' <option value="" disabled selected>  Select Region</option>';
         data.results.forEach(function(reg){
             output += `
             <option value="${reg.url}">${reg.name}</option>
@@ -15,13 +14,11 @@ function region(){
 
 region()
 
-
-
 document.getElementById('regions').addEventListener('change', function(){
     fetch(`${document.getElementById('regions').value}`)
     .then((res) => res.json())
     .then((data) => {
-        let output = '<option value="" disabled>Please Select a Region</option>';
+        let output = '<option value="" disabled selected>  Select Location</option>';
         data.locations.forEach(function(loc){
             output += `
            
@@ -36,7 +33,7 @@ document.getElementById('location').addEventListener('change', function(){
     fetch(`${document.getElementById('location').value}`)
     .then((res) => res.json())
     .then((data) => {
-        let output = '';
+        let output = '<option value="" disabled selected>  Select Area</option>';
         data.areas.forEach(function(are){
             output += `
             <option value="${are.url}">${are.name}</option>
@@ -47,9 +44,7 @@ document.getElementById('location').addEventListener('change', function(){
 }) 
 
 document.getElementById('exp').addEventListener('click', function(){
-    var found = document.querySelector('.found');
-    found.style.display = "";
-
+    
     fetch(`${document.getElementById('area').value}`)
     .then((res) => res.json())
     .then((data) => {
@@ -60,7 +55,7 @@ document.getElementById('exp').addEventListener('click', function(){
         var pokemonUrl = encounters[randomNumber].pokemon.url;
         let output = '';
 
-            output = `<h1 id=${pokemonUrl}>${pokemonName}</h1>`;
+            output = `<h1 id="pokeName">${pokemonName}</h1>`;
       
         document.getElementById('poke').innerHTML = output;
         // console.log(pokemonUrl)
@@ -74,7 +69,7 @@ document.getElementById('exp').addEventListener('click', function(){
             var res = ''
             // console.log(abi.stats);
             // console.log(abi.sprites.front_default)
-            document.getElementById('pic').innerHTML = `<img class="img-ephasis" src="${pokePic}" wdith="200px" height="200px" alt="">`;
+            document.getElementById('pic').innerHTML = `<img class="img-ephasis" id="pokeImage" src="${pokePic}" wdith="200px" height="200px" alt="">`;
             
             stats.forEach(function(stat){
                 res +=`<li style="list-style-type:none;" id="">${stat.stat.name}: ${stat.base_stat}</li>`
@@ -87,11 +82,58 @@ document.getElementById('exp').addEventListener('click', function(){
 
 })
 
+    counter = 1;
+$(document).ready(function(){ 
 
-document.getElementById('capture').addEventListener('click', function(){
+    $('.encounter-capt').hide()
 
 
-});
+    $('.explore').on('click', function(){
+        
+        
+        $('.encounter-capt').show()  
+        
+    })
+
+    console.log(area)
+    $('.capt').on('click', function(){
+        $('.second').show()  
+        $('.second').css('height', 'auto')
+    })
+    
+    
+
+    $('#capture').on('click', function(){
+        var capturedImage = $('#pokeImage').attr('src');
+        var capturedName = $('#pokeName').text();
+
+        $('#captured').append(`
+        <div class="captured">
+            <div class="captured-img"><img src="${capturedImage}" alt=""></div>
+            <div class="captured-name"><h6>${capturedName}</h6></div> 
+        </div>
+        `)
+
+        $('#counterCapt').html(`
+        <h4 id="counterCapt">Captured ${counter}/6</h4>
+        `);
+        console.log(this);
+        counter++
+        if(counter > 6){
+            
+            // alert('You dont have enough pokeballs');
+            $(this).prop('disabled', true)
+            $(this).text('Not Enough Poke Balls')
+        }
+        
+
+    }) 
+
+
+})
+
+
+   
 
 
 

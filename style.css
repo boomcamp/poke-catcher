@@ -1,11 +1,18 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+    transition: all .2s ease-in-out;
+}
+
 body{
     text-align: center;
     background-image: url(bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 20px;
-    font-family: 'Press Start 2P', cursive;
+    
 }
+
+
 .img-ephasis{
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) infinite both;
   transform: translate3d(0, 0, 0);
@@ -64,11 +71,9 @@ header img{
 .first{
     display: flex;
     flex-direction: column;
+    width: 68%; 
 }
 
-.second{
-
-}
 
 /* first sec */
 
@@ -84,17 +89,46 @@ header img{
     justify-content: center;
     align-items: center; */
     font-size: 15px;
+   
+}
+
+.reg-drpdown{
+    border-radius: 25px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid yellow;
 }
 
 .labels{
     margin: 10px 0;
     display: flex;
     justify-content: center;
+    
 }
-label{
-    margin-left: 20px;
+.text-d, .btn, .found, #pokeName, #istats, #counterCapt, .captured-name{
+    font-size: 25px;
+    -webkit-text-stroke: 1px blue;
+    color: yellow;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
+label{
+    margin-left: 20px;
+    
+}
+
+select{
+    font-size: 10px;
+    background: transparent;
+}
+option{
+    background: rgba(231, 72, 85, 0.1); 
+}
 
 
 /* display part  */
@@ -104,9 +138,7 @@ label{
     border-radius: 15px;
     margin-top: 10px;
     box-shadow: 5px 5px 5px;
-    height: auto; 
-    width: 695px;
-    
+    height: 550px; 
 }
 
 .encounter-capt h1{
@@ -129,9 +161,9 @@ label{
 }
 
 .btn{
-    padding: 0 20px;
+    padding: 10px 20px;
     font-size: 25px;
-    border: 1px solid black;
+    border: 2px solid yellow;
     margin: 10px;
     border-radius: 25px;
     background-color: transparent;
@@ -145,12 +177,34 @@ label{
     background-color: white;
 }
 
+.btn:disabled{
+
+        border: 1px solid grey;
+        font: grey;
+        margin: 10px;
+        border-radius: 25px;
+        background-color: grey;
+   
+}
+
 /* second */
 .second{
-    height: 55vh;
-    width: 600px; 
+   
+    width: 30%; 
+    height: 10vh;
     background: rgba(231, 72, 85, 0.8); 
     border-radius: 15px;
     margin-top: 10px;
     box-shadow: 5px 10px 5px;
+}
+
+.captured{
+    display: flex;
+    justify-content: space-around;
+}
+
+.capture-out{
+    display: flex;
+    flex-direction: column;
+
 }
