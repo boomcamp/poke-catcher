@@ -218,10 +218,11 @@ if(matched.length != 6){
 
     //Message after capture
     var div = document.querySelector('#messageCapture');
-    div.innerHTML = `<p style = "color: blue; font-size: 30px;" class="captureMes">AWESOME! You captured <span class="captureMes1" style="color: red">${pokemon}</span>! Explore to find more pokemon!</p>`;
+    div.innerHTML = `<p style = "color: blue; font-size: 30px;" class="captureMes">AWESOME! You captured <span class="captureMes1" style="color: red">${pokemon}</span> ! Explore to find more pokemon!</p>`;
     var pokeBall =  `<img class="pokeBall" src="../images/pokeball.gif">`;    
     div.insertAdjacentHTML("beforeend", pokeBall);
-
+    div.style.backgroundImage = "url('../images/confetti.gif')";
+    
     //Clearing Encounter
     var divfound = document.querySelector('#youFound');
     divfound.innerHTML = ``;

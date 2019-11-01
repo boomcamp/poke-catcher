@@ -148,6 +148,9 @@ main {
   border-bottom-right-radius: 20px;
   overflow: hidden;
 }
+/* .encounterBox{
+  background-image: url('../images/confetti.gif')
+} */
 .info{
   display: flex;
   flex-direction: column;
@@ -324,10 +327,14 @@ center{
 }
 .captureMes, .captureMes1{
   font-family: 'Shadows Into Light', cursive;
+  padding-top: 10px;
+  margin-top: 0;
 }
 .captureMes1{
-  text-transform: uppercase;
+  text-transform: uppercase;      
 }
 .pokeBall{
  margin: 0px 160px 0px 160px;
+ padding-top: 185px;
+ padding-bottom: 380px;
 }
