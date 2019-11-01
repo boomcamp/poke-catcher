@@ -68,13 +68,13 @@ function createLocationslist(list){
 }
 Locations();
 
-//function addeventhandlers for selecting a regions
+
 document.getElementById('region-list')
 .addEventListener("change", function(){
     var selectedreg=document.getElementById('region-list').value;
     RegionLocations(selectedreg, 1);
 });
-//called functions for list of all location called by region
+
 function RegionLocations(id, num){
     var ID = id;
     fetch(`https://pokeapi.co/api/v2/region/${ID}`)
@@ -90,7 +90,7 @@ function RegionLocations(id, num){
         });
     });
 }
-//function for calling to create list of locations within regions
+
 function createRegionLocations(ID){
     
     fetch(`https://pokeapi.co/api/v2/region/${ID}`)
@@ -116,14 +116,14 @@ function createRegionLocations(ID){
     });
 }
 
-//function addeventhandlers for selecting a locations
+
 document.getElementById('location-list')
 .addEventListener("change", function(){
     var locselct=document.getElementById('location-list').value;
     RegionLocationAreas(locselct, 1);
     
 });
-//called functions for list of all location areas called by location
+
 function RegionLocationAreas(id, num){
     fetch(`https://pokeapi.co/api/v2/location/${id}`)
     .then(function(Response){
@@ -137,7 +137,7 @@ function RegionLocationAreas(id, num){
         });
     });
 }
-//function for calling to create list of location areas within location
+
 function createRegionLocationAreas(id){
     fetch(`https://pokeapi.co/api/v2/location/${id}`)
     .then(function(Response){
