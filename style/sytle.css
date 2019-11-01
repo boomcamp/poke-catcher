@@ -1,7 +1,7 @@
 body{
-    font-family: arial;
     margin: 0;
     background: #99d0e2;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .header{
@@ -49,6 +49,7 @@ body{
     color: #99d0e2;
     margin: 0 0 0 0;
     padding: 12px 0;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .explore_btn:hover{
@@ -97,6 +98,7 @@ body{
 }
 
 .captureBtn{
+    font-family: 'Press Start 2P', cursive;
     clear: both;
     border: none;
     background: #2a5693;
@@ -108,6 +110,8 @@ body{
 }
 
 .success_captured{
+    font-size: 12px;
+    font-family: 'Press Start 2P';
     color: green;
 }
 
@@ -115,4 +119,22 @@ select{
     border-radius: 5px;
     padding: 5px;
     margin: 0 0 15px 0;
+    font-family: 'Share Tech Mono', monospace;
 }
+
+.captureText {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+.poke_name, .explored_txt{
+    font-size: 12px;
+    font-family: 'Press Start 2P', cursive;
+  }
