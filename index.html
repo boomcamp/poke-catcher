@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Pokemon</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="css/main.css"
+      type="text/css"
+      media="screen"
+      title="no title"
+      charset="utf-8"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="main-container">
+        <div class="logo-container">
+          <img
+            class="logo"
+            src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png"
+          />
+          <img
+            class="logo"
+            src="http://www.pokestadium.com/sprites/xy/dragonite.gif"
+          />
+        </div>
+        <div class="explore">
+          <div>
+            <span>Region</span>
+            <select class="region">
+              <option value="">Select One</option>
+            </select>
+          </div>
+          <div>
+            <span>Location</span>
+            <select class="location">
+              <option value="">Select One</option>
+            </select>
+          </div>
+          <div>
+            <span>Area</span>
+            <select class="area">
+              <option value="">Select One</option>
+            </select>
+          </div>
+          <button class="exploreBtn btn">Explore 🔍</button>
+        </div>
+        <div class="details">
+          <div class="pokemon">
+            <div class="div1"></div>
+            <div class="div2 none"></div>
+            <div class="div3">
+              <div class="div4"></div>
+            </div>
+          </div>
+          <div class="right-div">
+            <div class="bag">
+              <center><span id="counter">Bag (0/6)</span></center>
+            </div>
+            <div class="full-content">
+              <div class="bag-content">
+                <img src="../img/pokeball.png" />
+                <span>Empty Slot</span>
+              </div>
+              <div class="bag-content">
+                <img src="../img/pokeball.png" />
+                <span>Empty Slot</span>
+              </div>
+              <div class="bag-content">
+                <img src="../img/pokeball.png" />
+                <span>Empty Slot</span>
+              </div>
+              <div class="bag-content">
+                <img src="../img/pokeball.png" />
+                <span>Empty Slot</span>
+              </div>
+              <div class="bag-content">
+                <img src="../img/pokeball.png" />
+                <span>Empty Slot</span>
+              </div>
+              <div class="bag-content">
+                <img src="../img/pokeball.png" />
+                <span>Empty Slot</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/pokeapi.js"></script>
+    <script src="js/button.js"></script>
+    <script src="js/pokemon.js"></script>
+  </body>
+</html>
