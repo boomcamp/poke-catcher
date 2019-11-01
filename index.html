@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/index.css">
+    <title>Poke-Catcher</title>
+</head>
+<body>
+    <div class="main-border">
+        <div class="header">
+            <img src="img/banner.jpg" alt="PokemonLogo" id="headerLogo"/>
+        </div>
+        <div class="nav-container">
+            <div class="region">
+                    <label>REGION:</label>
+                    <select id="region" class="option">
+                    </select>
+
+            </div>
+            <div class="location">
+                    <label>LOCATION:</label>
+
+                    <select id="location" class="option">
+                    </select>
+
+            </div>
+            <div class="area">
+                    <label>AREA:</label>
+                    <select id="Area" class="option">
+                    </select>
+
+            </div>
+
+            <span id="exp"><b>Click here to <font color="green">EXPLORE==></b></font></span>
+            <button id="explore" class="poke-button"><img src="img/button.png" width="100px"></button>
+
+        </div>
+
+<div class="message-container">
+        <span id="message"></span>
+      </div>
+
+      <div class="body-container">
+
+        <div class="encounter-container">
+                <div class="textcontent-h3">
+                    <div class="textcontainer">
+                            <h3><font color="white">ENCOUNTER</font></h3>
+                    </div>
+                </div>
+                <div id="encounter-pokemonshow" class="detailed">
+                    <fieldset id="pokemon-1">
+                        <div class="found">
+                            <img class=""  src="" id="imgPoke"/>
+                            <h3 class="pokeName"></h3>
+                            <div id="btn" class="btnClass">
+
+                            </div>
+                            <ul id="list" class="list"></ul>
+                        </div>
+
+                    </fieldset>
+                </div>
+        </div>
+
+           <div class="capture-container">
+                <div class="textcontent-h3">
+                    <div class="textcontainer">
+                        <h3><font color="white">CAPTURED
+                            <span class="catch">
+                            <span id="count" class="count">0</span>/6</span></font>
+                        </h3>
+                    </div>
+                </div>
+            <div class="capture-pokemonshow">
+                    <img class="imgCapture" src="" >
+                <ul id="catch" class="list"></ul>
+            </div>
+        </div>
+</div>
+</div>
+    <script src="script/app.js"></script>
+</body>
+</html> 
