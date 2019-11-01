@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Poke Catcher</title>
+  </head>
+  <body>
+    <header>
+      <img src="../images/pokemon_logo.png" width="250" /><img
+        src="../images/giratina.gif"
+        height="100"
+      />
+    </header>
+    <div class="explore">
+      <label>
+        Region:
+        <select class="region"> </select>
+      </label>
+      <label>
+        Location:
+        <select class="location"> </select>
+      </label>
+      <label>
+        Area:
+        <select class="area"> </select>
+      </label>
+      <button class="explore-btn">
+        <img src="../images/step.png" width="35" height="30" /> Explore
+      </button>
+    </div>
+    <div class="main-container">
+      <div class="sub-cont1">
+        <div class="message"></div>
+        <div class="encounter">
+          <div class="appeared"></div>
+          <div class="capture-btn">
+            <img src="../images/mb.png" width="80" />
+          </div>
+        </div>
+        <div class="detail">
+          <div class="head-text2"></div>
+          <div class="poke-stat"></div>
+        </div>
+      </div>
+      <div class="sub-cont2">
+        <div class="capture">
+          <h3 class="poke-count">Captured: 0/6</h3>
+          <div class="head-text"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/explore.js"></script>
+    <script src="js/pokemon.js"></script>
+  </body>
+</html>
