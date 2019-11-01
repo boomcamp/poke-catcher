@@ -124,7 +124,7 @@ function regionsFunc() {
 function encounterClick(e) {
    if (e.target.matches(".poke-button img")) {
       CatchList(game.currentEncounter);
-      encounterDetails.innerHTML = `<p class="captured-text">Captured <span class="poke-name">${game.currentEncounter.name}</span>, explore to find more pokemon<p><img src="../assets/images/ash1.png" class="ash-1">`;
+      encounterDetails.innerHTML = `<div class="ashCapture"><p class="captured-text">Captured <span class="poke-name">${game.currentEncounter.name}</span>, explore to find more pokemon<p><img src="../assets/images/ash1.png" class="ash-1"></div>`;
    }
 }
 
@@ -201,32 +201,36 @@ function renderEncounter(pokemon) {
       <div class="found">
         <h3>${pokemon.name}</h3>
         <img src="${pokemon.sprites.front_default}" class="bg-image"/>
-        <button class="poke-button margin"><img src="../assets/images/poke-ball.gif" style="width: 60px;"></button>
+        <button class="poke-button margin"><img src="../assets/images/openball.png" style="width: 60px;"></button>
       </div>   
     </fieldset>
     <fieldset class="bg2">
       <legend>Stats</legend>
-      <ul>${pokemon.stats.map(s => `<li class="li-style">${s.stat.name}: ${s.base_stat}</li>`).join("")}</li>
+      <ul>${pokemon.stats.map(s => `<li class="li-style">${s.stat.name}:  ${s.base_stat}</li>`).join("")}</li>
     </fieldset>
     `;
 }
 
 function CatchList(pokemon) {
-   if (game.captured.length === 6) return disabled;
+   if (game.captured.length === 6) {
+      document.getElementById("message").innerText = "Oops! You already caught 6 Pokemons!";
+      document.querySelector(".ashCapture").style.display = "none";
+   } else {
+      game.captured.push(pokemon);
 
-   game.captured.push(pokemon);
+      document.getElementById("capturedTotal").innerText = `Captured ${game.captured.length} / 6`;
 
-   document.getElementById("capturedTotal").innerText = `Captured ${game.captured.length} / 6`;
+      const caught = document.getElementById("captureDetails");
+      const newPokemon = document.createElement("li");
+      const name = document.createElement("p");
+      name.innerText = pokemon.name;
 
-   const caught = document.getElementById("captureDetails");
-   const newPokemon = document.createElement("li");
-   const name = document.createElement("p");
-   name.innerText = pokemon.name;
-   const pokemonImg = document.createElement("img");
-   pokemonImg.src = pokemon.sprites.front_default;
+      const pokemonImg = document.createElement("img");
+      pokemonImg.src = pokemon.sprites.front_default;
 
-   newPokemon.appendChild(pokemonImg);
-   newPokemon.appendChild(name);
+      newPokemon.appendChild(pokemonImg);
+      newPokemon.appendChild(name);
 
-   caught.appendChild(newPokemon);
+      caught.appendChild(newPokemon);
+   }
 }

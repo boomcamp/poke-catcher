@@ -165,7 +165,6 @@ main {
 .pokemon-containers .encounter-cont .details h3 {
    background-color: #ffcd17;
    border-radius: 15px;
-   color: black;
    margin-bottom: 10px;
    color: black;
 }
@@ -197,7 +196,7 @@ main {
    padding-left: 10px;
    font-weight: bold;
    text-transform: uppercase;
-   font-family: Helvetica, sans-serif;
+   font-family: "PT Mono", monospace;
    width: 23%;
 }
 
@@ -236,7 +235,7 @@ legend {
    background: url("../images/source.gif");
    background-size: 100%;
    background-repeat: no-repeat;
-   background-position: 0 100%;
+   background-position: 0 95%;
 }
 
 .bg2 {
