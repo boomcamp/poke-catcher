@@ -129,8 +129,8 @@ body {
 .div1 img {
   height: 150px;
   weight: 150px;
-  -webkit-animation: mover 0.3s infinite alternate;
-  animation: mover 0.3s infinite alternate;
+  -webkit-animation: mover 0.4s infinite alternate;
+  animation: mover 0.4s infinite alternate;
 }
 .div3 p {
   padding: 10px 60px 0px 60px;
@@ -185,8 +185,8 @@ body {
 }
 .bag-content img {
   height: 78px;
-  -webkit-animation: mover 0.3s infinite alternate;
-  animation: mover 0.3s infinite alternate;
+  -webkit-animation: mover 0.4s infinite alternate;
+  animation: mover 0.4s infinite alternate;
 }
 .bag-content span {
   text-transform: capitalize;
@@ -214,20 +214,19 @@ body {
 }
 .window2 button {
   margin-top: 50px;
-  font-size: 20px;
-  background: white;
-  border: 5px solid #090983;
+  height: 100px;
+  width: 100px;
+  border: 0;
   border-radius: 40px;
-  padding: 10px 80px 10px 80px;
-  color: #090983;
-}
-.window2 button:hover {
-  background: #090983;
-  border: 5px solid #090983;
-  color: white;
+  background-image: url("../img/pokeball.gif");
+  background-size: 100% 100%;
+  background-color: transparent;
 }
 .window3 .logo {
   height: 150px;
+}
+.window3 .side {
+  margin: 0 20px 0 20px;
 }
 .bag button {
   margin-left: 18px;
@@ -237,6 +236,10 @@ body {
   border-radius: 15px;
   font-size: 18px;
   color: white;
+}
+.flip {
+  -webkit-transform: scaleX(-2);
+  transform: scaleX(-1);
 }
 @-webkit-keyframes mover {
   0% {
