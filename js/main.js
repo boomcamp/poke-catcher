@@ -126,15 +126,12 @@ $(document).ready(function() {
           if (capturedCounter <= 6) {
             $(".captured-box").append(`
         <div class="captured-poke">
-        <img src="${pokePics}" alt="" width="200px" height="200px" class="img-captured">
+        <img src="${pokePics}" alt="" width="100px" height="100px" class="img-captured">
         <span class="founded-text" id="founded-text">${pokeName}</span>
         </div>
         `);
             capturedCounter++;
             $("#title").text(`CAPTURE POKEMON (${capturedCounter}/6)`);
-            $(".image").val("");
-            $(".name").val("");
-            $(".stats").val("");
           }
         });
       });
@@ -142,10 +139,3 @@ $(document).ready(function() {
 
   fetchLocation("region");
 });
-
-// $(".found-cont").addClass("hide");
-// $(".found-cont-captured").removeClass("hide");
-// $(".capture-text").text(`you've captured ${pokeName}!`);
-// $(".capture-text").append(
-//   `<br><span class='capture-subtext'>click <span class="text-red">explore</span> to find more<span>`
-// );
