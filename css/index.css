@@ -41,7 +41,7 @@ body {
 
 .main-wrapper {
   height: 100vh;
-  width: 500px;
+  width: 900px;
   overflow: auto;
   background: url("../img/big-bg.png") center no-repeat;
   background-size: cover;
@@ -68,7 +68,7 @@ body {
 
 .sort {
   width: 100%;
-  height: 130px;
+  height: 190px;
   background: white;
   border: 1px solid black;
   border-radius: 5px;
@@ -76,15 +76,22 @@ body {
 }
 
 .sort-header {
-  flex: 1;
-  text-align: center;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .sort-location {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
+  margin: 10px;
+}
+
+.explore-btn {
+  margin: 10px;
+  justify-content: flex-end;
+}
+
+#explore-btn {
+  padding: 5px;
+  border: 1px solid #dae0e2;
+  border-radius: 5px;
 }
 
 .poke-data {
@@ -129,12 +136,11 @@ body {
   margin-bottom: 0;
 }
 
-.capture-btn {
-  margin: 0 auto 5px;
-  height: 20px;
+.catch-btn {
+  margin: 10px;
 }
 
-#capture {
+#catch {
   padding: 5px;
   background: #dae0e2;
   border: 1px solid #dae0e2;
@@ -158,12 +164,13 @@ body {
 .stats {
   width: 100%;
   height: 300px;
+  justify-content: space-around;
 }
 
 /* captured */
 .captured-pokemon {
   width: 100%;
-  height: 335px;
+  height: 275px;
   background: white;
   border: 1px solid black;
   margin: 5px auto;
@@ -172,6 +179,7 @@ body {
 
 .poke-captured {
   height: 90%;
+  width: 99%;
 }
 
 .poke-captured section {

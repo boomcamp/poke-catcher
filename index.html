@@ -18,10 +18,8 @@
       </section>
       <!-- sorting -->
       <section>
-        <div class="sort flex align-items-center justify-content-center">
-          <span class="sort-header">EXPLORE <br />
-            THE <br />
-            AREA</span>
+        <div class="sort flex flex-direction-column">
+          <span class="sort-header">EXPLORE THE AREA</span>
           <div class="sort-location flex flex-direction-column">
             <label for="region">Region:</label>
             <select name="region" id="region"></select>
@@ -29,6 +27,9 @@
             <select name="location" id="location"></select>
             <label for="area">Area:</label>
             <select name="area" id="area"></select>
+            <div class="explore-btn flex align-items-center">
+              <button id="explore-btn">EXPLORE</button>
+            </div>
           </div>
         </div>
       </section>
@@ -42,14 +43,14 @@
                   POKEMON
                 </div>
                 <div class="image flex flex-direction-column justify-content-center align-content-center align-items-center">
-                  <h5>Test</h5>
+                  <span> <img id="poke-image" /> </span>
                 </div>
                 <div class="name flex flex-direction-column justify-content-center align-content-center align-items-center">
-                  <h5>Test</h5>
+                  <span id="founded-text"></span>
                 </div>
               </div>
-              <div class="capture-btn flex justify-content-center align-items-center">
-              <button id="capture">CAPTURE</button>
+              <div class="catch-btn flex justify-content-center align-items-center">
+              <button id="catch-btn">CAPTURE</button>
             </div>
             </section>
           </aside>
@@ -59,8 +60,13 @@
                 <div class="box-title margin-stats">
                   STATS
                 </div>
-                <div class="stats flex flex-direction-column justify-content-center align-content-center align-items-center">
-                  <h5>Test</h5>
+                <div class="stats flex flex-direction-column align-content-center align-items-center">
+                  <span id="speed"></span>
+                  <span id="sp-defense"></span>
+                  <span id="sp-attack"></span>
+                  <span id="defense"></span>
+                  <span id="attack"></span>
+                  <span id="hp"></span>
                 </div>
               </div>
             </section>
@@ -71,7 +77,7 @@
         <div class="captured-pokemon flex justify-content-center align-items-center">
         <aside class="poke-captured">
           <section class="file-marker">
-            <div style="height: 310px; width: 480px;">
+            <div style="height: 255px; width: 480px;">
               <div class="box-title margin-captured">
                 CAPTURED POKEMON (0/6)
               </div>
@@ -82,6 +88,6 @@
       </section>
     </main>
     <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
