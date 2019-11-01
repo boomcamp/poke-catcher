@@ -239,7 +239,7 @@ legend {
 }
 
 .bg2 {
-   background: url("../images/pikachu1.jpg");
+   background: url("../images/yellow.jpg");
    background-size: cover;
    background-position: 0px -173px;
 }
@@ -291,4 +291,11 @@ legend {
    color: red;
    font-family: "Gochi Hand", cursive;
    font-size: 32px;
+}
+
+.animated-pikachu {
+   transform: scaleX(-1);
+   position: absolute;
+   top: 691px;
+   left: 48%;
 }

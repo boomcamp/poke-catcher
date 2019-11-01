@@ -207,6 +207,7 @@ function renderEncounter(pokemon) {
     <fieldset class="bg2">
       <legend>Stats</legend>
       <ul>${pokemon.stats.map(s => `<li class="li-style">${s.stat.name}:  ${s.base_stat}</li>`).join("")}</li>
+      <img src="../assets/images/aniPikachu.gif" class="animated-pikachu">
     </fieldset>
     `;
 }
