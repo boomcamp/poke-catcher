@@ -21,7 +21,7 @@
   </head>
   <body>
     <main>
-      <div class="main-container">
+      <div class="main-container none">
         <div class="logo-container">
           <img
             class="logo"
@@ -33,25 +33,29 @@
           />
         </div>
         <div class="explore">
-          <div>
-            <span>Region</span>
-            <select class="region">
-              <option value="">Select One</option>
-            </select>
+          <div class="loc">
+            <div>
+              <span>Region</span>
+              <select class="region">
+                <option value="">Select One</option>
+              </select>
+            </div>
+            <div>
+              <span>Location</span>
+              <select class="location">
+                <option value="">Select One</option>
+              </select>
+            </div>
+            <div>
+              <span>Area</span>
+              <select class="area">
+                <option value="">Select One</option>
+              </select>
+            </div>
           </div>
-          <div>
-            <span>Location</span>
-            <select class="location">
-              <option value="">Select One</option>
-            </select>
-          </div>
-          <div>
-            <span>Area</span>
-            <select class="area">
-              <option value="">Select One</option>
-            </select>
-          </div>
-          <button class="exploreBtn btn">Explore 🔍</button>
+          <button class="exploreBtn btn">
+            Explore <span class="fas fa-search"></span>
+          </button>
         </div>
         <div class="details">
           <div class="pokemon">
@@ -63,7 +67,10 @@
           </div>
           <div class="right-div">
             <div class="bag">
-              <center><span id="counter">Bag (0/6)</span></center>
+              <center>
+                <span id="counter">Bag (0/6)</span>
+                <button onclick="clearbag()">Clear</button>
+              </center>
             </div>
             <div class="full-content">
               <div class="bag-content">
@@ -91,6 +98,23 @@
                 <span>Empty Slot</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="window">
+        <div class="window2">
+          <div class="window3">
+            <img
+              class="logo"
+              src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png"
+            />
+            <img
+              class="logo"
+              src="http://www.pokestadium.com/sprites/xy/dragonite.gif"
+            />
+          </div>
+          <div>
+            <span><button class="start">Click to Start</button></span>
           </div>
         </div>
       </div>

@@ -16,26 +16,28 @@ const pokemon = (function() {
           .map(x => `<span>○ ${x.stat.name} : ${x.base_stat}</span><br>`)
           .join("");
         pokemonCont.innerHTML = `
-          <img src="${detail.sprites.front_default}">
+          <img src="${detail.sprites.front_default}" class="move"/>
           <button class="pokeball" onclick="pokemonBtn()"></button>`;
         picUrl = detail.sprites.front_default;
         var type = detail.types[0].type.name;
         if (type == "water") {
-          pokemonCont.style.backgroundImage = "url('../img/beach.jpg')";
+          pokemonCont.style.backgroundImage = `url('../img/beach.jpg')`;
         } else if (type == "rock") {
-          pokemonCont.style.backgroundImage = "url('../img/forest.png')";
+          pokemonCont.style.backgroundImage = `url('../img/rock.jpg')`;
         } else if (type == "ground") {
-          pokemonCont.style.backgroundImage = "url('../img/forest.png')";
+          pokemonCont.style.backgroundImage = `url('../img/rock.jpg')`;
         } else if (type == "grass") {
-          pokemonCont.style.backgroundImage = "url('../img/forest.png')";
+          pokemonCont.style.backgroundImage = `url('../img/grass.jpg')`;
         } else if (type == "normal") {
-          pokemonCont.style.backgroundImage = "url('../img/forest.png')";
+          pokemonCont.style.backgroundImage = `url('../img/grass.jpg')`;
         } else if (type == "bug") {
-          pokemonCont.style.backgroundImage = "url('../img/forest.jpg')";
+          pokemonCont.style.backgroundImage = `url('../img/forest.png')`;
         } else if (type == "ghost") {
-          pokemonCont.style.backgroundImage = "url('../img/haunted.jpg')";
+          pokemonCont.style.backgroundImage = `url('../img/haunted.jpg')`;
+        } else if (type == "flying") {
+          pokemonCont.style.backgroundImage = `url('../img/sky.jpg')`;
         } else {
-          pokemonCont.style.backgroundImage = "url('../img/forest.png')";
+          pokemonCont.style.backgroundImage = `url('../img/forest.png')`;
         }
       });
   }
