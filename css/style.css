@@ -1,12 +1,18 @@
-*{
+* {
   box-sizing: border-box;
+  font-family: "8BITWONDERNominal";
+  font-weight: normal;
+  font-style: normal;
 }
 
-body{
+body {
   margin: 0;
+  /* background-image: url(../images/bg.png); */
+  background-image: linear-gradient(black, black), url(../images/bg.png);
+  background-blend-mode: saturation;
 }
 
-.header-container{
+.header-container {
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -19,30 +25,38 @@ body{
   flex-wrap: wrap;
 }
 
-.logo-cont img{
-  margin-left: 15px;
+.logo-cont img {
+  margin: 5px 15px;
+  width: 100px;
   height: 90px;
-
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
-.selections{
+.selections {
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.selections h1{
+.selections h1 {
   margin: 30px;
-
+  font-size: 1em;
 }
 
-select{
+select {
   height: 30px;
-  background-color: white;
+  background-color: black;
+  font-size: 0.5em;
+  border: 1px solid black;
+  border-radius: 24px;
+  outline: none;
+  color: white;
+  opacity: 0.5;
 }
 
-.explore-cont button{
+.explore-cont button {
   background-color: black;
   border: 1px solid black;
   border-radius: 24px;
@@ -52,13 +66,13 @@ select{
   color: white;
 }
 
-.explore-cont button:hover{
+.explore-cont button:hover {
   background-color: white;
   color: black;
 }
 
 /* notif container */
-.notif-container{
+.notif-container {
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -69,12 +83,19 @@ select{
   border-radius: 24px;
   margin-top: 5px;
   flex-wrap: wrap;
+  background-color: black;
+  color: white;
+  opacity: 0.5;
 }
 
+.notif {
+  margin: 0 auto 0;
+  font-size: 1em;
+}
 
 /* status container */
 
-.status-container{
+.status-container {
   width: 90%;
   height: 790px;
   margin: 0 auto 0;
@@ -84,7 +105,7 @@ select{
   display: flex;
 }
 
-.box{
+.box {
   border: 1px solid black;
   height: auto;
   width: 48%;
@@ -92,46 +113,74 @@ select{
   border-radius: 20px;
 }
 
-.box h1{
+.box h1 {
   text-align: center;
   margin: 10px;
 }
 
-.photo-cont{
+.photo-cont {
   display: flex;
   justify-content: center;
 }
-.a img{
+
+.findPic {
+  width: 50%;
+  height: 250px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+.picpoke {
   width: 30%;
   height: 250px;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 
-   /* Start the shake animation and make the animation last for 0.5 seconds */
-   animation: shake 0.5s;
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
 
-   /* When the animation is finished, start again */
-   animation-iteration-count: infinite;
-
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
 }
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
-.a h2{
+.a h2 {
   text-align: center;
 }
-.a button{
+.a button {
   background-color: black;
   border: 1px solid black;
   border-radius: 24px;
@@ -140,12 +189,12 @@ select{
   color: white;
 }
 
-.a button:hover{
+.a button:hover {
   background-color: white;
   color: black;
 }
 
-.laogan{
+.laogan {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -153,29 +202,32 @@ select{
   align-items: center;
 }
 
-.laogan h2{
+.laogan h2 {
   text-transform: uppercase;
 }
 
-.detalye{
+.detalye {
   width: 60%;
   margin: 15px auto 0;
   border: 1px solid black;
   border-radius: 24px;
   padding: 15px;
+  background-color: black;
+  color: white;
+  opacity: 0.5;
 }
 
-.detalye h3{
+.detalye h3 {
   margin: 0;
 }
 
-.detalye li{
+.detalye li {
   text-transform: capitalize;
 }
 
 /* BOX B */
 
-.pokemon-container{
+.pokemon-container {
   border: 1px solid black;
   height: auto;
   width: 90%;
@@ -186,21 +238,51 @@ select{
   align-items: center;
 }
 
-.pokemon-container .asd img{
-  margin: 10px;
-  width: 50%;
-  height: 100%;
-  -webkit-filter: grayscale(100%); 
-  filter: grayscale(100%);
-}
-
-.pokemon-container .asd h2{
-  width: 25%;
-}
-
-.asd{
+.asd {
   width: 50%;
   height: 200px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.defaultPic {
+  margin: 10px;
+  width: 50%;
+  height: 60%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.kontenerPic {
+  width: 30%;
+  height: 250px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+
+  -webkit-animation: shaki 0.5s infinite alternate;
+  /* Chrome, Safari, Opera */
+
+  animation: shaki 0.5s infinite alternate;
+}
+@keyframes shaki {
+  0% {
+    transform: rotate(7deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.pokemon-container .asd h2 {
+  width: 30%;
+  height: auto;
+  text-transform: capitalize;
+  font-size: 1em;
 }

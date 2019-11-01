@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <title>Poke API</title>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
     <link rel="stylesheet" href="css/style.css" />
+    
   </head>
   <body>
     <div class="main-container">
       <div class="header-container">
         <div class="logo-cont">
-          <img src="images/poke-logo.jpg" alt="" />
+          <img src="images/pokemon-logo.png" alt="" />
         </div>
         <div class="selections">
           <h1>Region:</h1>
@@ -28,48 +30,44 @@
         </div>
       </div>
 
-      <div class="notif-container"></div>
+      <div class="notif-container">
+        <span class="notif" id="notif">Choose a region to start finding a pokemon!</span>
+      </div>
 
       <div class="status-container">
         <div class="box a">
           <h1>Encounter</h1>
           <div class="laogan" id="laogan">
-            <img src="images/poke-logo.jpg" alt="" />
-            <h2>Find a pokemon!</h2>
-            <button class="capture-btn" id="capture">Capture!</button>
+            <!-- <img src="images/pokeball.png" class="findPic"alt="" />
+            <h2>Find a pokemon!</h2> -->
+            
           </div>
           <div class="detalye" id="detalye">
-            <h3>Details:</h3>
+            <h3>Searching pokemon..</h3>
             <ul></ul>
           </div>
         </div>
 
         <div class="box b">
-          <h1>Captured <span id="caps">0/6</span></h1>
+          <h1>Captured <span id="caps">0 / 6</span></h1>
           <div class="pokemon-container" id="pokemon_container">
             <div class="asd" id="1">
-             <img src="images/pokeball.png" alt="" />
-             <h2>Find a pokemon!</h2>
+             <img src="images/pokeball.png" class="defaultPic" alt="" />
             </div>
             <div class="asd" id="2">
-             <img src="images/pokeball.png" alt="" />
-             <h2>Find a pokemon!</h2>
+             <img src="images/pokeball.png" class="defaultPic" alt="" />
             </div>
             <div class="asd" id="3">
-                <img src="images/pokeball.png" alt="" />
-                <h2>Find a pokemon!</h2>
+                <img src="images/pokeball.png" class="defaultPic" alt="" />
             </div>
             <div class="asd" id="4">
-                <img src="images/pokeball.png" alt="" />
-                <h2>Find a pokemon!</h2>
+                <img src="images/pokeball.png" class="defaultPic" alt="" />
             </div>
             <div class="asd" id="5">
-                <img src="images/pokeball.png" alt="" />
-                <h2>Find a pokemon!</h2>
+                <img src="images/pokeball.png" class="defaultPic" alt="" />
             </div>
             <div class="asd" id="6">
-                <img src="images/pokeball.png" alt="" />
-                <h2>Find a pokemon!</h2>
+                <img src="images/pokeball.png" class="defaultPic" alt="" />
             </div>
             
             
@@ -78,6 +76,7 @@
         </div>
       </div>
     </div>
+    <audio id="pokemon-music" src = "sounds/pokebattle.mp3" type="audio/mpeg" />
     <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
     <script src="scripts/main.js"></script>
   </body>
