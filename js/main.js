@@ -126,14 +126,19 @@ $(document).ready(function() {
           if (capturedCounter <= 6) {
             $(".captured-box").append(`
         <div class="captured-poke">
-        <img src="${pokePics}" alt="" width="100px" height="100px" class="img-captured">
-        <span class="founded-text" id="founded-text">${pokeName}</span>
+        <span class="close">&times;</span><span class="captured-text" id="captured-text">${pokeName}</span>
+        <img src="${pokePics}" alt="" width="100px" height="100px" class="captured-img">
         </div>
         `);
             capturedCounter++;
             $("#title").text(`CAPTURE POKEMON (${capturedCounter}/6)`);
           }
         });
+        // var span = document.getElementsByClassName("close")[0];
+
+        // span.onclick = function() {
+        //   $(".captured-poke").style.display = "none";
+        // };
       });
   };
 
