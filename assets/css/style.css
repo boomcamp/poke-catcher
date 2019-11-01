@@ -1,9 +1,12 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+}
+
 html, body{
     box-sizing: border-box;
     font-size: 16px;
     margin: auto;
     padding: 0;
-    font-family: 'Press Start 2P', cursive;
     height: 100%;
 }
 
@@ -20,7 +23,7 @@ main{
 header{
     display: flex;
     justify-content: space-evenly;
-    background: #ef5350;
+    background: none;
     height: 70px;
     flex-direction: row;
 }
@@ -48,8 +51,7 @@ header{
 }
 
 .explore-btn > button{
-    font-family: 'Press Start 2P', cursive;
-    color: #ef5350;
+    color: #000;
     background: #fff;
     height: 50px;
     width: 150px;
@@ -57,6 +59,7 @@ header{
     border: 1px solid #fff;
     font-size: 0,7rem; 
     outline: none;
+    border: 5px solid #000;
 }
 
 .explore-btn > button:hover{
@@ -101,6 +104,7 @@ header{
     padding: 10px;
     justify-content: space-between;
     background: #ef5350;
+    border: 5px solid #000;
 }
 
 .pokedex-header-screen{
@@ -109,12 +113,18 @@ header{
     background: #fff;
     border-radius: 8px;
     align-self: center;
+    border: 5px solid #000;
 }
 
 .pokedex-header-screen > h1{
     color: #000;
     text-align: center;
     font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.pokedex-header-screen{
+    text-align: center;
 }
 
 .pokemons-captured{
@@ -124,6 +134,7 @@ header{
     border-radius: 8px;
     margin: 0 auto;
     display: flex;
+    border: 5px solid #000;
 }
 
 .pokemons-captured > table{
@@ -153,6 +164,7 @@ header{
     border-radius: 16px;
     display: flex;
     flex-wrap: wrap;
+    border: 5px solid #000;
 }
 
 .wild-pokemon-stats{
@@ -162,6 +174,8 @@ header{
     height: 30%;
     width: 90%;
     border-radius: 16px;
+    border: 5px solid #000;
+    transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
 }
 
 .wild-pokemon-stats > h2{
@@ -187,7 +201,6 @@ header{
 }
 
 .capture-btn{
-    font-family: 'Press Start 2P', cursive;
     width: 100%;
     height: 100%;
     border-radius: 16px;
@@ -195,7 +208,8 @@ header{
     letter-spacing: 20px;
     text-transform: uppercase;
     background: #fff;
-    border: 1px solid #fff;
+    border: 5px solid #000;
+    color: #000;
 }
 
 .capture-btn:hover{
@@ -230,4 +244,28 @@ header{
     align-self: auto;
     margin: auto;
     font-size: 1.4rem;
+}
+
+.gonnaCatchEm{
+    text-align: center; 
+    background: #ffcb05;  
+    border: 5px solid #3c5aa6; 
+    border-radius: 24px; 
+    height: 5vh; 
+    padding-top: 20px; 
+    font-size: 1.7rem;
+}
+
+select{
+    border-radius: 24px; 
+    background: #fff; 
+    outline: none;
+    border: none;
+    color: #000;
+    height: 3vh;
+    text-align-last:center;
+}
+
+option{
+    background: #fff;
 }
