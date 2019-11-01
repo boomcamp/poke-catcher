@@ -178,7 +178,20 @@ document.getElementById("explore-btn").addEventListener("click", function() {
                 }, 3000);
               } else {
                 alert("Oh no! No more pokeball!");
-                // location.reload();
+                document.getElementById("laogan").innerHTML = ``;
+                document.getElementById("notif").innerHTML = `No more pokeball left restart it`;
+                document.getElementById("detalye").innerHTML = `
+                No more pokemon left :(
+                `;
+                document.getElementById("explore-cont").innerHTML = `
+                <button id="restart-btn">Restart!</button>
+                `;
+
+                document.getElementById("restart-btn").addEventListener("click", function() {
+                  location.reload();
+                })
+
+                
               }
             }, 2500);
           });
