@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Poke | Catcher</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Acme|PT+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <img src="images/logo1.png">
+        <!-- <img src="images/eve.gif"> -->
+    </div>
+    <div class="content">
+        <div class="box1">
+            <div class="catch-pokemon">
+                <h1 class="pokemon">Poke Catch</h1>
+            </div>
+            <div class="wild-pokemon">
+                <div class="pokemon-image"></div>
+                <div class="pokemon-name"></div>
+                <div class="detail"><ul class="pokemon-detail"></ul></div>
+                <button class="catch">CAPTURE</button>
+                <div class="more">Explore more POKEMON!</div>
+            </div>
+        </div>   
+        <div class="box2">
+            <form>
+                <label>Region : </label>
+                <select class="region"><option hidden selected></option></select>
+            
+                <label>Location : </label>
+                <select class="loc"><option hidden selected>Please Select Region</option></select> 
+            
+                <label>Area: </label>
+                <select class="area"><option hidden selected>Please Select Location</option></select>
+                <button class="explore">Explore</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="scripts/index.js"></script>
+</body>
+</html>
