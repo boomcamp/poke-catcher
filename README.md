@@ -11,10 +11,7 @@ user can explore the Pokemon world and catch Pokemon they find along the way.
 
 ## Getting Started
 
-- `Fork` and `Clone` this repository
-- Create a `submission` branch with git, use this branch to build your
-  submission
-- Familiarize your self with the API documentation and project requirements
+- This app should run using the live server extension in vscode. In order to prevent some errors.
 
 ## Resources
 
